@@ -55,7 +55,7 @@
     "/{appId}": {
       "get": {
         "description": "Gets the published endpoint predictions for the given query.",
-        "operationId": "Luis_GetPredictionsFromEndpointViaGet",
+        "operationId": "Prediction_GetPredictionsFromEndpointViaGet",
         "parameters": [
           {
             "name": "appId",
@@ -165,7 +165,7 @@
       },
       "post": {
         "description": "Gets the published endpoint prediction for the given long query.",
-        "operationId": "Luis_GetPredictionsFromEndpointViaPost",
+        "operationId": "Prediction_GetPredictionsFromEndpointViaPost",
         "parameters": [
           {
             "name": "appId",

@@ -55,7 +55,7 @@
     "/apps/{appId}/versions/{versionId}/patterns": {
       "post": {
         "description": "Creates a new pattern feature.",
-        "operationId": "features - Create pattern feature",
+        "operationId": "Features_CreatePatternFeature",
         "parameters": [
           {
             "name": "appId",
@@ -108,7 +108,7 @@
       },
       "get": {
         "description": "Gets all application version pattern features.",
-        "operationId": "features - Get application version pattern features",
+        "operationId": "Features_GetApplicationVersionPatternFeatures",
         "parameters": [
           {
             "name": "appId",
@@ -171,7 +171,7 @@
     "/apps/{appId}/versions/{versionId}/phraselists": {
       "post": {
         "description": "Creates a new phraselist feature.",
-        "operationId": "features - Create phraselist feature",
+        "operationId": "Features_CreatePhraselistFeature",
         "parameters": [
           {
             "name": "appId",
@@ -213,7 +213,7 @@
       },
       "get": {
         "description": "Gets all application phraselist features.",
-        "operationId": "features - Get application version phraselist features",
+        "operationId": "Features_GetApplicationVersionPhraselistFeatures",
         "parameters": [
           {
             "name": "appId",
@@ -276,7 +276,7 @@
     "/apps/{appId}/versions/{versionId}/features": {
       "get": {
         "description": "Gets all application version features.",
-        "operationId": "features - Get application version features",
+        "operationId": "Features_GetApplicationVersionFeatures",
         "parameters": [
           {
             "name": "appId",
@@ -364,7 +364,7 @@
     "/apps/{appId}/versions/{versionId}/patterns/{patternId}": {
       "get": {
         "description": "Gets pattern feature info.",
-        "operationId": "features - Get pattern feature info",
+        "operationId": "Features_Get_Pattern_Feature_Info",
         "parameters": [
           {
             "name": "appId",
@@ -407,7 +407,7 @@
       },
       "put": {
         "description": "Updates the pattern, the name and the state of the pattern feature.",
-        "operationId": "features - Update pattern feature",
+        "operationId": "Features_UpdatePatternFeature",
         "parameters": [
           {
             "name": "appId",
@@ -450,7 +450,7 @@
       },
       "delete": {
         "description": "Deletes a pattern feature from an application version.",
-        "operationId": "features - Delete pattern feature",
+        "operationId": "Features_DeletePatternFeature",
         "parameters": [
           {
             "name": "appId",
@@ -484,7 +484,7 @@
     "/apps/{appId}/versions/{versionId}/phraselists/{phraselistId}": {
       "get": {
         "description": "Gets phraselist feature info.",
-        "operationId": "features - Get phraselist feature info",
+        "operationId": "Features_GetPhraselistFeatureInfo",
         "parameters": [
           {
             "name": "appId",
@@ -528,7 +528,7 @@
       },
       "put": {
         "description": "Updates the phrases, the state and the name of the phraselist feature.",
-        "operationId": "features - Update phraselist feature",
+        "operationId": "Features_UpdatePhraselistFeature",
         "parameters": [
           {
             "name": "appId",
@@ -571,7 +571,7 @@
       },
       "delete": {
         "description": "Deletes a phraselist feature from an application.",
-        "operationId": "features - Delete phraselist feature",
+        "operationId": "Features_DeletePhraselistFeature",
         "parameters": [
           {
             "name": "appId",
@@ -605,7 +605,7 @@
     "/apps/{appId}/versions/{versionId}/example": {
       "post": {
         "description": "Adds a labeled example to the application.",
-        "operationId": "examples - Add label",
+        "operationId": "Examples_AddLabel",
         "parameters": [
           {
             "name": "appId",
@@ -652,7 +652,7 @@
     "/apps/{appId}/versions/{versionId}/examples": {
       "post": {
         "description": "Adds a batch of labeled examples to the specified application.",
-        "operationId": "examples - Batch add labels",
+        "operationId": "Examples_BatchAddLabels",
         "parameters": [
           {
             "name": "appId",
@@ -694,7 +694,7 @@
       },
       "get": {
         "description": "Returns examples to be reviewed.",
-        "operationId": "examples - Review labeled examples",
+        "operationId": "Examples_ReviewLabeledExamples",
         "parameters": [
           {
             "name": "appId",
@@ -757,7 +757,7 @@
     "/apps/{appId}/versions/{versionId}/examples/{exampleId}": {
       "delete": {
         "description": "Deletes the label with the specified ID.",
-        "operationId": "examples - Delete example labels",
+        "operationId": "Examples_DeleteExampleLabels",
         "parameters": [
           {
             "name": "appId",
@@ -791,7 +791,7 @@
     "/apps/{appId}/versions/{versionId}/intents": {
       "post": {
         "description": "Adds an intent classifier to the application.",
-        "operationId": "models - Create intent classifier",
+        "operationId": "Models_CreateIntentClassifier",
         "parameters": [
           {
             "name": "appId",
@@ -833,7 +833,7 @@
       },
       "get": {
         "description": "Gets information about the intent models.",
-        "operationId": "models - Get application version intent infos",
+        "operationId": "Models_GetApplicationVersionIntentInfos",
         "parameters": [
           {
             "name": "appId",
@@ -896,7 +896,7 @@
     "/apps/{appId}/versions/{versionId}/entities": {
       "post": {
         "description": "Adds an entity extractor to the application.",
-        "operationId": "models - Create entity extractor",
+        "operationId": "Models_CreateEntityExtractor",
         "parameters": [
           {
             "name": "appId",
@@ -938,7 +938,7 @@
       },
       "get": {
         "description": "Gets information about the entity models.",
-        "operationId": "models - Get application version entity infos",
+        "operationId": "Models_GetApplicationVersionEntityInfos",
         "parameters": [
           {
             "name": "appId",
@@ -1001,7 +1001,7 @@
     "/apps/{appId}/versions/{versionId}/hierarchicalentities": {
       "post": {
         "description": "Adds a hierarchical entity extractor to the application version.",
-        "operationId": "models - Create hierarchical entity extractor",
+        "operationId": "Models_CreateHierarchicalEntityExtractor",
         "parameters": [
           {
             "name": "appId",
@@ -1043,7 +1043,7 @@
       },
       "get": {
         "description": "Gets information about the hierarchical entity models.",
-        "operationId": "models - Get application version hierarchical entity infos",
+        "operationId": "Models_GetApplicationVersionHierarchicalEntityInfos",
         "parameters": [
           {
             "name": "appId",
@@ -1106,7 +1106,7 @@
     "/apps/{appId}/versions/{versionId}/compositeentities": {
       "post": {
         "description": "Adds a composite entity extractor to the application.",
-        "operationId": "models - Create composite entity extractor",
+        "operationId": "Models_CreateCompositeEntityExtractor",
         "parameters": [
           {
             "name": "appId",
@@ -1148,7 +1148,7 @@
       },
       "get": {
         "description": "Gets information about the composite entity models.",
-        "operationId": "models - Get application version composite entity infos",
+        "operationId": "Models_GetApplicationVersionCompositeEntityInfos",
         "parameters": [
           {
             "name": "appId",
@@ -1211,7 +1211,7 @@
     "/apps/{appId}/versions/{versionId}/closedlists": {
       "post": {
         "description": "Adds a closed list model to the application.",
-        "operationId": "models - Create closed list entity model",
+        "operationId": "Models_CreateClosedListEntityModel",
         "parameters": [
           {
             "name": "appId",
@@ -1253,7 +1253,7 @@
       },
       "get": {
         "description": "Gets information about the closedlist models.",
-        "operationId": "models - Get application version closed list infos",
+        "operationId": "Models_GetApplicationVersionClosedListInfos",
         "parameters": [
           {
             "name": "appId",
@@ -1316,7 +1316,7 @@
     "/apps/{appId}/versions/{versionId}/prebuilts": {
       "post": {
         "description": "Adds a list of prebuilt entity extractors to the application.",
-        "operationId": "models - Add prebuilt entity extractors",
+        "operationId": "Models_AddPrebuiltEntityExtractors",
         "parameters": [
           {
             "name": "appId",
@@ -1358,7 +1358,7 @@
       },
       "get": {
         "description": "Gets information about the prebuilt entity models.",
-        "operationId": "models - Get application version prebuilt infos",
+        "operationId": "Models_GetApplicationVersionPrebuiltInfos",
         "parameters": [
           {
             "name": "appId",
@@ -1421,7 +1421,7 @@
     "/apps/{appId}/versions/{versionId}/listprebuilts": {
       "get": {
         "description": "Gets all the available prebuilt entity extractors for the application.",
-        "operationId": "models - Get available prebuilt entity extractors",
+        "operationId": "Models_GetAvailablePrebuiltEntityExtractors",
         "parameters": [
           {
             "name": "appId",
@@ -1454,7 +1454,7 @@
     "/apps/{appId}/versions/{versionId}/models": {
       "get": {
         "description": "Gets information about the application version models.",
-        "operationId": "models - Get application version model infos",
+        "operationId": "Models_GetApplicationVersionModelInfos",
         "parameters": [
           {
             "name": "appId",
@@ -1517,7 +1517,7 @@
     "/apps/{appId}/versions/{versionId}/intents/{intentId}": {
       "get": {
         "description": "Gets information about the intent model.",
-        "operationId": "models - Get intent info",
+        "operationId": "Models_GetIntentInfo",
         "parameters": [
           {
             "name": "appId",
@@ -1560,7 +1560,7 @@
       },
       "put": {
         "description": "Updates the name of an intent classifier.",
-        "operationId": "models - Rename intent model",
+        "operationId": "Models_RenameIntentModel",
         "parameters": [
           {
             "name": "appId",
@@ -1603,7 +1603,7 @@
       },
       "delete": {
         "description": "Deletes an intent classifier from the application.",
-        "operationId": "models - Delete intent model",
+        "operationId": "Models_DeleteIntentModel",
         "parameters": [
           {
             "name": "appId",
@@ -1637,7 +1637,7 @@
     "/apps/{appId}/versions/{versionId}/entities/{entityId}": {
       "get": {
         "description": "Gets information about the entity model.",
-        "operationId": "models - Get entity info",
+        "operationId": "Models_GetEntityInfo",
         "parameters": [
           {
             "name": "appId",
@@ -1680,7 +1680,7 @@
       },
       "put": {
         "description": "Updates the name of an entity extractor.",
-        "operationId": "models - Rename entity model",
+        "operationId": "Models_RenameEntityModel",
         "parameters": [
           {
             "name": "appId",
@@ -1723,7 +1723,7 @@
       },
       "delete": {
         "description": "Deletes an entity extractor from the application.",
-        "operationId": "models - Delete entity model",
+        "operationId": "Models_DeleteEntityModel",
         "parameters": [
           {
             "name": "appId",
@@ -1757,7 +1757,7 @@
     "/apps/{appId}/versions/{versionId}/hierarchicalentities/{hEntityId}": {
       "get": {
         "description": "Gets information about the hierarchical entity model.",
-        "operationId": "models - Get hierarchical entity info",
+        "operationId": "Models_GetHierarchicalEntityInfo",
         "parameters": [
           {
             "name": "appId",
@@ -1810,7 +1810,7 @@
       },
       "put": {
         "description": "Updates the name and children of a hierarchical entity model.",
-        "operationId": "models - Update hierarchical entity model",
+        "operationId": "Models_UpdateHierarchicalEntityModel",
         "parameters": [
           {
             "name": "appId",
@@ -1853,7 +1853,7 @@
       },
       "delete": {
         "description": "Deletes a hierarchical entity extractor from the application version.",
-        "operationId": "models - Delete hierarchical entity model",
+        "operationId": "Models_DeleteHierarchicalEntityModel",
         "parameters": [
           {
             "name": "appId",
@@ -1887,7 +1887,7 @@
     "/apps/{appId}/versions/{versionId}/compositeentities/{cEntityId}": {
       "get": {
         "description": "Gets information about the composite entity model.",
-        "operationId": "models - Get composite entity info",
+        "operationId": "Models_GetCompositeEntityInfo",
         "parameters": [
           {
             "name": "appId",
@@ -1940,7 +1940,7 @@
       },
       "put": {
         "description": "Updates the composite entity extractor.",
-        "operationId": "models - Update composite entity model",
+        "operationId": "Models_UpdateCompositeEntityModel",
         "parameters": [
           {
             "name": "appId",
@@ -1983,7 +1983,7 @@
       },
       "delete": {
         "description": "Deletes a composite entity extractor from the application.",
-        "operationId": "models - Delete composite entity model",
+        "operationId": "Models_DeleteCompositeEntityModel",
         "parameters": [
           {
             "name": "appId",
@@ -2017,7 +2017,7 @@
     "/apps/{appId}/versions/{versionId}/closedlists/{clEntityId}": {
       "get": {
         "description": "Gets information of a closed list model.",
-        "operationId": "models - Get closed list entity info",
+        "operationId": "Models_GetClosedListEntityInfo",
         "parameters": [
           {
             "name": "appId",
@@ -2088,7 +2088,7 @@
       },
       "put": {
         "description": "Updates the closed list model.",
-        "operationId": "models - Update closed list entity model",
+        "operationId": "Models_UpdateClosedListEntityModel",
         "parameters": [
           {
             "name": "appId",
@@ -2131,7 +2131,7 @@
       },
       "patch": {
         "description": "Adds a batch of sublists to an existing closedlist.",
-        "operationId": "models - Patch closed list entity model",
+        "operationId": "Models_PatchClosedListEntityModel",
         "parameters": [
           {
             "name": "appId",
@@ -2174,7 +2174,7 @@
       },
       "delete": {
         "description": "Deletes a closed list model from the application.",
-        "operationId": "models - Delete closed list entity model",
+        "operationId": "Models_DeleteClosedListEntityModel",
         "parameters": [
           {
             "name": "appId",
@@ -2208,7 +2208,7 @@
     "/apps/{appId}/versions/{versionId}/prebuilts/{prebuiltId}": {
       "get": {
         "description": "Gets information about the prebuilt entity model.",
-        "operationId": "models - Get prebuilt info",
+        "operationId": "Models_GetPrebuiltInfo",
         "parameters": [
           {
             "name": "appId",
@@ -2251,7 +2251,7 @@
       },
       "delete": {
         "description": "Deletes a prebuilt entity extractor from the application.",
-        "operationId": "models - Delete prebuilt model",
+        "operationId": "Models_DeletePrebuiltModel",
         "parameters": [
           {
             "name": "appId",
@@ -2285,7 +2285,7 @@
     "/apps/{appId}/versions/{versionId}/closedlists/{clEntityId}/sublists/{subListId}": {
       "delete": {
         "description": "Deletes a sublist of a specific closed list model.",
-        "operationId": "models - Delete sub list",
+        "operationId": "Models_DeleteSubList",
         "parameters": [
           {
             "name": "appId",
@@ -2324,7 +2324,7 @@
       },
       "put": {
         "description": "Updates one of the closed list's sublists",
-        "operationId": "models - Update closed list's sublist",
+        "operationId": "Models_UpdateSubList",
         "parameters": [
           {
             "name": "appId",
@@ -2376,7 +2376,7 @@
     "/apps/{appId}/versions/{versionId}/intents/{intentId}/suggest": {
       "get": {
         "description": "Suggests examples that would improve the accuracy of the intent model.",
-        "operationId": "models - Suggest endpoint queries for intents",
+        "operationId": "Models_SuggestEndpointQueriesForIntents",
         "parameters": [
           {
             "name": "appId",
@@ -2431,7 +2431,7 @@
     "/apps/{appId}/versions/{versionId}/entities/{entityId}/suggest": {
       "get": {
         "description": "Suggests examples that would improve the accuracy of the entity model.",
-        "operationId": "models - Suggest endpoint queries for entities",
+        "operationId": "Models_SuggestEndpointQueriesForEntities",
         "parameters": [
           {
             "name": "appId",
@@ -2486,7 +2486,7 @@
     "/apps/": {
       "post": {
         "description": "Creates a new LUIS app.",
-        "operationId": "apps - Add application",
+        "operationId": "Apps_AddApplication",
         "parameters": [
           {
             "name": "applicationCreateObject",
@@ -2514,7 +2514,7 @@
       },
       "get": {
         "description": "Lists all of the user applications.",
-        "operationId": "apps - Get user applications",
+        "operationId": "Apps_GetUserApplications",
         "parameters": [
           {
             "name": "skip",
@@ -2563,7 +2563,7 @@
     "/apps/import": {
       "post": {
         "description": "Imports an application to LUIS, the application's JSON should be included in in the request body.",
-        "operationId": "apps - Import application",
+        "operationId": "Apps_ImportApplication",
         "parameters": [
           {
             "name": "appName",
@@ -2599,7 +2599,7 @@
     "/apps/assistants": {
       "get": {
         "description": "Gets the endpoint URLs for the prebuilt Cortana applications.",
-        "operationId": "apps - Get personal assistant applications",
+        "operationId": "Apps_GetPersonalAssistantApplications",
         "responses": {
           "200": {
             "description": "A personal assistant apps JSON object containing the endpoint URLs for Cortana applications            and the user's endpoint keys.",
@@ -2625,7 +2625,7 @@
     "/apps/domains": {
       "get": {
         "description": "Gets the available application domains.",
-        "operationId": "apps - Get application domains",
+        "operationId": "Apps_GetApplicationDomains",
         "responses": {
           "200": {
             "description": "A list object containing the available application domains.",
@@ -2642,7 +2642,7 @@
     "/apps/usagescenarios": {
       "get": {
         "description": "Gets the application available usage scenarios.",
-        "operationId": "apps - Get application usage scenarios",
+        "operationId": "Apps_GetApplicationUsageScenarios",
         "responses": {
           "200": {
             "description": "A list object containing the available application usage scenarios.",
@@ -2659,7 +2659,7 @@
     "/apps/cultures": {
       "get": {
         "description": "Gets the supported application cultures.",
-        "operationId": "apps - Get application cultures",
+        "operationId": "Apps_GetApplicationCultures",
         "responses": {
           "200": {
             "description": "A list object containing the supported application cultures.",
@@ -2676,7 +2676,7 @@
     "/apps/{appId}/querylogs": {
       "get": {
         "description": "Gets the query logs of the past month for the application.",
-        "operationId": "apps - Download application query logs",
+        "operationId": "Apps_DownloadApplicationQueryLogs",
         "parameters": [
           {
             "name": "appId",
@@ -2702,7 +2702,7 @@
     "/apps/{appId}": {
       "get": {
         "description": "Gets the application info.",
-        "operationId": "apps - Get application info",
+        "operationId": "Apps_GetApplicationInfo",
         "parameters": [
           {
             "name": "appId",
@@ -2746,7 +2746,7 @@
       },
       "put": {
         "description": "Updates the name or description of the application.",
-        "operationId": "apps - Rename application",
+        "operationId": "Apps_RenameApplication",
         "parameters": [
           {
             "name": "appId",
@@ -2775,7 +2775,7 @@
       },
       "delete": {
         "description": "Deletes an application.",
-        "operationId": "apps - Delete application",
+        "operationId": "Apps_DeleteApplication",
         "parameters": [
           {
             "name": "appId",
@@ -2795,7 +2795,7 @@
     "/apps/{appId}/versions/{versionId}/clone": {
       "post": {
         "description": "Creates a new version equivalent to the current snapshot of the selected application version.",
-        "operationId": "versions - Clone version",
+        "operationId": "Versions_CloneVersion",
         "parameters": [
           {
             "name": "appId",
@@ -2839,7 +2839,7 @@
     "/apps/{appId}/publish": {
       "post": {
         "description": "Publishes a specific version of the application.",
-        "operationId": "apps - Publish application",
+        "operationId": "Apps_PublishApplication",
         "parameters": [
           {
             "name": "appId",
@@ -2881,7 +2881,7 @@
     "/apps/{appId}/versions": {
       "get": {
         "description": "Gets the application versions info.",
-        "operationId": "versions - Get application versions",
+        "operationId": "Versions_GetApplicationVersions",
         "parameters": [
           {
             "name": "appId",
@@ -2937,7 +2937,7 @@
     "/apps/{appId}/versions/{versionId}/": {
       "get": {
         "description": "Gets the task info.",
-        "operationId": "versions - Get application version",
+        "operationId": "Versions_GetApplicationVersion",
         "parameters": [
           {
             "name": "appId",
@@ -2983,7 +2983,7 @@
       },
       "put": {
         "description": "Updates the name or description of the application version.",
-        "operationId": "versions - Rename application version",
+        "operationId": "Versions_RenameApplicationVersion",
         "parameters": [
           {
             "name": "appId",
@@ -3019,7 +3019,7 @@
       },
       "delete": {
         "description": "Deletes an application version.",
-        "operationId": "versions - Delete application version",
+        "operationId": "Versions_DeleteApplicationVersion",
         "parameters": [
           {
             "name": "appId",
@@ -3046,7 +3046,7 @@
     "/apps/{appId}/versions/{versionId}/export": {
       "get": {
         "description": "Exports a LUIS application to JSON format.",
-        "operationId": "versions - Export application version",
+        "operationId": "Versions_ExportApplicationVersion",
         "parameters": [
           {
             "name": "appId",
@@ -3159,7 +3159,7 @@
     "/apps/{appId}/versions/{versionId}/assignedkey": {
       "get": {
         "description": "Gets the given application version's subscription key.",
-        "operationId": "versions - Get application version subscription key",
+        "operationId": "Versions_GetApplicationVersionSubscriptionKey",
         "parameters": [
           {
             "name": "appId",
@@ -3193,7 +3193,7 @@
       },
       "put": {
         "description": "Assigns a subscription key to the given application version.",
-        "operationId": "versions - Assign subscription key to version",
+        "operationId": "Versions_AssignSubscriptionKeyToVersion",
         "parameters": [
           {
             "name": "appId",
@@ -3231,7 +3231,7 @@
     "/apps/{appId}/versions/{versionId}/externalKeys": {
       "put": {
         "description": "Assigns an external API key to the given application according to the specified key type.",
-        "operationId": "versions - Update application version external key",
+        "operationId": "Versions_UpdateApplicationVersionExternalKey",
         "parameters": [
           {
             "name": "appId",
@@ -3267,7 +3267,7 @@
       },
       "get": {
         "description": "Gets the given application versions's external keys.",
-        "operationId": "versions - Get application version external api keys",
+        "operationId": "Versions_GetApplicationVersionExternalApiKeys",
         "parameters": [
           {
             "name": "appId",
@@ -3302,7 +3302,7 @@
     "/apps/{appId}/versions/{versionId}/externalKeys/{keyType}": {
       "delete": {
         "description": "Deletes an external API key currently associated to the given application according for the specified key type.",
-        "operationId": "versions - Delete application version external key",
+        "operationId": "Versions_DeleteApplicationVersionExternalKey",
         "parameters": [
           {
             "name": "appId",
@@ -3336,7 +3336,7 @@
     "/apps/{appId}/versions/{versionId}/train": {
       "post": {
         "description": "Sends a training request for a version of a specified LUIS app. <br>This POST request initiates a request asynchronously. To determine whether the training request is successful, submit a GET request to get training status.<br><b>Note:</b> The application version is not fully trained unless all the models (intents and entities) are trained successfully or are up to date.<br/><b>To verify training success, get the training status at least once after training is complete.</b>",
-        "operationId": "train - Train application version",
+        "operationId": "Train_TrainApplicationVersion",
         "parameters": [
           {
             "name": "appId",
@@ -3371,7 +3371,7 @@
       },
       "get": {
         "description": "Gets the training status of all models (intents and entities) for the specified LUIS app. You must <a href=\"https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c45\">call the train API</a> to train the LUIS app before you call this API to get training status.<br/><b>appID</b> specifies the LUIS app ID.<br/><b>versionId</b> specifies the version number of the LUIS app. For example, \"0.1\".",
-        "operationId": "train - Get application version training status",
+        "operationId": "Train_GetApplicationVersionTrainingStatus",
         "parameters": [
           {
             "name": "appId",
@@ -3420,7 +3420,7 @@
     "/subscriptions": {
       "post": {
         "description": "Adds a subscription key to the user.",
-        "operationId": "user - Add subscription key",
+        "operationId": "User_AddSubscriptionKey",
         "parameters": [
           {
             "name": "userSubscriptionCreateObject",
@@ -3452,7 +3452,7 @@
       },
       "get": {
         "description": "Gets the user's endpoint subscription keys.",
-        "operationId": "user - Get user subscription keys",
+        "operationId": "User_GetUserSubscriptionKeys",
         "responses": {
           "200": {
             "description": "A list containing subscription keys info.",
@@ -3467,7 +3467,7 @@
       },
       "put": {
         "description": "Renames a subscription key owned by the user.",
-        "operationId": "user - Rename subscription key",
+        "operationId": "User_RenameSubscriptionKey",
         "parameters": [
           {
             "name": "body",
@@ -3491,7 +3491,7 @@
     "/externalKeys": {
       "post": {
         "description": "Adds an external API key to the user.",
-        "operationId": "user - Add external api key",
+        "operationId": "User_AddExternalApiKey",
         "parameters": [
           {
             "name": "externalKeyCreateObject",
@@ -3513,7 +3513,7 @@
       },
       "get": {
         "description": "Gets a list of the user's external api keys.",
-        "operationId": "user - Get user external api keys",
+        "operationId": "User_GetUserExternalApiKeys",
         "responses": {
           "200": {
             "description": "A list containing user's external keys info.",
@@ -3530,7 +3530,7 @@
     "/programmatickey": {
       "put": {
         "description": "Resets the user programmatic key.",
-        "operationId": "user - Reset programmatic key",
+        "operationId": "User_ResetProgrammaticKey",
         "responses": {
           "200": {
             "description": "The new programmatic key.",
@@ -3547,7 +3547,7 @@
     "/subscriptions/{subscriptionKey}": {
       "delete": {
         "description": "Deletes a user subscription key.",
-        "operationId": "user - Delete subscription key",
+        "operationId": "User_DeleteSubscriptionKey",
         "parameters": [
           {
             "name": "subscriptionKey",
@@ -3567,7 +3567,7 @@
     "/externalKeys/{externalKeyValue}": {
       "delete": {
         "description": "Deletes a user external API key.",
-        "operationId": "user - Delete external api key",
+        "operationId": "User_DeleteExternalApiKey",
         "parameters": [
           {
             "name": "externalKeyValue",
@@ -3587,7 +3587,7 @@
     "/apps/{appId}/versions/import": {
       "post": {
         "description": "Imports a new version into a LUIS application, the version's JSON should be included in in the request body.",
-        "operationId": "versions - Import version to application",
+        "operationId": "Versions_ImportVersionToApplication",
         "parameters": [
           {
             "name": "appId",
@@ -3630,7 +3630,7 @@
     "/apps/{appId}/settings": {
       "get": {
         "description": "Get the application settings",
-        "operationId": "apps - Get application settings",
+        "operationId": "Apps_GetApplicationSettings",
         "parameters": [
           {
             "name": "appId",
@@ -3657,7 +3657,7 @@
       },
       "put": {
         "description": "Updates the application settings",
-        "operationId": "apps - Update application settings",
+        "operationId": "Apps_UpdateApplicationSettings",
         "parameters": [
           {
             "name": "appId",
@@ -3688,7 +3688,7 @@
     "/apps/{appId}/versions/{versionId}/suggest": {
       "delete": {
         "description": "Deleted an unlabelled utterance.",
-        "operationId": "versions - Delete unlabelled utterance",
+        "operationId": "Versions_DeleteUnlabelledUtterance",
         "parameters": [
           {
             "name": "appId",
@@ -3726,7 +3726,7 @@
     "/apps/{appId}/permissions": {
       "get": {
         "description": "Gets the list of user emails that have permissions to access your application.",
-        "operationId": "permissions - Get application user access list",
+        "operationId": "Permissions_GetApplicationUserAccessList",
         "parameters": [
           {
             "name": "appId",
@@ -3744,7 +3744,7 @@
       },
       "post": {
         "description": "Adds a user to the allowed list of users to access this LUIS application.Users are added using their email address.",
-        "operationId": "permissions - Add user to the access list",
+        "operationId": "Permissions_AddUserToAccessList",
         "parameters": [
           {
             "name": "appId",
@@ -3773,7 +3773,7 @@
       },
       "delete": {
         "description": "Removed a user to the allowed list of users to access this LUIS application.Users are removed using their email address.",
-        "operationId": "permissions - Remove user from access list",
+        "operationId": "Permissions_RemoveUserFromAccessList",
         "parameters": [
           {
             "name": "appId",
@@ -3802,7 +3802,7 @@
       },
       "put": {
         "description": "Replaces the current users access list with the one sent in the body.If an empty list is sent, all access to other users will be removed.",
-        "operationId": "permissions - Update access list",
+        "operationId": "Permissions_UpdateAccessList",
         "parameters": [
           {
             "name": "appId",
@@ -3833,7 +3833,7 @@
     "/apps/{appId}/endpoints": {
       "get": {
         "description": "Returns the available endpoint deployment regions and urls",
-        "operationId": "apps - Get endpoints",
+        "operationId": "Apps_GetEndpoints",
         "parameters": [
           {
             "name": "appId",
@@ -3864,7 +3864,7 @@
     "/apps/{appId}/versions/{versionId}/closedlists/{clEntityId}/sublists": {
       "post": {
         "description": "Adds a list to an existing closed list",
-        "operationId": "models - Add closed list's sublist",
+        "operationId": "Models_AddSubList",
         "parameters": [
           {
             "name": "appId",
@@ -3915,7 +3915,7 @@
     "/apps/{appId}/versions/{versionId}/customprebuiltdomains": {
       "post": {
         "description": "Adds a customizable prebuilt domain along with all of its models to this application.",
-        "operationId": "models - Add custom prebuilt domain to application",
+        "operationId": "Models_AddCustomPrebuiltDomainToApplication",
         "parameters": [
           {
             "name": "appId",
@@ -3959,7 +3959,7 @@
     "/apps/{appId}/versions/{versionId}/customprebuiltintents": {
       "post": {
         "description": "Adds a custom prebuilt intent model to the application",
-        "operationId": "models - Add custom prebuilt intent model",
+        "operationId": "Models_AddCustomPrebuiltIntentModel",
         "parameters": [
           {
             "name": "appId",
@@ -4001,7 +4001,7 @@
       },
       "get": {
         "description": "Gets custom prebuilt intents information of this application",
-        "operationId": "models - Get custom prebuilt domain intents info",
+        "operationId": "Models_GetCustomPrebuiltDomainIntentsInfo",
         "parameters": [
           {
             "name": "appId",
@@ -4034,7 +4034,7 @@
     "/apps/{appId}/versions/{versionId}/customprebuiltentities": {
       "post": {
         "description": "Adds a custom prebuilt entity model to the application",
-        "operationId": "models - Add custom prebuilt entity model",
+        "operationId": "Models_AddCustomPrebuiltEntityModel",
         "parameters": [
           {
             "name": "appId",
@@ -4076,7 +4076,7 @@
       },
       "get": {
         "description": "Gets all custom prebuilt entities information of this application",
-        "operationId": "models - Get custom prebuilt domain entities info",
+        "operationId": "Models_GetCustomPrebuiltDomainEntitiesInfo",
         "parameters": [
           {
             "name": "appId",
@@ -4109,7 +4109,7 @@
     "/apps/{appId}/versions/{versionId}/customprebuiltmodels": {
       "get": {
         "description": "Gets all custom prebuilt models information of this application",
-        "operationId": "models - Get custom prebuilt domain models info",
+        "operationId": "Models_GetCustomPrebuiltDomainModelsInfo",
         "parameters": [
           {
             "name": "appId",
@@ -4142,7 +4142,7 @@
     "/apps/{appId}/versions/{versionId}/customprebuiltdomains/{domainName}": {
       "delete": {
         "description": "Deletes a prebuilt domain's models from the application.",
-        "operationId": "models - Delete custom prebuilt domain models",
+        "operationId": "Models_DeleteCustomPrebuiltDomainModels",
         "parameters": [
           {
             "name": "appId",
@@ -4176,7 +4176,7 @@
     "/apps/customprebuiltdomains": {
       "get": {
         "description": "Gets all the available custom prebuilt domains for all cultures",
-        "operationId": "apps - Get available custom prebuilt domains",
+        "operationId": "Apps_GetAvailableCustomPrebuiltDomains",
         "responses": {
           "200": {
             "description": "Returns a list of all custom prebuilt domains and their intents/entities representation",
@@ -4191,7 +4191,7 @@
       },
       "post": {
         "description": "Adds a prebuilt domain along with its models as a new application.",
-        "operationId": "apps - Add custom prebuilt application",
+        "operationId": "Apps_AddCustomPrebuiltApplication",
         "parameters": [
           {
             "name": "prebuiltDomainCreateObject",
@@ -4221,7 +4221,7 @@
     "/apps/customprebuiltdomains/{culture}": {
       "get": {
         "description": "Gets all the available custom prebuilt domains for a specific culture",
-        "operationId": "apps - Get available custom prebuilt domains for culture",
+        "operationId": "Apps_GetAvailableCustomPrebuiltDomainsForCulture",
         "parameters": [
           {
             "name": "culture",
@@ -4247,7 +4247,7 @@
     "/apps/{appId}/versions/{versionId}/hierarchicalentities/{hEntityId}/children/{hChildId}": {
       "get": {
         "description": "Gets information about the hierarchical entity child model.",
-        "operationId": "models - Get hierarchical entity child info",
+        "operationId": "Models_GetHierarchicalEntityChildInfo",
         "parameters": [
           {
             "name": "appId",
@@ -4297,7 +4297,7 @@
       },
       "put": {
         "description": "Renames a single child in an existing hierarchical entity model.",
-        "operationId": "models - Update hierarchical entity child model",
+        "operationId": "Models_UpdateHierarchicalEntityChildModel",
         "parameters": [
           {
             "name": "appId",
@@ -4347,7 +4347,7 @@
       },
       "delete": {
         "description": "Deletes a hierarchical entity extractor child from the application.",
-        "operationId": "models - Delete hierarchical entity child model",
+        "operationId": "Models_DeleteHierarchicalEntityChildModel",
         "parameters": [
           {
             "name": "appId",
@@ -4388,7 +4388,7 @@
     "/apps/{appId}/versions/{versionId}/hierarchicalentities/{hEntityId}/children": {
       "post": {
         "description": "Creates a single child in an existing hierarchical entity model.",
-        "operationId": "models - Create hierarchical entity child model",
+        "operationId": "Models_CreateHierarchicalEntityChildModel",
         "parameters": [
           {
             "name": "appId",
@@ -4439,7 +4439,7 @@
     "/apps/{appId}/versions/{versionId}/compositeentities/{cEntityId}/children": {
       "post": {
         "description": "Creates a single child in an existing composite entity model.",
-        "operationId": "models - Create composite entity child model",
+        "operationId": "Models_CreateCompositeEntityChildModel",
         "parameters": [
           {
             "name": "appId",
@@ -4490,7 +4490,7 @@
     "/apps/{appId}/versions/{versionId}/compositeentities/{cEntityId}/children/{cChildId}": {
       "delete": {
         "description": "Deletes a composite entity extractor child from the application.",
-        "operationId": "models - Delete composite entity child model",
+        "operationId": "Models_DeleteCompositeEntityChildModel",
         "parameters": [
           {
             "name": "appId",
