@@ -364,7 +364,7 @@
     "/apps/{appId}/versions/{versionId}/patterns/{patternId}": {
       "get": {
         "description": "Gets pattern feature info.",
-        "operationId": "Features_Get_Pattern_Feature_Info",
+        "operationId": "Features_GetPatternFeatureInfo",
         "parameters": [
           {
             "name": "appId",
