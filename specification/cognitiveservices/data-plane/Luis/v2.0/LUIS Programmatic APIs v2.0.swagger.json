@@ -45,24 +45,26 @@
   ],
   "paths": {
     "/apps/{appId}/versions/{versionId}/patterns": {
+      "parameters": [
+        {
+          "name": "appId",
+          "in": "path",
+          "description": "Format - guid. The application ID.",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "versionId",
+          "in": "path",
+          "description": "The version ID of the task.",
+          "required": true,
+          "type": "string"
+        } 
+      ],
       "post": {
         "description": "Creates a new pattern feature.",
         "operationId": "Features_CreatePatternFeature",
         "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The version ID of the task.",
-            "required": true,
-            "type": "string"
-          },
           {
             "name": "patternCreateObject",
             "in": "body",
@@ -102,20 +104,6 @@
         "description": "Gets all application version pattern features.",
         "operationId": "Features_GetApplicationVersionPatternFeatures",
         "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The version ID of the task.",
-            "required": true,
-            "type": "string"
-          },
           {
             "name": "skip",
             "in": "query",
@@ -161,24 +149,26 @@
       }
     },
     "/apps/{appId}/versions/{versionId}/phraselists": {
+      "parameters": [
+        {
+          "name": "appId",
+          "in": "path",
+          "description": "Format - guid. The application ID.",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "versionId",
+          "in": "path",
+          "description": "The version ID of the task.",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "post": {
         "description": "Creates a new phraselist feature.",
         "operationId": "Features_CreatePhraselistFeature",
         "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The version ID of the task.",
-            "required": true,
-            "type": "string"
-          },
           {
             "name": "phraselistCreateObject",
             "in": "body",
@@ -207,20 +197,6 @@
         "description": "Gets all application phraselist features.",
         "operationId": "Features_GetApplicationVersionPhraselistFeatures",
         "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The version ID of the task.",
-            "required": true,
-            "type": "string"
-          },
           {
             "name": "skip",
             "in": "query",
@@ -354,32 +330,32 @@
       }
     },
     "/apps/{appId}/versions/{versionId}/patterns/{patternId}": {
+      "parameters": [
+        {
+          "name": "appId",
+          "in": "path",
+          "description": "Format - guid. The application ID.",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "versionId",
+          "in": "path",
+          "description": "The version ID of the task.",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "patternId",
+          "in": "path",
+          "description": "The pattern feature ID.",
+          "required": true,
+          "type": "integer"
+        }
+      ],
       "get": {
         "description": "Gets pattern feature info.",
         "operationId": "Features_GetPatternFeatureInfo",
-        "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The version ID of the task.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "patternId",
-            "in": "path",
-            "description": "The pattern feature ID.",
-            "required": true,
-            "type": "integer"
-          }
-        ],
         "responses": {
           "200": {
             "description": "A JSON object containing the pattern feature info.",
@@ -402,27 +378,6 @@
         "operationId": "Features_UpdatePatternFeature",
         "parameters": [
           {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The version ID of the task.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "patternId",
-            "in": "path",
-            "description": "The ID of the feature to be updated.",
-            "required": true,
-            "type": "integer"
-          },
-          {
             "name": "patternUpdateObject",
             "in": "body",
             "schema": {
@@ -443,29 +398,6 @@
       "delete": {
         "description": "Deletes a pattern feature from an application version.",
         "operationId": "Features_DeletePatternFeature",
-        "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The version ID of the task.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "patternId",
-            "in": "path",
-            "description": "The ID of the pattern feature to be deleted.",
-            "required": true,
-            "type": "integer"
-          }
-        ],
         "responses": {
           "200": {
             "description": ""
@@ -474,32 +406,32 @@
       }
     },
     "/apps/{appId}/versions/{versionId}/phraselists/{phraselistId}": {
+      "parameters": [
+        {
+          "name": "appId",
+          "in": "path",
+          "description": "Format - guid. The application ID.",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "versionId",
+          "in": "path",
+          "description": "The version ID of the task.",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "phraselistId",
+          "in": "path",
+          "description": "The ID of the feature to be deleted.",
+          "required": true,
+          "type": "integer"
+        }
+      ],
       "get": {
         "description": "Gets phraselist feature info.",
         "operationId": "Features_GetPhraselistFeatureInfo",
-        "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The version ID of the task.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "phraselistId",
-            "in": "path",
-            "description": "The phraselist feature ID.",
-            "required": true,
-            "type": "integer"
-          }
-        ],
         "responses": {
           "200": {
             "description": "A JSON object containing the phraselist feature info.",
@@ -523,27 +455,6 @@
         "operationId": "Features_UpdatePhraselistFeature",
         "parameters": [
           {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The version ID of the task.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "phraselistId",
-            "in": "path",
-            "description": "The ID of the feature to be updated.",
-            "required": true,
-            "type": "integer"
-          },
-          {
             "name": "phraselistUpdateObject",
             "in": "body",
             "schema": {
@@ -564,29 +475,6 @@
       "delete": {
         "description": "Deletes a phraselist feature from an application.",
         "operationId": "Features_DeletePhraselistFeature",
-        "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The version ID of the task.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "phraselistId",
-            "in": "path",
-            "description": "The ID of the feature to be deleted.",
-            "required": true,
-            "type": "integer"
-          }
-        ],
         "responses": {
           "200": {
             "description": ""
@@ -642,24 +530,27 @@
       }
     },
     "/apps/{appId}/versions/{versionId}/examples": {
+      "parameters": [
+        {
+          "name": "appId",
+          "in": "path",
+          "description": "Format - guid. The application ID.",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "versionId",
+          "in": "path",
+          "description": "The task version ID.",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "post": {
         "description": "Adds a batch of labeled examples to the specified application.",
         "operationId": "Examples_BatchAddLabels",
         "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
-          },
+
           {
             "name": "exampleLabelObjectArray",
             "in": "body",
@@ -688,20 +579,6 @@
         "description": "Returns examples to be reviewed.",
         "operationId": "Examples_ReviewLabeledExamples",
         "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
-          },
           {
             "name": "skip",
             "in": "query",
@@ -781,24 +658,26 @@
       }
     },
     "/apps/{appId}/versions/{versionId}/intents": {
+      "parameters": [
+        {
+          "name": "appId",
+          "in": "path",
+          "description": "Format - guid. ID of the application.",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "versionId",
+          "in": "path",
+          "description": "The task version ID.",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "post": {
         "description": "Adds an intent classifier to the application.",
         "operationId": "Models_CreateIntentClassifier",
         "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. ID of the application.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
-          },
           {
             "name": "modelCreateObject",
             "in": "body",
@@ -827,20 +706,6 @@
         "description": "Gets information about the intent models.",
         "operationId": "Models_GetApplicationVersionIntentInfos",
         "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
-          },
           {
             "name": "skip",
             "in": "query",
@@ -886,24 +751,26 @@
       }
     },
     "/apps/{appId}/versions/{versionId}/entities": {
+      "parameters": [
+        {
+          "name": "appId",
+          "in": "path",
+          "description": "Format - guid. ID of the application.",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "versionId",
+          "in": "path",
+          "description": "The task version ID.",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "post": {
         "description": "Adds an entity extractor to the application.",
         "operationId": "Models_CreateEntityExtractor",
         "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
-          },
           {
             "name": "modelCreateObject",
             "in": "body",
@@ -932,20 +799,6 @@
         "description": "Gets information about the entity models.",
         "operationId": "Models_GetApplicationVersionEntityInfos",
         "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
-          },
           {
             "name": "skip",
             "in": "query",
@@ -991,24 +844,26 @@
       }
     },
     "/apps/{appId}/versions/{versionId}/hierarchicalentities": {
+      "parameters": [
+        {
+          "name": "appId",
+          "in": "path",
+          "description": "Format - guid. ID of the application.",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "versionId",
+          "in": "path",
+          "description": "The task version ID.",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "post": {
         "description": "Adds a hierarchical entity extractor to the application version.",
         "operationId": "Models_CreateHierarchicalEntityExtractor",
         "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
-          },
           {
             "name": "hierarchicalModelCreateObject",
             "in": "body",
@@ -1037,20 +892,6 @@
         "description": "Gets information about the hierarchical entity models.",
         "operationId": "Models_GetApplicationVersionHierarchicalEntityInfos",
         "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
-          },
           {
             "name": "skip",
             "in": "query",
@@ -1096,24 +937,26 @@
       }
     },
     "/apps/{appId}/versions/{versionId}/compositeentities": {
+      "parameters": [
+        {
+          "name": "appId",
+          "in": "path",
+          "description": "Format - guid. ID of the application.",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "versionId",
+          "in": "path",
+          "description": "The task version ID.",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "post": {
         "description": "Adds a composite entity extractor to the application.",
         "operationId": "Models_CreateCompositeEntityExtractor",
         "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
-          },
           {
             "name": "hierarchicalModelCreateObject",
             "in": "body",
@@ -1142,20 +985,6 @@
         "description": "Gets information about the composite entity models.",
         "operationId": "Models_GetApplicationVersionCompositeEntityInfos",
         "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
-          },
           {
             "name": "skip",
             "in": "query",
@@ -1201,24 +1030,26 @@
       }
     },
     "/apps/{appId}/versions/{versionId}/closedlists": {
+      "parameters": [
+        {
+          "name": "appId",
+          "in": "path",
+          "description": "Format - guid. ID of the application.",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "versionId",
+          "in": "path",
+          "description": "The task version ID.",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "post": {
         "description": "Adds a closed list model to the application.",
         "operationId": "Models_CreateClosedListEntityModel",
         "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
-          },
           {
             "name": "closedListModelCreateObject",
             "in": "body",
@@ -1247,20 +1078,6 @@
         "description": "Gets information about the closedlist models.",
         "operationId": "Models_GetApplicationVersionClosedListInfos",
         "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
-          },
           {
             "name": "skip",
             "in": "query",
@@ -1306,24 +1123,26 @@
       }
     },
     "/apps/{appId}/versions/{versionId}/prebuilts": {
+      "parameters": [
+        {
+          "name": "appId",
+          "in": "path",
+          "description": "Format - guid. ID of the application.",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "versionId",
+          "in": "path",
+          "description": "The task version ID.",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "post": {
         "description": "Adds a list of prebuilt entity extractors to the application.",
         "operationId": "Models_AddPrebuiltEntityExtractors",
         "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
-          },
           {
             "name": "prebuiltExtractorNames",
             "in": "body",
@@ -1352,20 +1171,6 @@
         "description": "Gets information about the prebuilt entity models.",
         "operationId": "Models_GetApplicationVersionPrebuiltInfos",
         "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
-          },
           {
             "name": "skip",
             "in": "query",
@@ -1507,32 +1312,32 @@
       }
     },
     "/apps/{appId}/versions/{versionId}/intents/{intentId}": {
+      "parameters": [
+        {
+          "name": "appId",
+          "in": "path",
+          "description": "Format - guid. ID of the application.",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "versionId",
+          "in": "path",
+          "description": "The task version ID.",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "intentId",
+          "in": "path",
+          "description": "Format - guid. The intent classifier ID.",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "get": {
         "description": "Gets information about the intent model.",
         "operationId": "Models_GetIntentInfo",
-        "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "intentId",
-            "in": "path",
-            "description": "Format - guid. The intent classifier ID.",
-            "required": true,
-            "type": "string"
-          }
-        ],
         "responses": {
           "200": {
             "description": "An intent model info.",
@@ -1555,27 +1360,6 @@
         "operationId": "Models_RenameIntentModel",
         "parameters": [
           {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "intentId",
-            "in": "path",
-            "description": "Format - guid. The intent classifier ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
             "name": "modelUpdateObject",
             "in": "body",
             "schema": {
@@ -1596,29 +1380,6 @@
       "delete": {
         "description": "Deletes an intent classifier from the application.",
         "operationId": "Models_DeleteIntentModel",
-        "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "intentId",
-            "in": "path",
-            "description": "Format - guid. The intent classifier ID.",
-            "required": true,
-            "type": "string"
-          }
-        ],
         "responses": {
           "200": {
             "description": ""
@@ -1627,32 +1388,32 @@
       }
     },
     "/apps/{appId}/versions/{versionId}/entities/{entityId}": {
+      "parameters": [
+        {
+          "name": "appId",
+          "in": "path",
+          "description": "Format - guid. The application ID.",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "versionId",
+          "in": "path",
+          "description": "The task version ID.",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "entityId",
+          "in": "path",
+          "description": "Format - guid. The entity extractor ID.",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "get": {
         "description": "Gets information about the entity model.",
         "operationId": "Models_GetEntityInfo",
-        "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "entityId",
-            "in": "path",
-            "description": "Format - guid. The entity extractor ID.",
-            "required": true,
-            "type": "string"
-          }
-        ],
         "responses": {
           "200": {
             "description": "An entity model info.",
@@ -1675,27 +1436,6 @@
         "operationId": "Models_RenameEntityModel",
         "parameters": [
           {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "entityId",
-            "in": "path",
-            "description": "Format - guid. The entity extractor ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
             "name": "modelUpdateObject",
             "in": "body",
             "schema": {
@@ -1716,29 +1456,6 @@
       "delete": {
         "description": "Deletes an entity extractor from the application.",
         "operationId": "Models_DeleteEntityModel",
-        "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "entityId",
-            "in": "path",
-            "description": "Format - guid. The entity extractor ID.",
-            "required": true,
-            "type": "string"
-          }
-        ],
         "responses": {
           "200": {
             "description": ""
@@ -1747,32 +1464,32 @@
       }
     },
     "/apps/{appId}/versions/{versionId}/hierarchicalentities/{hEntityId}": {
+      "parameters": [
+        {
+          "name": "appId",
+          "in": "path",
+          "description": "Format - guid. The application ID.",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "versionId",
+          "in": "path",
+          "description": "The task version ID.",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "hEntityId",
+          "in": "path",
+          "description": "Format - guid. The hierarchical entity extractor ID.",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "get": {
         "description": "Gets information about the hierarchical entity model.",
         "operationId": "Models_GetHierarchicalEntityInfo",
-        "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "hEntityId",
-            "in": "path",
-            "description": "Format - guid. The hierarchical entity extractor ID.",
-            "required": true,
-            "type": "string"
-          }
-        ],
         "responses": {
           "200": {
             "description": "A hierarchical entity model info.",
@@ -1805,27 +1522,6 @@
         "operationId": "Models_UpdateHierarchicalEntityModel",
         "parameters": [
           {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "hEntityId",
-            "in": "path",
-            "description": "Format - guid. The hierarchical entity extractor ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
             "name": "hierarchicalModelUpdateObject",
             "in": "body",
             "schema": {
@@ -1846,29 +1542,6 @@
       "delete": {
         "description": "Deletes a hierarchical entity extractor from the application version.",
         "operationId": "Models_DeleteHierarchicalEntityModel",
-        "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "hEntityId",
-            "in": "path",
-            "description": "Format - guid. The hierarchical entity extractor ID.",
-            "required": true,
-            "type": "string"
-          }
-        ],
         "responses": {
           "200": {
             "description": ""
@@ -1877,32 +1550,32 @@
       }
     },
     "/apps/{appId}/versions/{versionId}/compositeentities/{cEntityId}": {
+      "parameters": [
+        {
+          "name": "appId",
+          "in": "path",
+          "description": "Format - guid. The application ID.",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "versionId",
+          "in": "path",
+          "description": "The task version ID.",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "cEntityId",
+          "in": "path",
+          "description": "Format - guid. The composite entity extractor ID.",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "get": {
         "description": "Gets information about the composite entity model.",
         "operationId": "Models_GetCompositeEntityInfo",
-        "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "cEntityId",
-            "in": "path",
-            "description": "Format - guid. The composite entity extractor ID.",
-            "required": true,
-            "type": "string"
-          }
-        ],
         "responses": {
           "200": {
             "description": "The composite entity model info.",
@@ -1935,27 +1608,6 @@
         "operationId": "Models_UpdateCompositeEntityModel",
         "parameters": [
           {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "cEntityId",
-            "in": "path",
-            "description": "Format - guid. The composite entity extractor ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
             "name": "hierarchicalModelUpdateObject",
             "in": "body",
             "schema": {
@@ -1976,29 +1628,6 @@
       "delete": {
         "description": "Deletes a composite entity extractor from the application.",
         "operationId": "Models_DeleteCompositeEntityModel",
-        "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "cEntityId",
-            "in": "path",
-            "description": "Format - guid. The composite entity extractor ID.",
-            "required": true,
-            "type": "string"
-          }
-        ],
         "responses": {
           "200": {
             "description": ""
@@ -2007,32 +1636,32 @@
       }
     },
     "/apps/{appId}/versions/{versionId}/closedlists/{clEntityId}": {
+      "parameters": [
+        {
+          "name": "appId",
+          "in": "path",
+          "description": "Format - guid. The application ID.",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "versionId",
+          "in": "path",
+          "description": "The task version ID.",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "clEntityId",
+          "in": "path",
+          "description": "Format - guid. The closed list model ID.",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "get": {
         "description": "Gets information of a closed list model.",
         "operationId": "Models_GetClosedListEntityInfo",
-        "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "clEntityId",
-            "in": "path",
-            "description": "Format - guid. The closed list model ID.",
-            "required": true,
-            "type": "string"
-          }
-        ],
         "responses": {
           "200": {
             "description": "The closed list model info.",
@@ -2083,27 +1712,6 @@
         "operationId": "Models_UpdateClosedListEntityModel",
         "parameters": [
           {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "clEntityId",
-            "in": "path",
-            "description": "Format - guid. The closed list entity extractor ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
             "name": "closedListModelUpdateObject",
             "in": "body",
             "schema": {
@@ -2126,27 +1734,6 @@
         "operationId": "Models_PatchClosedListEntityModel",
         "parameters": [
           {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "clEntityId",
-            "in": "path",
-            "description": "Format - guid. The closed list entity extractor ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
             "name": "closedListModelPatchObject",
             "in": "body",
             "schema": {
@@ -2167,29 +1754,6 @@
       "delete": {
         "description": "Deletes a closed list model from the application.",
         "operationId": "Models_DeleteClosedListEntityModel",
-        "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "clEntityId",
-            "in": "path",
-            "description": "Format - guid. The closed list entity extractor ID.",
-            "required": true,
-            "type": "string"
-          }
-        ],
         "responses": {
           "200": {
             "description": ""
@@ -2198,32 +1762,32 @@
       }
     },
     "/apps/{appId}/versions/{versionId}/prebuilts/{prebuiltId}": {
+      "parameters": [
+        {
+          "name": "appId",
+          "in": "path",
+          "description": "Format - guid. The application ID.",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "versionId",
+          "in": "path",
+          "description": "The task version ID.",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "prebuiltId",
+          "in": "path",
+          "description": "Format - guid. The prebuilt entity extractor ID.",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "get": {
         "description": "Gets information about the prebuilt entity model.",
         "operationId": "Models_GetPrebuiltInfo",
-        "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "prebuiltId",
-            "in": "path",
-            "description": "Format - guid. The prebuilt entity extractor ID.",
-            "required": true,
-            "type": "string"
-          }
-        ],
         "responses": {
           "200": {
             "description": "A prebuilt entity models info.",
@@ -2244,29 +1808,7 @@
       "delete": {
         "description": "Deletes a prebuilt entity extractor from the application.",
         "operationId": "Models_DeletePrebuiltModel",
-        "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "prebuiltId",
-            "in": "path",
-            "description": "Format - guid. The prebuilt entity extractor ID.",
-            "required": true,
-            "type": "string"
-          }
-        ],
+
         "responses": {
           "200": {
             "description": ""
@@ -2275,39 +1817,39 @@
       }
     },
     "/apps/{appId}/versions/{versionId}/closedlists/{clEntityId}/sublists/{subListId}": {
+      "parameters": [
+        {
+          "name": "appId",
+          "in": "path",
+          "description": "Format - guid. The application ID.",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "versionId",
+          "in": "path",
+          "description": "The task version ID.",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "clEntityId",
+          "in": "path",
+          "description": "Format - guid. The closed list entity extractor ID.",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "subListId",
+          "in": "path",
+          "description": "The sublist ID.",
+          "required": true,
+          "type": "integer"
+        }
+      ],
       "delete": {
         "description": "Deletes a sublist of a specific closed list model.",
         "operationId": "Models_DeleteSubList",
-        "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "clEntityId",
-            "in": "path",
-            "description": "Format - guid. The closed list entity extractor ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "subListId",
-            "in": "path",
-            "description": "The sublist ID.",
-            "required": true,
-            "type": "integer"
-          }
-        ],
         "responses": {
           "200": {
             "description": ""
@@ -2318,34 +1860,6 @@
         "description": "Updates one of the closed list's sublists",
         "operationId": "Models_UpdateSubList",
         "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "clEntityId",
-            "in": "path",
-            "description": "Format - guid. The closedlist ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "subListId",
-            "in": "path",
-            "description": "Format - long. The sublist ID",
-            "required": true,
-            "type": "string"
-          },
           {
             "name": "wordListBaseUpdateObject",
             "in": "body",
@@ -2692,18 +2206,18 @@
       }
     },
     "/apps/{appId}": {
+      "parameters": [
+        {
+          "name": "appId",
+          "in": "path",
+          "description": "Format - guid. The application ID.",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "get": {
         "description": "Gets the application info.",
         "operationId": "Apps_GetApplicationInfo",
-        "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          }
-        ],
         "responses": {
           "200": {
             "description": "A JSON object containing the application info.",
@@ -2741,13 +2255,6 @@
         "operationId": "Apps_RenameApplication",
         "parameters": [
           {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
             "name": "applicationUpdateObject",
             "in": "body",
             "schema": {
@@ -2768,15 +2275,6 @@
       "delete": {
         "description": "Deletes an application.",
         "operationId": "Apps_DeleteApplication",
-        "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          }
-        ],
         "responses": {
           "200": {
             "description": ""
@@ -2927,25 +2425,25 @@
       }
     },
     "/apps/{appId}/versions/{versionId}/": {
+      "parameters": [
+        {
+          "name": "appId",
+          "in": "path",
+          "description": "Format - guid. The application ID.",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "versionId",
+          "in": "path",
+          "description": "The task version ID.",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "get": {
         "description": "Gets the task info.",
         "operationId": "Versions_GetApplicationVersion",
-        "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
-          }
-        ],
         "responses": {
           "200": {
             "description": "A JSON object containing the task info.",
@@ -2978,20 +2476,6 @@
         "operationId": "Versions_RenameApplicationVersion",
         "parameters": [
           {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application version ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
             "name": "taskUpdateObject",
             "in": "body",
             "schema": {
@@ -3012,22 +2496,6 @@
       "delete": {
         "description": "Deletes an application version.",
         "operationId": "Versions_DeleteApplicationVersion",
-        "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application version ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The application ID.",
-            "required": true,
-            "type": "string"
-          }
-        ],
         "responses": {
           "200": {
             "description": ""
@@ -3149,25 +2617,25 @@
       }
     },
     "/apps/{appId}/versions/{versionId}/assignedkey": {
+      "parameters": [
+        {
+          "name": "appId",
+          "in": "path",
+          "description": "Format - guid. The application version ID.",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "versionId",
+          "in": "path",
+          "description": "The id of the app to get the key for.",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "get": {
         "description": "Gets the given application version's subscription key.",
         "operationId": "Versions_GetApplicationVersionSubscriptionKey",
-        "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application version ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The id of the app to get the key for.",
-            "required": true,
-            "type": "string"
-          }
-        ],
         "responses": {
           "200": {
             "description": "The subscription key for this application's endpoint.",
@@ -3188,20 +2656,6 @@
         "operationId": "Versions_AssignSubscriptionKeyToVersion",
         "parameters": [
           {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application version ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
             "name": "keyValue",
             "in": "body",
             "schema": {
@@ -3221,24 +2675,26 @@
       }
     },
     "/apps/{appId}/versions/{versionId}/externalKeys": {
+      "parameters": [
+        {
+          "name": "appId",
+          "in": "path",
+          "description": "Format - guid. The application ID.",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "versionId",
+          "in": "path",
+          "description": "The application version ID.",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "put": {
         "description": "Assigns an external API key to the given application according to the specified key type.",
         "operationId": "Versions_UpdateApplicationVersionExternalKey",
         "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application version ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The application ID.",
-            "required": true,
-            "type": "string"
-          },
           {
             "name": "externalKeyUpdateObject",
             "in": "body",
@@ -3260,22 +2716,6 @@
       "get": {
         "description": "Gets the given application versions's external keys.",
         "operationId": "Versions_GetApplicationVersionExternalApiKeys",
-        "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The application version ID.",
-            "required": true,
-            "type": "string"
-          }
-        ],
         "responses": {
           "200": {
             "description": "An array containing the external keys.",
@@ -3326,25 +2766,25 @@
       }
     },
     "/apps/{appId}/versions/{versionId}/train": {
+      "parameters": [
+        {
+          "name": "appId",
+          "in": "path",
+          "description": "Format - guid. The application ID.",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "versionId",
+          "in": "path",
+          "description": "The task version ID.",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "post": {
         "description": "Sends a training request for a version of a specified LUIS app. <br>This POST request initiates a request asynchronously. To determine whether the training request is successful, submit a GET request to get training status.<br><b>Note:</b> The application version is not fully trained unless all the models (intents and entities) are trained successfully or are up to date.<br/><b>To verify training success, get the training status at least once after training is complete.</b>",
         "operationId": "Train_TrainApplicationVersion",
-        "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
-          }
-        ],
         "responses": {
           "202": {
             "description": ""
@@ -3364,22 +2804,6 @@
       "get": {
         "description": "Gets the training status of all models (intents and entities) for the specified LUIS app. You must <a href=\"https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c45\">call the train API</a> to train the LUIS app before you call this API to get training status.<br/><b>appID</b> specifies the LUIS app ID.<br/><b>versionId</b> specifies the version number of the LUIS app. For example, \"0.1\".",
         "operationId": "Train_GetApplicationVersionTrainingStatus",
-        "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
-          }
-        ],
         "responses": {
           "200": {
             "description": "A successful response provides an array of training status details for a LUIS app that you submitted for training. Each element in the response array provides training status for a model (intent or entity) in the LUIS app.  <br/><br/><b>Note:</b> Training status is not provided for prebuilt entities because they are pretrained. <br/></br>The <b>modelId</b> property identifies which intent or entity the training status corresponds to. To get the name and type of each model, use the models API which has a request URL in this format: <br/></br>https://westus.api.cognitive.microsoft.com/luis/api/v2.0/apps/{appId}/versions/{versionId}/models<br/></br> The details property for each model can contain the following fields: <br/><br/><b>statusId</b>: An integer from 0 to 3 that corresponds to the value of the <b>status</b> field. <br/><br/><b>status</b>: A string with one of the following values: “Success”, “UpToDate”, “InProgress”, “Fail”. If the status is “Fail”, the <b>failureReason</b> property provides the reason for failure. <br/><br/><b>exampleCount</b>: The number of examples used for training. In the case of the None intent or prebuilt domain intents and entities, this number includes example provided internally by the system as well as examples you added to your LUIS app. <br/></br><b>failureReason</b>:  A string that indicates the reason training failed.  The value \"FewLabels\" means that no labeled examples were provided for training. <br/></br><b>trainingDateTime</b>: A string indicating the time the model was last trained. The value uses the ISO 8601 format for representing times in UTC (Coordinated Universal Time) with a UTC designator (“Z”), for example: \"2017-08-10T01:08:34Z\".",
@@ -3620,18 +3044,18 @@
       }
     },
     "/apps/{appId}/settings": {
+      "parameters": [
+        {
+          "name": "appId",
+          "in": "path",
+          "description": "Format - guid. The application ID.",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "get": {
         "description": "Get the application settings",
         "operationId": "Apps_GetApplicationSettings",
-        "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          }
-        ],
         "responses": {
           "200": {
             "description": "A JSON object containing the application settings.",
@@ -3651,13 +3075,6 @@
         "description": "Updates the application settings",
         "operationId": "Apps_UpdateApplicationSettings",
         "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
           {
             "name": "applicationSettingUpdateObject",
             "in": "body",
@@ -3716,18 +3133,18 @@
       }
     },
     "/apps/{appId}/permissions": {
+      "parameters": [
+        {
+          "name": "appId",
+          "in": "path",
+          "description": "Format - guid. The application ID.",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "get": {
         "description": "Gets the list of user emails that have permissions to access your application.",
         "operationId": "Permissions_GetApplicationUserAccessList",
-        "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          }
-        ],
         "responses": {
           "200": {
             "description": ""
@@ -3738,13 +3155,6 @@
         "description": "Adds a user to the allowed list of users to access this LUIS application.Users are added using their email address.",
         "operationId": "Permissions_AddUserToAccessList",
         "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
           {
             "name": "body",
             "in": "body",
@@ -3768,13 +3178,6 @@
         "operationId": "Permissions_RemoveUserFromAccessList",
         "parameters": [
           {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
             "name": "body",
             "in": "body",
             "schema": {
@@ -3796,13 +3199,6 @@
         "description": "Replaces the current users access list with the one sent in the body.If an empty list is sent, all access to other users will be removed.",
         "operationId": "Permissions_UpdateAccessList",
         "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
           {
             "name": "body",
             "in": "body",
@@ -3911,17 +3307,15 @@
         "parameters": [
           {
             "name": "appId",
+            "type": "string",
             "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
+            "required": true
           },
           {
             "name": "versionId",
+            "type": "string",
             "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
+            "required": true
           },
           {
             "name": "prebuiltDomainCreateBaseObject",
@@ -3949,24 +3343,26 @@
       }
     },
     "/apps/{appId}/versions/{versionId}/customprebuiltintents": {
+      "parameters": [
+        {
+          "name": "appId",
+          "in": "path",
+          "description": "Format - guid. The application ID.",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "versionId",
+          "in": "path",
+          "description": "The task version ID.",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "post": {
         "description": "Adds a custom prebuilt intent model to the application",
         "operationId": "Models_AddCustomPrebuiltIntentModel",
         "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
-          },
           {
             "name": "prebuiltDomainModelCreateObject",
             "in": "body",
@@ -3994,22 +3390,6 @@
       "get": {
         "description": "Gets custom prebuilt intents information of this application",
         "operationId": "Models_GetCustomPrebuiltDomainIntentsInfo",
-        "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
-          }
-        ],
         "responses": {
           "200": {
             "description": "Returns a list of all custom prebuilt intents and their representations.",
@@ -4024,24 +3404,26 @@
       }
     },
     "/apps/{appId}/versions/{versionId}/customprebuiltentities": {
+      "parameters": [
+        {
+          "name": "appId",
+          "in": "path",
+          "description": "Format - guid. The application ID.",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "versionId",
+          "in": "path",
+          "description": "The task version ID.",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "post": {
         "description": "Adds a custom prebuilt entity model to the application",
         "operationId": "Models_AddCustomPrebuiltEntityModel",
         "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
-          },
           {
             "name": "prebuiltDomainModelCreateObject",
             "in": "body",
@@ -4069,22 +3451,6 @@
       "get": {
         "description": "Gets all custom prebuilt entities information of this application",
         "operationId": "Models_GetCustomPrebuiltDomainEntitiesInfo",
-        "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
-          }
-        ],
         "responses": {
           "200": {
             "description": "Returns a list of all custom prebuilt entities and their representations.",
@@ -4237,39 +3603,39 @@
       }
     },
     "/apps/{appId}/versions/{versionId}/hierarchicalentities/{hEntityId}/children/{hChildId}": {
+      "parameters": [
+        {
+          "name": "appId",
+          "in": "path",
+          "description": "Format - guid. The application ID.",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "versionId",
+          "in": "path",
+          "description": "The task version ID.",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "hEntityId",
+          "in": "path",
+          "description": "Format - guid. The hierarchical entity extractor parent ID.",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "hChildId",
+          "in": "path",
+          "description": "Format - guid. The hierarchical entity extractor child ID.",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "get": {
         "description": "Gets information about the hierarchical entity child model.",
         "operationId": "Models_GetHierarchicalEntityChildInfo",
-        "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "hEntityId",
-            "in": "path",
-            "description": "Format - guid. The hierarchical entity extractor parent ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "hChildId",
-            "in": "path",
-            "description": "Format - guid. The hierarchical entity extractor child ID.",
-            "required": true,
-            "type": "string"
-          }
-        ],
         "responses": {
           "200": {
             "description": "The hierarchical entity child model info.",
@@ -4292,34 +3658,6 @@
         "operationId": "Models_UpdateHierarchicalEntityChildModel",
         "parameters": [
           {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "hEntityId",
-            "in": "path",
-            "description": "Format - guid. The hierarchical entity extractor ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "hChildId",
-            "in": "path",
-            "description": "Format - guid. The hierarchical entity extractor child ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
             "name": "body",
             "in": "body",
             "schema": {
@@ -4340,36 +3678,6 @@
       "delete": {
         "description": "Deletes a hierarchical entity extractor child from the application.",
         "operationId": "Models_DeleteHierarchicalEntityChildModel",
-        "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "hEntityId",
-            "in": "path",
-            "description": "Format - guid. The hierarchical entity extractor ID.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "hChildId",
-            "in": "path",
-            "description": "Format - guid. The hierarchical entity extractor child ID.",
-            "required": true,
-            "type": "string"
-          }
-        ],
         "responses": {
           "200": {
             "description": ""
