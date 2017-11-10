@@ -274,29 +274,30 @@
       "type": "object",
       "properties": {
         "query": {
-            "type": "string"
+            "type": "string",
+            "x-nullable": true
         },
         "topScoringIntent": {
-          "nullable": true,
-          "$ref": "#/definitions/IntentModel"
+          "$ref": "#/definitions/IntentModel",
+          "x-nullable": true
         },
         "intents": {
-          "nullable": true,
           "type": "array",
+          "x-nullable": true,
           "items": {
             "$ref": "#/definitions/IntentModel"
           }
         },
         "entities": {
-          "nullable": true,
           "type": "array",
+          "x-nullable": true,
           "items": {
             "$ref": "#/definitions/EntityModel"
           }
         },
         "compositeEntities": {
           "type": "array",
-          "nullable": true,
+          "x-nullable": true,
           "description": "The composite entities extracted from the utterance.",
           "items": {
             "$ref": "#/definitions/CompositeEntityModel"
