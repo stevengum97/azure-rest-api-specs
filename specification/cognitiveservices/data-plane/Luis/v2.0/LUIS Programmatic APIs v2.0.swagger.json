@@ -47,18 +47,10 @@
     "/apps/{appId}/versions/{versionId}/patterns": {
       "parameters": [
         {
-          "name": "appId",
-          "in": "path",
-          "description": "Format - guid. The application ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/AppIdInPath"
         },
         {
-          "name": "versionId",
-          "in": "path",
-          "description": "The version ID of the task.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/VersionIdInPath"
         } 
       ],
       "post": {
@@ -151,19 +143,11 @@
     "/apps/{appId}/versions/{versionId}/phraselists": {
       "parameters": [
         {
-          "name": "appId",
-          "in": "path",
-          "description": "Format - guid. The application ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/AppIdInPath"
         },
         {
-          "name": "versionId",
-          "in": "path",
-          "description": "The version ID of the task.",
-          "required": true,
-          "type": "string"
-        }
+          "$ref": "#/parameters/VersionIdInPath"
+        } 
       ],
       "post": {
         "description": "Creates a new phraselist feature.",
@@ -247,18 +231,10 @@
         "operationId": "Features_GetApplicationVersionFeatures",
         "parameters": [
           {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/AppIdInPath"
           },
           {
-            "name": "versionId",
-            "in": "path",
-            "description": "The version ID of the task.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/VersionIdInPath"
           },
           {
             "name": "skip",
@@ -332,18 +308,10 @@
     "/apps/{appId}/versions/{versionId}/patterns/{patternId}": {
       "parameters": [
         {
-          "name": "appId",
-          "in": "path",
-          "description": "Format - guid. The application ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/AppIdInPath"
         },
         {
-          "name": "versionId",
-          "in": "path",
-          "description": "The version ID of the task.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/VersionIdInPath"
         },
         {
           "name": "patternId",
@@ -408,18 +376,10 @@
     "/apps/{appId}/versions/{versionId}/phraselists/{phraselistId}": {
       "parameters": [
         {
-          "name": "appId",
-          "in": "path",
-          "description": "Format - guid. The application ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/AppIdInPath"
         },
         {
-          "name": "versionId",
-          "in": "path",
-          "description": "The version ID of the task.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/VersionIdInPath"
         },
         {
           "name": "phraselistId",
@@ -488,18 +448,10 @@
         "operationId": "Examples_AddLabel",
         "parameters": [
           {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/AppIdInPath"
           },
           {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/VersionIdInPath"
           },
           {
             "name": "exampleLabelObject",
@@ -532,18 +484,10 @@
     "/apps/{appId}/versions/{versionId}/examples": {
       "parameters": [
         {
-          "name": "appId",
-          "in": "path",
-          "description": "Format - guid. The application ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/AppIdInPath"
         },
         {
-          "name": "versionId",
-          "in": "path",
-          "description": "The task version ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/VersionIdInPath"
         }
       ],
       "post": {
@@ -629,18 +573,10 @@
         "operationId": "Examples_DeleteExampleLabels",
         "parameters": [
           {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/AppIdInPath"
           },
           {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/VersionIdInPath"
           },
           {
             "name": "exampleId",
@@ -660,18 +596,10 @@
     "/apps/{appId}/versions/{versionId}/intents": {
       "parameters": [
         {
-          "name": "appId",
-          "in": "path",
-          "description": "Format - guid. ID of the application.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/AppIdInPath"
         },
         {
-          "name": "versionId",
-          "in": "path",
-          "description": "The task version ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/VersionIdInPath"
         }
       ],
       "post": {
@@ -753,18 +681,10 @@
     "/apps/{appId}/versions/{versionId}/entities": {
       "parameters": [
         {
-          "name": "appId",
-          "in": "path",
-          "description": "Format - guid. ID of the application.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/AppIdInPath"
         },
         {
-          "name": "versionId",
-          "in": "path",
-          "description": "The task version ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/VersionIdInPath"
         }
       ],
       "post": {
@@ -846,18 +766,10 @@
     "/apps/{appId}/versions/{versionId}/hierarchicalentities": {
       "parameters": [
         {
-          "name": "appId",
-          "in": "path",
-          "description": "Format - guid. ID of the application.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/AppIdInPath"
         },
         {
-          "name": "versionId",
-          "in": "path",
-          "description": "The task version ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/VersionIdInPath"
         }
       ],
       "post": {
@@ -939,18 +851,10 @@
     "/apps/{appId}/versions/{versionId}/compositeentities": {
       "parameters": [
         {
-          "name": "appId",
-          "in": "path",
-          "description": "Format - guid. ID of the application.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/AppIdInPath"
         },
         {
-          "name": "versionId",
-          "in": "path",
-          "description": "The task version ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/VersionIdInPath"
         }
       ],
       "post": {
@@ -1032,18 +936,10 @@
     "/apps/{appId}/versions/{versionId}/closedlists": {
       "parameters": [
         {
-          "name": "appId",
-          "in": "path",
-          "description": "Format - guid. ID of the application.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/AppIdInPath"
         },
         {
-          "name": "versionId",
-          "in": "path",
-          "description": "The task version ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/VersionIdInPath"
         }
       ],
       "post": {
@@ -1125,18 +1021,10 @@
     "/apps/{appId}/versions/{versionId}/prebuilts": {
       "parameters": [
         {
-          "name": "appId",
-          "in": "path",
-          "description": "Format - guid. ID of the application.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/AppIdInPath"
         },
         {
-          "name": "versionId",
-          "in": "path",
-          "description": "The task version ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/VersionIdInPath"
         }
       ],
       "post": {
@@ -1221,18 +1109,10 @@
         "operationId": "Models_GetAvailablePrebuiltEntityExtractors",
         "parameters": [
           {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/AppIdInPath"
           },
           {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/VersionIdInPath"
           }
         ],
         "responses": {
@@ -1254,18 +1134,10 @@
         "operationId": "Models_GetApplicationVersionModelInfos",
         "parameters": [
           {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/AppIdInPath"
           },
           {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/VersionIdInPath"
           },
           {
             "name": "skip",
@@ -1314,18 +1186,10 @@
     "/apps/{appId}/versions/{versionId}/intents/{intentId}": {
       "parameters": [
         {
-          "name": "appId",
-          "in": "path",
-          "description": "Format - guid. ID of the application.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/AppIdInPath"
         },
         {
-          "name": "versionId",
-          "in": "path",
-          "description": "The task version ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/VersionIdInPath"
         },
         {
           "name": "intentId",
@@ -1390,18 +1254,10 @@
     "/apps/{appId}/versions/{versionId}/entities/{entityId}": {
       "parameters": [
         {
-          "name": "appId",
-          "in": "path",
-          "description": "Format - guid. The application ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/AppIdInPath"
         },
         {
-          "name": "versionId",
-          "in": "path",
-          "description": "The task version ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/VersionIdInPath"
         },
         {
           "name": "entityId",
@@ -1466,18 +1322,10 @@
     "/apps/{appId}/versions/{versionId}/hierarchicalentities/{hEntityId}": {
       "parameters": [
         {
-          "name": "appId",
-          "in": "path",
-          "description": "Format - guid. The application ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/AppIdInPath"
         },
         {
-          "name": "versionId",
-          "in": "path",
-          "description": "The task version ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/VersionIdInPath"
         },
         {
           "name": "hEntityId",
@@ -1552,18 +1400,10 @@
     "/apps/{appId}/versions/{versionId}/compositeentities/{cEntityId}": {
       "parameters": [
         {
-          "name": "appId",
-          "in": "path",
-          "description": "Format - guid. The application ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/AppIdInPath"
         },
         {
-          "name": "versionId",
-          "in": "path",
-          "description": "The task version ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/VersionIdInPath"
         },
         {
           "name": "cEntityId",
@@ -1638,18 +1478,10 @@
     "/apps/{appId}/versions/{versionId}/closedlists/{clEntityId}": {
       "parameters": [
         {
-          "name": "appId",
-          "in": "path",
-          "description": "Format - guid. The application ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/AppIdInPath"
         },
         {
-          "name": "versionId",
-          "in": "path",
-          "description": "The task version ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/VersionIdInPath"
         },
         {
           "name": "clEntityId",
@@ -1764,18 +1596,10 @@
     "/apps/{appId}/versions/{versionId}/prebuilts/{prebuiltId}": {
       "parameters": [
         {
-          "name": "appId",
-          "in": "path",
-          "description": "Format - guid. The application ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/AppIdInPath"
         },
         {
-          "name": "versionId",
-          "in": "path",
-          "description": "The task version ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/VersionIdInPath"
         },
         {
           "name": "prebuiltId",
@@ -1819,18 +1643,10 @@
     "/apps/{appId}/versions/{versionId}/closedlists/{clEntityId}/sublists/{subListId}": {
       "parameters": [
         {
-          "name": "appId",
-          "in": "path",
-          "description": "Format - guid. The application ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/AppIdInPath"
         },
         {
-          "name": "versionId",
-          "in": "path",
-          "description": "The task version ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/VersionIdInPath"
         },
         {
           "name": "clEntityId",
@@ -1885,18 +1701,10 @@
         "operationId": "Models_SuggestEndpointQueriesForIntents",
         "parameters": [
           {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/AppIdInPath"
           },
           {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/VersionIdInPath"
           },
           {
             "name": "intentId",
@@ -1940,18 +1748,10 @@
         "operationId": "Models_SuggestEndpointQueriesForEntities",
         "parameters": [
           {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/AppIdInPath"
           },
           {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/VersionIdInPath"
           },
           {
             "name": "entityId",
@@ -2185,11 +1985,7 @@
         "operationId": "Apps_DownloadApplicationQueryLogs",
         "parameters": [
           {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/AppIdInPath"
           }
         ],
         "responses": {
@@ -2208,11 +2004,7 @@
     "/apps/{appId}": {
       "parameters": [
         {
-          "name": "appId",
-          "in": "path",
-          "description": "Format - guid. The application ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/AppIdInPath"
         }
       ],
       "get": {
@@ -2288,18 +2080,10 @@
         "operationId": "Versions_CloneVersion",
         "parameters": [
           {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/AppIdInPath"
           },
           {
-            "name": "versionId",
-            "in": "path",
-            "description": "The application version ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/VersionIdInPath"
           },
           {
             "name": "taskUpdateObject",
@@ -2332,11 +2116,7 @@
         "operationId": "Apps_PublishApplication",
         "parameters": [
           {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application version ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/AppIdInPath"
           },
           {
             "name": "applicationPublishObject",
@@ -2374,11 +2154,7 @@
         "operationId": "Versions_GetApplicationVersions",
         "parameters": [
           {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/AppIdInPath"
           },
           {
             "name": "skip",
@@ -2427,18 +2203,10 @@
     "/apps/{appId}/versions/{versionId}/": {
       "parameters": [
         {
-          "name": "appId",
-          "in": "path",
-          "description": "Format - guid. The application ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/AppIdInPath"
         },
         {
-          "name": "versionId",
-          "in": "path",
-          "description": "The task version ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/VersionIdInPath"
         }
       ],
       "get": {
@@ -2509,18 +2277,10 @@
         "operationId": "Versions_ExportApplicationVersion",
         "parameters": [
           {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application version ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/AppIdInPath"
           },
           {
-            "name": "versionId",
-            "in": "path",
-            "description": "The application ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/VersionIdInPath"
           }
         ],
         "responses": {
@@ -2619,18 +2379,10 @@
     "/apps/{appId}/versions/{versionId}/assignedkey": {
       "parameters": [
         {
-          "name": "appId",
-          "in": "path",
-          "description": "Format - guid. The application version ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/AppIdInPath"
         },
         {
-          "name": "versionId",
-          "in": "path",
-          "description": "The id of the app to get the key for.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/VersionIdInPath"
         }
       ],
       "get": {
@@ -2677,18 +2429,10 @@
     "/apps/{appId}/versions/{versionId}/externalKeys": {
       "parameters": [
         {
-          "name": "appId",
-          "in": "path",
-          "description": "Format - guid. The application ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/AppIdInPath"
         },
         {
-          "name": "versionId",
-          "in": "path",
-          "description": "The application version ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/VersionIdInPath"
         }
       ],
       "put": {
@@ -2737,18 +2481,10 @@
         "operationId": "Versions_DeleteApplicationVersionExternalKey",
         "parameters": [
           {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application version ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/AppIdInPath"
           },
           {
-            "name": "versionId",
-            "in": "path",
-            "description": "The application ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/VersionIdInPath"
           },
           {
             "name": "keyType",
@@ -2768,18 +2504,10 @@
     "/apps/{appId}/versions/{versionId}/train": {
       "parameters": [
         {
-          "name": "appId",
-          "in": "path",
-          "description": "Format - guid. The application ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/AppIdInPath"
         },
         {
-          "name": "versionId",
-          "in": "path",
-          "description": "The task version ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/VersionIdInPath"
         }
       ],
       "post": {
@@ -3006,11 +2734,7 @@
         "operationId": "Versions_ImportVersionToApplication",
         "parameters": [
           {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/AppIdInPath"
           },
           {
             "name": "versionId",
@@ -3046,11 +2770,7 @@
     "/apps/{appId}/settings": {
       "parameters": [
         {
-          "name": "appId",
-          "in": "path",
-          "description": "Format - guid. The application ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/AppIdInPath"
         }
       ],
       "get": {
@@ -3100,18 +2820,10 @@
         "operationId": "Versions_DeleteUnlabelledUtterance",
         "parameters": [
           {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/AppIdInPath"
           },
           {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/VersionIdInPath"
           },
           {
             "name": "body",
@@ -3135,11 +2847,7 @@
     "/apps/{appId}/permissions": {
       "parameters": [
         {
-          "name": "appId",
-          "in": "path",
-          "description": "Format - guid. The application ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/AppIdInPath"
         }
       ],
       "get": {
@@ -3224,11 +2932,7 @@
         "operationId": "Apps_GetEndpoints",
         "parameters": [
           {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/AppIdInPath"
           }
         ],
         "responses": {
@@ -3255,18 +2959,10 @@
         "operationId": "Models_AddSubList",
         "parameters": [
           {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/AppIdInPath"
           },
           {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/VersionIdInPath"
           },
           {
             "name": "clEntityId",
@@ -3306,16 +3002,10 @@
         "operationId": "Models_AddCustomPrebuiltDomainToApplication",
         "parameters": [
           {
-            "name": "appId",
-            "type": "string",
-            "in": "path",
-            "required": true
+            "$ref": "#/parameters/AppIdInPath"
           },
           {
-            "name": "versionId",
-            "type": "string",
-            "in": "path",
-            "required": true
+            "$ref": "#/parameters/VersionIdInPath"
           },
           {
             "name": "prebuiltDomainCreateBaseObject",
@@ -3345,18 +3035,10 @@
     "/apps/{appId}/versions/{versionId}/customprebuiltintents": {
       "parameters": [
         {
-          "name": "appId",
-          "in": "path",
-          "description": "Format - guid. The application ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/AppIdInPath"
         },
         {
-          "name": "versionId",
-          "in": "path",
-          "description": "The task version ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/VersionIdInPath"
         }
       ],
       "post": {
@@ -3406,18 +3088,10 @@
     "/apps/{appId}/versions/{versionId}/customprebuiltentities": {
       "parameters": [
         {
-          "name": "appId",
-          "in": "path",
-          "description": "Format - guid. The application ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/AppIdInPath"
         },
         {
-          "name": "versionId",
-          "in": "path",
-          "description": "The task version ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/VersionIdInPath"
         }
       ],
       "post": {
@@ -3470,18 +3144,10 @@
         "operationId": "Models_GetCustomPrebuiltDomainModelsInfo",
         "parameters": [
           {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/AppIdInPath"
           },
           {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/VersionIdInPath"
           }
         ],
         "responses": {
@@ -3503,18 +3169,10 @@
         "operationId": "Models_DeleteCustomPrebuiltDomainModels",
         "parameters": [
           {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/AppIdInPath"
           },
           {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/VersionIdInPath"
           },
           {
             "name": "domainName",
@@ -3605,18 +3263,10 @@
     "/apps/{appId}/versions/{versionId}/hierarchicalentities/{hEntityId}/children/{hChildId}": {
       "parameters": [
         {
-          "name": "appId",
-          "in": "path",
-          "description": "Format - guid. The application ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/AppIdInPath"
         },
         {
-          "name": "versionId",
-          "in": "path",
-          "description": "The task version ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/VersionIdInPath"
         },
         {
           "name": "hEntityId",
@@ -3691,18 +3341,10 @@
         "operationId": "Models_CreateHierarchicalEntityChildModel",
         "parameters": [
           {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/AppIdInPath"
           },
           {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/VersionIdInPath"
           },
           {
             "name": "hEntityId",
@@ -3742,18 +3384,10 @@
         "operationId": "Models_CreateCompositeEntityChildModel",
         "parameters": [
           {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/AppIdInPath"
           },
           {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/VersionIdInPath"
           },
           {
             "name": "cEntityId",
@@ -3793,18 +3427,10 @@
         "operationId": "Models_DeleteCompositeEntityChildModel",
         "parameters": [
           {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/AppIdInPath"
           },
           {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/VersionIdInPath"
           },
           {
             "name": "cEntityId",
@@ -4521,5 +4147,23 @@
       },
       "example": "{  \"luis_schema_version\": \"1.3.1\",  \"name\": \"DummyImportedApp\",  \"versionId\": \"0.2\",  \"desc\": \"This is my dummy imported application\",  \"culture\": \"en-us\",  \"intents\": [    {      \"name\": \"BookFlight\"    },    {      \"name\": \"GetWeather\"    },    {      \"name\": \"None\"    }  ],  \"entities\": [    {      \"name\": \"Location\",      \"children\": [        \"To\",        \"From\"      ]    }  ],  \"composites\": [],  \"closedLists\": [],  \"bing_entities\": [    \"datetime\"  ],  \"actions\": [],  \"model_features\": [    {      \"name\": \"Cities\",      \"mode\": true,      \"words\": \"Seattle,New York,Paris,Moscow,Beijin\",      \"activated\": true    }  ],  \"regex_features\": [],  \"utterances\": [    {      \"text\": \"book me a flight from redmond to new york next saturday\",      \"intent\": \"BookFlight\",      \"entities\": [        {          \"entity\": \"Location::From\",          \"startPos\": 5,          \"endPos\": 5        },        {          \"entity\": \"Location::To\",          \"startPos\": 7,          \"endPos\": 8        }      ]    },    {      \"text\": \"what's the weather like in paris?\",      \"intent\": \"GetWeather\",      \"entities\": [        {          \"entity\": \"Location\",          \"startPos\": 7,          \"endPos\": 7        }      ]    }  ]}"
     }
+  },
+  "parameters": {
+    "AppIdInPath": {
+      "name": "appId",
+      "in": "path",
+      "required": true,
+      "type": "string",
+      "description": "Format - guid. The application ID.",
+      "x-ms-parameter-location": "method"
+    },
+    "VersionIdInPath": {
+      "name": "versionId",
+      "in": "path",
+      "description": "The version ID of the task.",
+      "required": true,
+      "type": "string",
+      "x-ms-parameter-location": "method"
+    } 
   }
 }
