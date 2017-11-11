@@ -97,34 +97,10 @@
         "operationId": "Features_GetApplicationVersionPatternFeatures",
         "parameters": [
           {
-            "name": "skip",
-            "in": "query",
-            "description": "The number of entries to skip. Default value is 0.",
-            "type": "integer",
-            "default": 0,
-            "x-nullable": "false",
-            "x-ms-enum": {
-              "name": "SkipParameter",
-              "modelAsString": false
-            },
-            "enum": [
-              0
-            ]
+            "$ref": "#/parameters/SkipInPath"
           },
           {
-            "name": "take",
-            "in": "query",
-            "description": "The number of entries to return. Maximum page size is 500. Default is 100.",
-            "type": "integer",
-            "default": 100,
-            "x-nullable": "false",
-            "x-ms-enum": {
-              "name": "TakeParameter",
-              "modelAsString": false
-            },
-            "enum": [
-              100
-            ]
+            "$ref": "#/parameters/TakeInPath"
           }
         ],
         "responses": {
@@ -182,34 +158,10 @@
         "operationId": "Features_GetApplicationVersionPhraselistFeatures",
         "parameters": [
           {
-            "name": "skip",
-            "in": "query",
-            "description": "The number of entries to skip. Default value is 0.",
-            "type": "integer",
-            "default": 0,
-            "x-nullable": "false",
-            "x-ms-enum": {
-              "name": "SkipParameter",
-              "modelAsString": false
-            },
-            "enum": [
-              0
-            ]
+            "$ref": "#/parameters/SkipInPath"
           },
           {
-            "name": "take",
-            "in": "query",
-            "description": "The number of entries to return. Maximum page size is 500. Default is 100.",
-            "type": "integer",
-            "default": 100,
-            "x-nullable": "false",
-            "x-ms-enum": {
-              "name": "TakeParameter",
-              "modelAsString": false
-            },
-            "enum": [
-              100
-            ]
+            "$ref": "#/parameters/TakeInPath"
           }
         ],
         "responses": {
@@ -237,34 +189,10 @@
             "$ref": "#/parameters/VersionIdInPath"
           },
           {
-            "name": "skip",
-            "in": "query",
-            "description": "The number of entries to skip. Default value is 0.",
-            "type": "integer",
-            "default": 0,
-            "x-nullable": "false",
-            "x-ms-enum": {
-              "name": "SkipParameter",
-              "modelAsString": false
-            },
-            "enum": [
-              0
-            ]
+            "$ref": "#/parameters/SkipInPath"
           },
           {
-            "name": "take",
-            "in": "query",
-            "description": "The number of entries to return. Maximum page size is 500. Default is 100.",
-            "type": "integer",
-            "default": 100,
-            "x-nullable": "false",
-            "x-ms-enum": {
-              "name": "TakeParameter",
-              "modelAsString": false
-            },
-            "enum": [
-              100
-            ]
+            "$ref": "#/parameters/TakeInPath"
           }
         ],
         "responses": {
@@ -524,34 +452,10 @@
         "operationId": "Examples_ReviewLabeledExamples",
         "parameters": [
           {
-            "name": "skip",
-            "in": "query",
-            "description": "The number of entries to skip. Default value is 0.",
-            "type": "integer",
-            "default": 0,
-            "x-nullable": "false",
-            "x-ms-enum": {
-              "name": "SkipParameter",
-              "modelAsString": false
-            },
-            "enum": [
-              0
-            ]
+            "$ref": "#/parameters/SkipInPath"
           },
           {
-            "name": "take",
-            "in": "query",
-            "description": "The number of entries to return. Maximum page size is 500. Default is 100.",
-            "type": "integer",
-            "default": 100,
-            "x-nullable": "false",
-            "x-ms-enum": {
-              "name": "TakeParameter",
-              "modelAsString": false
-            },
-            "enum": [
-              100
-            ]
+            "$ref": "#/parameters/TakeInPath"
           }
         ],
         "responses": {
@@ -635,34 +539,10 @@
         "operationId": "Models_GetApplicationVersionIntentInfos",
         "parameters": [
           {
-            "name": "skip",
-            "in": "query",
-            "description": "The number of entries to skip. Default value is 0.",
-            "type": "integer",
-            "default": 0,
-            "x-nullable": "false",
-            "x-ms-enum": {
-              "name": "SkipParameter",
-              "modelAsString": false
-            },
-            "enum": [
-              0
-            ]
+            "$ref": "#/parameters/SkipInPath"
           },
           {
-            "name": "take",
-            "in": "query",
-            "description": "The number of entries to return. Maximum page size is 500. Default is 100.",
-            "type": "integer",
-            "default": 100,
-            "x-nullable": "false",
-            "x-ms-enum": {
-              "name": "TakeParameter",
-              "modelAsString": false
-            },
-            "enum": [
-              100
-            ]
+            "$ref": "#/parameters/TakeInPath"
           }
         ],
         "responses": {
@@ -720,34 +600,10 @@
         "operationId": "Models_GetApplicationVersionEntityInfos",
         "parameters": [
           {
-            "name": "skip",
-            "in": "query",
-            "description": "The number of entries to skip. Default value is 0.",
-            "type": "integer",
-            "default": 0,
-            "x-nullable": "false",
-            "x-ms-enum": {
-              "name": "SkipParameter",
-              "modelAsString": false
-            },
-            "enum": [
-              0
-            ]
+            "$ref": "#/parameters/SkipInPath"
           },
           {
-            "name": "take",
-            "in": "query",
-            "description": "The number of entries to return. Maximum page size is 500. Default is 100.",
-            "type": "integer",
-            "default": 100,
-            "x-nullable": "false",
-            "x-ms-enum": {
-              "name": "TakeParameter",
-              "modelAsString": false
-            },
-            "enum": [
-              100
-            ]
+            "$ref": "#/parameters/TakeInPath"
           }
         ],
         "responses": {
@@ -805,34 +661,10 @@
         "operationId": "Models_GetApplicationVersionHierarchicalEntityInfos",
         "parameters": [
           {
-            "name": "skip",
-            "in": "query",
-            "description": "The number of entries to skip. Default value is 0.",
-            "type": "integer",
-            "default": 0,
-            "x-nullable": "false",
-            "x-ms-enum": {
-              "name": "SkipParameter",
-              "modelAsString": false
-            },
-            "enum": [
-              0
-            ]
+            "$ref": "#/parameters/SkipInPath"
           },
           {
-            "name": "take",
-            "in": "query",
-            "description": "The number of entries to return. Maximum page size is 500. Default is 100.",
-            "type": "integer",
-            "default": 100,
-            "x-nullable": "false",
-            "x-ms-enum": {
-              "name": "TakeParameter",
-              "modelAsString": false
-            },
-            "enum": [
-              100
-            ]
+            "$ref": "#/parameters/TakeInPath"
           }
         ],
         "responses": {
@@ -890,34 +722,10 @@
         "operationId": "Models_GetApplicationVersionCompositeEntityInfos",
         "parameters": [
           {
-            "name": "skip",
-            "in": "query",
-            "description": "The number of entries to skip. Default value is 0.",
-            "type": "integer",
-            "default": 0,
-            "x-nullable": "false",
-            "x-ms-enum": {
-              "name": "SkipParameter",
-              "modelAsString": false
-            },
-            "enum": [
-              0
-            ]
+            "$ref": "#/parameters/SkipInPath"
           },
           {
-            "name": "take",
-            "in": "query",
-            "description": "The number of entries to return. Maximum page size is 500. Default is 100.",
-            "type": "integer",
-            "default": 100,
-            "x-nullable": "false",
-            "x-ms-enum": {
-              "name": "TakeParameter",
-              "modelAsString": false
-            },
-            "enum": [
-              100
-            ]
+            "$ref": "#/parameters/TakeInPath"
           }
         ],
         "responses": {
@@ -975,34 +783,10 @@
         "operationId": "Models_GetApplicationVersionClosedListInfos",
         "parameters": [
           {
-            "name": "skip",
-            "in": "query",
-            "description": "The number of entries to skip. Default value is 0.",
-            "type": "integer",
-            "default": 0,
-            "x-nullable": "false",
-            "x-ms-enum": {
-              "name": "SkipParameter",
-              "modelAsString": false
-            },
-            "enum": [
-              0
-            ]
+            "$ref": "#/parameters/SkipInPath"
           },
           {
-            "name": "take",
-            "in": "query",
-            "description": "The number of entries to return. Maximum page size is 500. Default is 100.",
-            "type": "integer",
-            "default": 100,
-            "x-nullable": "false",
-            "x-ms-enum": {
-              "name": "TakeParameter",
-              "modelAsString": false
-            },
-            "enum": [
-              100
-            ]
+            "$ref": "#/parameters/TakeInPath"
           }
         ],
         "responses": {
@@ -1060,34 +844,10 @@
         "operationId": "Models_GetApplicationVersionPrebuiltInfos",
         "parameters": [
           {
-            "name": "skip",
-            "in": "query",
-            "description": "The number of entries to skip. Default value is 0.",
-            "type": "integer",
-            "default": 0,
-            "x-nullable": "false",
-            "x-ms-enum": {
-              "name": "SkipParameter",
-              "modelAsString": false
-            },
-            "enum": [
-              0
-            ]
+            "$ref": "#/parameters/SkipInPath"
           },
           {
-            "name": "take",
-            "in": "query",
-            "description": "The number of entries to return. Maximum page size is 500. Default is 100.",
-            "type": "integer",
-            "default": 100,
-            "x-nullable": "false",
-            "x-ms-enum": {
-              "name": "TakeParameter",
-              "modelAsString": false
-            },
-            "enum": [
-              100
-            ]
+            "$ref": "#/parameters/TakeInPath"
           }
         ],
         "responses": {
@@ -1140,34 +900,10 @@
             "$ref": "#/parameters/VersionIdInPath"
           },
           {
-            "name": "skip",
-            "in": "query",
-            "description": "The number of entries to skip. Default value is 0.",
-            "type": "integer",
-            "default": 0,
-            "x-nullable": "false",
-            "x-ms-enum": {
-              "name": "SkipParameter",
-              "modelAsString": false
-            },
-            "enum": [
-              0
-            ]
+            "$ref": "#/parameters/SkipInPath"
           },
           {
-            "name": "take",
-            "in": "query",
-            "description": "The number of entries to return. Maximum page size is 500. Default is 100.",
-            "type": "integer",
-            "default": 100,
-            "x-nullable": "false",
-            "x-ms-enum": {
-              "name": "TakeParameter",
-              "modelAsString": false
-            },
-            "enum": [
-              100
-            ]
+            "$ref": "#/parameters/TakeInPath"
           }
         ],
         "responses": {
@@ -1192,11 +928,7 @@
           "$ref": "#/parameters/VersionIdInPath"
         },
         {
-          "name": "intentId",
-          "in": "path",
-          "description": "Format - guid. The intent classifier ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/IntentIdInPath"
         }
       ],
       "get": {
@@ -1328,11 +1060,7 @@
           "$ref": "#/parameters/VersionIdInPath"
         },
         {
-          "name": "hEntityId",
-          "in": "path",
-          "description": "Format - guid. The hierarchical entity extractor ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/HEntityIdInPath"
         }
       ],
       "get": {
@@ -1406,11 +1134,7 @@
           "$ref": "#/parameters/VersionIdInPath"
         },
         {
-          "name": "cEntityId",
-          "in": "path",
-          "description": "Format - guid. The composite entity extractor ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/CEntityIdInPath"
         }
       ],
       "get": {
@@ -1707,26 +1431,10 @@
             "$ref": "#/parameters/VersionIdInPath"
           },
           {
-            "name": "intentId",
-            "in": "path",
-            "description": "Format - guid. The target intent classifier model to enhance.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/IntentIdInPath"
           },
           {
-            "name": "take",
-            "in": "query",
-            "description": "Maximum number of queries to be returned. Default is set to 10. Maximum is 500.",
-            "type": "integer",
-            "default": 10,
-            "x-nullable": "false",
-            "x-ms-enum": {
-              "name": "QueryReturnNumberParameter",
-              "modelAsString": false
-            },
-            "enum": [
-              10
-            ]
+            "$ref": "#/parameters/TakeInPath"
           }
         ],
         "responses": {
@@ -1761,19 +1469,7 @@
             "type": "string"
           },
           {
-            "name": "take",
-            "in": "query",
-            "description": "Maximum number of queries to be returned. Default is set to 10. Maximum is 500.",
-            "type": "integer",
-            "default": 10,
-            "x-nullable": "false",
-            "x-ms-enum": {
-              "name": "QueryReturnNumberParameter",
-              "modelAsString": false
-            },
-            "enum": [
-              10
-            ]
+            "$ref": "#/parameters/TakeInPath"
           }
         ],
         "responses": {
@@ -1823,34 +1519,10 @@
         "operationId": "Apps_GetUserApplications",
         "parameters": [
           {
-            "name": "skip",
-            "in": "query",
-            "description": "The number of entries to skip. Default value is 0.",
-            "type": "integer",
-            "default": 0,
-            "x-nullable": "false",
-            "x-ms-enum": {
-              "name": "SkipParameter",
-              "modelAsString": false
-            },
-            "enum": [
-              0
-            ]
+            "$ref": "#/parameters/SkipInPath"
           },
           {
-            "name": "take",
-            "in": "query",
-            "description": "The number of entries to return. Maximum page size is 500. Default is 100.",
-            "type": "integer",
-            "default": 100,
-            "x-nullable": "false",
-            "x-ms-enum": {
-              "name": "TakeParameter",
-              "modelAsString": false
-            },
-            "enum": [
-              100
-            ]
+            "$ref": "#/parameters/TakeInPath"
           }
         ],
         "responses": {
@@ -2157,34 +1829,10 @@
             "$ref": "#/parameters/AppIdInPath"
           },
           {
-            "name": "skip",
-            "in": "query",
-            "description": "The number of entries to skip. Default value is 0.",
-            "type": "integer",
-            "default": 0,
-            "x-nullable": "false",
-            "x-ms-enum": {
-              "name": "SkipParameter",
-              "modelAsString": false
-            },
-            "enum": [
-              0
-            ]
+            "$ref": "#/parameters/SkipInPath"
           },
           {
-            "name": "take",
-            "in": "query",
-            "description": "The number of entries to return. Maximum page size is 500. Default is 100.",
-            "type": "integer",
-            "default": 100,
-            "x-nullable": "false",
-            "x-ms-enum": {
-              "name": "TakeParameter",
-              "modelAsString": false
-            },
-            "enum": [
-              100
-            ]
+            "$ref": "#/parameters/TakeInPath"
           }
         ],
         "responses": {
@@ -3269,11 +2917,7 @@
           "$ref": "#/parameters/VersionIdInPath"
         },
         {
-          "name": "hEntityId",
-          "in": "path",
-          "description": "Format - guid. The hierarchical entity extractor parent ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/HEntityIdInPath"
         },
         {
           "name": "hChildId",
@@ -3347,11 +2991,7 @@
             "$ref": "#/parameters/VersionIdInPath"
           },
           {
-            "name": "hEntityId",
-            "in": "path",
-            "description": "Format - guid. The hierarchical entity extractor ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/HEntityIdInPath"
           },
           {
             "name": "body",
@@ -3390,11 +3030,7 @@
             "$ref": "#/parameters/VersionIdInPath"
           },
           {
-            "name": "cEntityId",
-            "in": "path",
-            "description": "Format - guid. The composite entity extractor ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/CEntityIdInPath"
           },
           {
             "name": "body",
@@ -3433,11 +3069,7 @@
             "$ref": "#/parameters/VersionIdInPath"
           },
           {
-            "name": "cEntityId",
-            "in": "path",
-            "description": "Format - guid. The hierarchical entity extractor ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/CEntityIdInPath"
           },
           {
             "name": "cChildId",
@@ -4164,6 +3796,62 @@
       "required": true,
       "type": "string",
       "x-ms-parameter-location": "method"
-    } 
+    },
+    "CEntityIdInPath": {
+      "name": "cEntityId",
+      "in": "path",
+      "description": "Format - guid. The hierarchical entity extractor ID.",
+      "required": true,
+      "type": "string",
+      "x-ms-parameter-location": "method"
+    },
+    "HEntityIdInPath": {
+      "name": "hEntityId",
+      "in": "path",
+      "description": "Format - guid. The hierarchical entity extractor ID.",
+      "required": true,
+      "type": "string",
+      "x-ms-parameter-location": "method"
+    },
+    "IntentIdInPath": {
+      "name": "intentId",
+      "in": "path",
+      "description": "Format - guid. The intent classifier ID.",
+      "required": true,
+      "type": "string",
+      "x-ms-parameter-location": "method"
+    },
+    "SkipInPath": {
+      "name": "skip",
+      "in": "query",
+      "description": "The number of entries to skip. Default value is 0.",
+      "type": "integer",
+      "default": 0,
+      "x-nullable": "false",
+      "x-ms-enum": {
+        "name": "SkipParameter",
+        "modelAsString": false
+      },
+      "enum": [
+        0
+      ],
+      "x-ms-parameter-location": "method"
+    },
+    "TakeInPath": {
+      "name": "take",
+      "in": "query",
+      "description": "The number of entries to return. Maximum page size is 500. Default is 100.",
+      "type": "integer",
+      "default": 100,
+      "x-nullable": "false",
+      "x-ms-enum": {
+        "name": "TakeParameter",
+        "modelAsString": false
+      },
+      "enum": [
+        100
+      ],
+      "x-ms-parameter-location": "method"
+    }
   }
 }
