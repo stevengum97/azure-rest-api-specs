@@ -566,7 +566,7 @@
       },
       "get": {
         "description": "Gets information about the intent models.",
-        "operationId": "Models_GetApplicationVersionIntentInfos",
+        "operationId": "Model_GetApplicationVersionIntentInfos",
         "parameters": [
           {
             "$ref": "#/parameters/SkipInPath"
@@ -633,7 +633,7 @@
       },
       "get": {
         "description": "Gets information about the entity models.",
-        "operationId": "Models_GetApplicationVersionEntityInfos",
+        "operationId": "Model_GetApplicationVersionEntityInfos",
         "parameters": [
           {
             "$ref": "#/parameters/SkipInPath"
@@ -716,7 +716,7 @@
               "application/json": "[  {    \"id\": \"fe559c31-9778-42ea-ba45-94e0bd7cf767\",    \"name\": \"Location\",    \"typeId\": 3,    \"readableType\": \"Hierarchical Entity Extractor\",    \"children\": [      {        \"id\": \"ec076676-d8d9-42fa-a44e-87989c0a2f82\",        \"name\": \"From\"      },      {        \"id\": \"63ebd752-4e81-4ce7-a698-b59b82bf5519\",        \"name\": \"To\"      }    ]  }]"
             },
             "schema": {
-              "$ref": "#/definitions/HierarchicalEntityExtractorsList"
+              "$ref": "#/definitions/HierarchicalEntityExtractorResponse"
             }
           }
         },
@@ -783,7 +783,7 @@
               "application/json": "[  {    \"id\": \"bc1bae43-7904-48ad-a165-88b1910174f9\",    \"name\": \"Reservation\",    \"typeId\": 4,    \"readableType\": \"Composite Entity Extractor\",    \"children\": [      {        \"id\": \"63ebd752-4e81-4ce7-a698-b59b82bf5519\",        \"name\": \"Location::To\"      },      {        \"id\": \"a18eaa87-ecd9-4a67-a951-e70cf5b87c7e\",        \"name\": \"datetime\"      }    ]  }]"
             },
             "schema": {
-              "$ref": "#/definitions/CompositeEntityExtractorsList"
+              "$ref": "#/definitions/CompositeEntityExtractorResponse"
             }
           }
         },
@@ -850,7 +850,7 @@
               "application/json": "[  {    \"id\": \"8713b104-78ec-4c4f-9f96-f2e53562cc16\",    \"name\": \"States\",    \"typeId\": 5,    \"readableType\": \"Closed List Entity Extractor\",    \"subLists\": [      {        \"id\": 1,        \"canonicalForm\": \"new york\",        \"list\": [          \"ny\",          \"new york\"        ]      },      {        \"id\": 2,        \"canonicalForm\": \"washington\",        \"list\": [          \"washington\",          \"wa\"        ]      },      {        \"id\": 3,        \"canonicalForm\": \"california\",        \"list\": [          \"california\",          \"ca\",          \"calif.\",          \"cal.\"        ]      }    ]  }]"
             },
             "schema": {
-              "$ref": "#/definitions/ClosedListEntityExtractorsList"
+              "$ref": "#/definitions/ClosedListEntityExtractorResponse"
             }
           }
         },
@@ -891,7 +891,7 @@
               "application/json": "[  {    \"id\": \"a18eaa87-ecd9-4a67-a951-e70cf5b87c7e\",    \"name\": \"datetime\",    \"typeId\": 2,    \"readableType\": \"Prebuilt Entity Extractor\"  }]"
             },
             "schema": {
-              "$ref": "#/definitions/PrebuiltEntityExtractorsList"
+              "$ref": "#/definitions/PrebuiltEntityExtractorResponse"
             }
           }
         },
@@ -917,7 +917,7 @@
               "application/json": "[  {    \"id\": \"a18eaa87-ecd9-4a67-a951-e70cf5b87c7e\",    \"name\": \"datetime\",    \"typeId\": 2,    \"readableType\": \"Prebuilt Entity Extractor\"  }]"
             },
             "schema": {
-              "$ref": "#/definitions/PrebuiltEntityExtractorsList"
+              "$ref": "#/definitions/PrebuiltEntityExtractorResponse"
             }
           }
         },
@@ -929,7 +929,7 @@
     "/apps/{appId}/versions/{versionId}/listprebuilts": {
       "get": {
         "description": "Gets all the available prebuilt entity extractors for the application.",
-        "operationId": "Models_GetAvailablePrebuiltEntityExtractors",
+        "operationId": "Model_GetAvailablePrebuiltEntityExtractors",
         "parameters": [
           {
             "$ref": "#/parameters/AppIdInPath"
@@ -1070,7 +1070,7 @@
       ],
       "get": {
         "description": "Gets information about the entity model.",
-        "operationId": "Models_GetEntityInfo",
+        "operationId": "Model_GetEntityInfo",
         "responses": {
           "200": {
             "description": "An entity model info.",
@@ -1137,7 +1137,7 @@
       ],
       "get": {
         "description": "Gets information about the hierarchical entity model.",
-        "operationId": "Models_GetHierarchicalEntityInfo",
+        "operationId": "Model_GetHierarchicalEntityInfo",
         "responses": {
           "200": {
             "description": "A hierarchical entity model info.",
@@ -1214,7 +1214,7 @@
       ],
       "get": {
         "description": "Gets information about the composite entity model.",
-        "operationId": "Models_GetCompositeEntityInfo",
+        "operationId": "Model_GetCompositeEntityInfo",
         "responses": {
           "200": {
             "description": "The composite entity model info.",
@@ -1295,7 +1295,7 @@
       ],
       "get": {
         "description": "Gets information of a closed list model.",
-        "operationId": "Models_GetClosedListEntityInfo",
+        "operationId": "Model_GetClosedListEntityInfo",
         "responses": {
           "200": {
             "description": "The closed list model info.",
@@ -1368,7 +1368,7 @@
       },
       "patch": {
         "description": "Adds a batch of sublists to an existing closedlist.",
-        "operationId": "Models_BatchClosedListEntityModel",
+        "operationId": "Model_BatchClosedListEntityModel",
         "parameters": [
           {
             "name": "closedListModelPatchObject",
@@ -1416,7 +1416,7 @@
       ],
       "get": {
         "description": "Gets information about the prebuilt entity model.",
-        "operationId": "Models_GetPrebuiltInfo",
+        "operationId": "Model_GetPrebuiltInfo",
         "responses": {
           "200": {
             "description": "A prebuilt entity models info.",
@@ -1505,7 +1505,7 @@
     "/apps/{appId}/versions/{versionId}/intents/{intentId}/suggest": {
       "get": {
         "description": "Suggests examples that would improve the accuracy of the intent model.",
-        "operationId": "Models_SuggestEndpointQueriesForIntents",
+        "operationId": "Model_SuggestEndpointQueriesForIntents",
         "parameters": [
           {
             "$ref": "#/parameters/AppIdInPath"
@@ -1536,7 +1536,7 @@
     "/apps/{appId}/versions/{versionId}/entities/{entityId}/suggest": {
       "get": {
         "description": "Suggests examples that would improve the accuracy of the entity model.",
-        "operationId": "Models_SuggestEndpointQueriesForEntities",
+        "operationId": "Model_SuggestEndpointQueriesForEntities",
         "parameters": [
           {
             "$ref": "#/parameters/AppIdInPath"
@@ -2699,7 +2699,7 @@
     "/apps/{appId}/versions/{versionId}/closedlists/{clEntityId}/sublists": {
       "post": {
         "description": "Adds a list to an existing closed list",
-        "operationId": "Models_AddSubList",
+        "operationId": "Model_AddSubList",
         "parameters": [
           {
             "$ref": "#/parameters/AppIdInPath"
@@ -2745,7 +2745,7 @@
     "/apps/{appId}/versions/{versionId}/customprebuiltdomains": {
       "post": {
         "description": "Adds a customizable prebuilt domain along with all of its models to this application.",
-        "operationId": "Models_AddCustomPrebuiltDomainToApplication",
+        "operationId": "Model_AddCustomPrebuiltDomainToApplication",
         "parameters": [
           {
             "$ref": "#/parameters/AppIdInPath"
@@ -2792,7 +2792,7 @@
       ],
       "post": {
         "description": "Adds a custom prebuilt intent model to the application",
-        "operationId": "Models_AddCustomPrebuiltIntentModel",
+        "operationId": "Model_AddCustomPrebuiltIntentModel",
         "parameters": [
           {
             "name": "prebuiltDomainModelCreateObject",
@@ -2823,7 +2823,7 @@
       },
       "get": {
         "description": "Gets custom prebuilt intents information of this application",
-        "operationId": "Models_GetCustomPrebuiltDomainIntentsInfo",
+        "operationId": "Model_GetCustomPrebuiltDomainIntentsInfo",
         "responses": {
           "200": {
             "description": "Returns a list of all custom prebuilt intents and their representations.",
@@ -2851,7 +2851,7 @@
       ],
       "post": {
         "description": "Adds a custom prebuilt entity model to the application",
-        "operationId": "Models_AddCustomPrebuiltEntityModel",
+        "operationId": "Model_AddCustomPrebuiltEntityModel",
         "parameters": [
           {
             "name": "prebuiltDomainModelCreateObject",
@@ -2882,7 +2882,7 @@
       },
       "get": {
         "description": "Gets all custom prebuilt entities information of this application",
-        "operationId": "Models_GetCustomPrebuiltDomainEntitiesInfo",
+        "operationId": "Model_GetCustomPrebuiltDomainEntitiesInfo",
         "responses": {
           "200": {
             "description": "Returns a list of all custom prebuilt entities and their representations.",
@@ -2902,7 +2902,7 @@
     "/apps/{appId}/versions/{versionId}/customprebuiltmodels": {
       "get": {
         "description": "Gets all custom prebuilt models information of this application",
-        "operationId": "Models_GetCustomPrebuiltDomainModelsInfo",
+        "operationId": "Model_GetCustomPrebuiltDomainModelsInfo",
         "parameters": [
           {
             "$ref": "#/parameters/AppIdInPath"
@@ -3054,7 +3054,7 @@
       ],
       "get": {
         "description": "Gets information about the hierarchical entity child model.",
-        "operationId": "Models_GetHierarchicalEntityChildInfo",
+        "operationId": "Model_GetHierarchicalEntityChildInfo",
         "responses": {
           "200": {
             "description": "The hierarchical entity child model info.",
@@ -3925,12 +3925,9 @@
       "example": "{  \"luis_schema_version\": \"1.3.1\",  \"name\": \"DummyImportedApp\",  \"versionId\": \"0.2\",  \"desc\": \"This is my dummy imported application\",  \"culture\": \"en-us\",  \"intents\": [    {      \"name\": \"BookFlight\"    },    {      \"name\": \"GetWeather\"    },    {      \"name\": \"None\"    }  ],  \"entities\": [    {      \"name\": \"Location\",      \"children\": [        \"To\",        \"From\"      ]    }  ],  \"composites\": [],  \"closedLists\": [],  \"bing_entities\": [    \"datetime\"  ],  \"actions\": [],  \"model_features\": [    {      \"name\": \"Cities\",      \"mode\": true,      \"words\": \"Seattle,New York,Paris,Moscow,Beijin\",      \"activated\": true    }  ],  \"regex_features\": [],  \"utterances\": [    {      \"text\": \"book me a flight from redmond to new york next saturday\",      \"intent\": \"BookFlight\",      \"entities\": [        {          \"entity\": \"Location::From\",          \"startPos\": 5,          \"endPos\": 5        },        {          \"entity\": \"Location::To\",          \"startPos\": 7,          \"endPos\": 8        }      ]    },    {      \"text\": \"what's the weather like in paris?\",      \"intent\": \"GetWeather\",      \"entities\": [        {          \"entity\": \"Location\",          \"startPos\": 7,          \"endPos\": 7        }      ]    }  ]}"
     },
     "GuidResponse": {
+      "additionalProperties": false,
       "type": "string",
       "example": "\"363187f1-c573-46b3-bc4c-ae01d686e68e\""
-    },
-    "FeatureIDResponse": {
-      "type": "number",
-      "example": "398102"
     },
     "LabeledUtterances": {
       "type": "array",
@@ -4160,7 +4157,7 @@
         }
       }
     },
-    "HierarchicalEntityExtractorsList": {
+    "HierarchicalEntityExtractorResponse": {
       "type": "array",
       "items": {
         "$ref": "#/definitions/HierarchicalEntityExtractor"
@@ -4183,7 +4180,7 @@
         }
       }
     },
-    "CompositeEntityExtractorsList": {
+    "CompositeEntityExtractorResponse": {
       "type": "array",
       "items": {
         "$ref": "#/definitions/CompositeEntityExtractor"
@@ -4196,17 +4193,9 @@
         {
           "$ref": "#/definitions/ModelInfo"
         }
-      ],
-      "properties": {
-        "subLists": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/JSONSubClosedListResponse"
-          }
-        }
-      }
+      ]
     },
-    "ClosedListEntityExtractorsList": {
+    "ClosedListEntityExtractorResponse": {
       "type": "array",
       "items": {
         "$ref": "#/definitions/ClosedListEntityExtractor"
@@ -4221,7 +4210,7 @@
         }
       ]
     },
-    "PrebuiltEntityExtractorsList": {
+    "PrebuiltEntityExtractorResponse": {
       "type": "array",
       "items": {
         "$ref": "#/definitions/PrebuiltEntityExtractor"
