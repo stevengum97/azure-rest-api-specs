@@ -1287,7 +1287,7 @@
       },
       "patch": {
         "description": "Adds a batch of sublists to an existing closedlist.",
-        "operationId": "Models_PatchClosedListEntityModel",
+        "operationId": "Models_BatchClosedListEntityModel",
         "parameters": [
           {
             "name": "closedListModelPatchObject",
