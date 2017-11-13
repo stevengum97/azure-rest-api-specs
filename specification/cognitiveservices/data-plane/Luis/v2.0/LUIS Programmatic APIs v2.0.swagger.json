@@ -508,7 +508,7 @@
       ],
       "post": {
         "description": "Adds an intent classifier to the application.",
-        "operationId": "Models_CreateIntentClassifier",
+        "operationId": "Model_CreateIntentClassifier",
         "parameters": [
           {
             "name": "modelCreateObject",
@@ -527,6 +527,9 @@
             "description": "The ID of the created model.",
             "examples": {
               "application/json": "\"227a71ed-7d4b-4dce-8f3a-16c4e5cc06e8\""
+            },
+            "schema": {
+              "$ref": "#/definitions/GuidResponse"
             }
           }
         },
@@ -569,7 +572,7 @@
       ],
       "post": {
         "description": "Adds an entity extractor to the application.",
-        "operationId": "Models_CreateEntityExtractor",
+        "operationId": "Model_CreateEntityExtractor",
         "parameters": [
           {
             "name": "modelCreateObject",
@@ -588,6 +591,9 @@
             "description": "The ID of the created model.",
             "examples": {
               "application/json": "\"3d73462d-98f0-4dcd-8d30-fab9e65f2e73\""
+            },
+            "schema": {
+              "$ref": "#/definitions/GuidResponse"
             }
           }
         },
@@ -630,7 +636,7 @@
       ],
       "post": {
         "description": "Adds a hierarchical entity extractor to the application version.",
-        "operationId": "Models_CreateHierarchicalEntityExtractor",
+        "operationId": "Model_CreateHierarchicalEntityExtractor",
         "parameters": [
           {
             "name": "hierarchicalModelCreateObject",
@@ -649,6 +655,9 @@
             "description": "The ID of the created model.",
             "examples": {
               "application/json": "\"fe559c31-9778-42ea-ba45-94e0bd7cf767\""
+            },
+            "schema": {
+              "$ref": "#/definitions/GuidResponse"
             }
           }
         },
@@ -658,7 +667,7 @@
       },
       "get": {
         "description": "Gets information about the hierarchical entity models.",
-        "operationId": "Models_GetApplicationVersionHierarchicalEntityInfos",
+        "operationId": "Model_GetApplicationVersionHierarchicalEntityInfos",
         "parameters": [
           {
             "$ref": "#/parameters/SkipInPath"
@@ -672,6 +681,9 @@
             "description": "A list of hierarchical entity model infos.",
             "examples": {
               "application/json": "[  {    \"id\": \"fe559c31-9778-42ea-ba45-94e0bd7cf767\",    \"name\": \"Location\",    \"typeId\": 3,    \"readableType\": \"Hierarchical Entity Extractor\",    \"children\": [      {        \"id\": \"ec076676-d8d9-42fa-a44e-87989c0a2f82\",        \"name\": \"From\"      },      {        \"id\": \"63ebd752-4e81-4ce7-a698-b59b82bf5519\",        \"name\": \"To\"      }    ]  }]"
+            },
+            "schema": {
+              "$ref": "#/definitions/HierarchicalEntityExtractorResponse"
             }
           }
         },
@@ -691,7 +703,7 @@
       ],
       "post": {
         "description": "Adds a composite entity extractor to the application.",
-        "operationId": "Models_CreateCompositeEntityExtractor",
+        "operationId": "Model_CreateCompositeEntityExtractor",
         "parameters": [
           {
             "name": "hierarchicalModelCreateObject",
@@ -710,6 +722,9 @@
             "description": "The ID of the created Model.",
             "examples": {
               "application/json": "\"bc1bae43-7904-48ad-a165-88b1910174f9\""
+            },
+            "schema": {
+              "$ref": "#/definitions/GuidResponse"
             }
           }
         },
@@ -719,7 +734,7 @@
       },
       "get": {
         "description": "Gets information about the composite entity models.",
-        "operationId": "Models_GetApplicationVersionCompositeEntityInfos",
+        "operationId": "Model_GetApplicationVersionCompositeEntityInfos",
         "parameters": [
           {
             "$ref": "#/parameters/SkipInPath"
@@ -733,6 +748,9 @@
             "description": "A list of composite entity model infos.",
             "examples": {
               "application/json": "[  {    \"id\": \"bc1bae43-7904-48ad-a165-88b1910174f9\",    \"name\": \"Reservation\",    \"typeId\": 4,    \"readableType\": \"Composite Entity Extractor\",    \"children\": [      {        \"id\": \"63ebd752-4e81-4ce7-a698-b59b82bf5519\",        \"name\": \"Location::To\"      },      {        \"id\": \"a18eaa87-ecd9-4a67-a951-e70cf5b87c7e\",        \"name\": \"datetime\"      }    ]  }]"
+            },
+            "schema": {
+              "$ref": "#/definitions/CompositeEntityExtractorResponse"
             }
           }
         },
@@ -752,7 +770,7 @@
       ],
       "post": {
         "description": "Adds a closed list model to the application.",
-        "operationId": "Models_CreateClosedListEntityModel",
+        "operationId": "Model_CreateClosedListEntityModel",
         "parameters": [
           {
             "name": "closedListModelCreateObject",
@@ -771,6 +789,9 @@
             "description": "The ID of the created model.",
             "examples": {
               "application/json": "\"8713b104-78ec-4c4f-9f96-f2e53562cc16\""
+            },
+            "schema": {
+              "$ref": "#/definitions/GuidResponse"
             }
           }
         },
@@ -780,7 +801,7 @@
       },
       "get": {
         "description": "Gets information about the closedlist models.",
-        "operationId": "Models_GetApplicationVersionClosedListInfos",
+        "operationId": "Model_GetApplicationVersionClosedListInfos",
         "parameters": [
           {
             "$ref": "#/parameters/SkipInPath"
@@ -794,6 +815,9 @@
             "description": "A list of closedlist entity model infos.",
             "examples": {
               "application/json": "[  {    \"id\": \"8713b104-78ec-4c4f-9f96-f2e53562cc16\",    \"name\": \"States\",    \"typeId\": 5,    \"readableType\": \"Closed List Entity Extractor\",    \"subLists\": [      {        \"id\": 1,        \"canonicalForm\": \"new york\",        \"list\": [          \"ny\",          \"new york\"        ]      },      {        \"id\": 2,        \"canonicalForm\": \"washington\",        \"list\": [          \"washington\",          \"wa\"        ]      },      {        \"id\": 3,        \"canonicalForm\": \"california\",        \"list\": [          \"california\",          \"ca\",          \"calif.\",          \"cal.\"        ]      }    ]  }]"
+            },
+            "schema": {
+              "$ref": "#/definitions/ClosedListEntityExtractorResponse"
             }
           }
         },
@@ -813,7 +837,7 @@
       ],
       "post": {
         "description": "Adds a list of prebuilt entity extractors to the application.",
-        "operationId": "Models_AddPrebuiltEntityExtractors",
+        "operationId": "Model_AddPrebuiltEntityExtractors",
         "parameters": [
           {
             "name": "prebuiltExtractorNames",
@@ -832,6 +856,9 @@
             "description": "An array of the created prebuilt extractor infos.",
             "examples": {
               "application/json": "[  {    \"id\": \"a18eaa87-ecd9-4a67-a951-e70cf5b87c7e\",    \"name\": \"datetime\",    \"typeId\": 2,    \"readableType\": \"Prebuilt Entity Extractor\"  }]"
+            },
+            "schema": {
+              "$ref": "#/definitions/PrebuiltEntityExtractorResponse"
             }
           }
         },
@@ -841,7 +868,7 @@
       },
       "get": {
         "description": "Gets information about the prebuilt entity models.",
-        "operationId": "Models_GetApplicationVersionPrebuiltInfos",
+        "operationId": "Model_GetApplicationVersionPrebuiltInfos",
         "parameters": [
           {
             "$ref": "#/parameters/SkipInPath"
@@ -855,6 +882,9 @@
             "description": "A list of prebuilt entity models infos.",
             "examples": {
               "application/json": "[  {    \"id\": \"a18eaa87-ecd9-4a67-a951-e70cf5b87c7e\",    \"name\": \"datetime\",    \"typeId\": 2,    \"readableType\": \"Prebuilt Entity Extractor\"  }]"
+            },
+            "schema": {
+              "$ref": "#/definitions/PrebuiltEntityExtractorResponse"
             }
           }
         },
@@ -891,7 +921,7 @@
     "/apps/{appId}/versions/{versionId}/models": {
       "get": {
         "description": "Gets information about the application version models.",
-        "operationId": "Models_GetApplicationVersionModelInfos",
+        "operationId": "Model_GetApplicationVersionModelInfos",
         "parameters": [
           {
             "$ref": "#/parameters/AppIdInPath"
@@ -911,6 +941,9 @@
             "description": "A list of application models infos.",
             "examples": {
               "application/json": "[  {    \"id\": \"227a71ed-7d4b-4dce-8f3a-16c4e5cc06e8\",    \"name\": \"BookFlight\",    \"typeId\": 0,    \"readableType\": \"Intent Classifier\"  },  {    \"id\": \"a18eaa87-ecd9-4a67-a951-e70cf5b87c7e\",    \"name\": \"datetime\",    \"typeId\": 2,    \"readableType\": \"Prebuilt Entity Extractor\"  },  {    \"id\": \"3d73462d-98f0-4dcd-8d30-fab9e65f2e73\",    \"name\": \"DayOfWeek\",    \"typeId\": 1,    \"readableType\": \"Entity Extractor\"  },  {    \"id\": \"fe559c31-9778-42ea-ba45-94e0bd7cf767\",    \"name\": \"Location\",    \"typeId\": 3,    \"readableType\": \"Hierarchical Entity Extractor\",    \"children\": [      {        \"id\": \"ec076676-d8d9-42fa-a44e-87989c0a2f82\",        \"name\": \"From\"      },      {        \"id\": \"63ebd752-4e81-4ce7-a698-b59b82bf5519\",        \"name\": \"To\"      }    ]  },  {    \"id\": \"8285a9ee-6bc0-4409-87f4-82d539f70529\",    \"name\": \"None\",    \"typeId\": 0,    \"readableType\": \"Intent Classifier\"  },  {    \"id\": \"bc1bae43-7904-48ad-a165-88b1910174f9\",    \"name\": \"Reservation\",    \"typeId\": 4,    \"readableType\": \"Composite Entity Extractor\",    \"children\": [      {        \"id\": \"63ebd752-4e81-4ce7-a698-b59b82bf5519\",        \"name\": \"Location::To\"      },      {        \"id\": \"a18eaa87-ecd9-4a67-a951-e70cf5b87c7e\",        \"name\": \"datetime\"      }    ]  },  {    \"id\": \"8713b104-78ec-4c4f-9f96-f2e53562cc16\",    \"name\": \"States\",    \"typeId\": 5,    \"readableType\": \"Closed List Entity Extractor\",    \"subLists\": [      {        \"id\": 1,        \"canonicalForm\": \"new york\",        \"list\": [          \"ny\",          \"new york\"        ]      },      {        \"id\": 2,        \"canonicalForm\": \"washington\",        \"list\": [          \"washington\",          \"wa\"        ]      },      {        \"id\": 3,        \"canonicalForm\": \"california\",        \"list\": [          \"california\",          \"ca\",          \"calif.\",          \"cal.\"        ]      }    ]  },  {    \"id\": \"b8e31be4-300f-455e-894b-6f079abca0a2\",    \"name\": \"$Camera.AppName\",    \"typeId\": 1,    \"readableType\": \"Entity Extractor\",    \"customPrebuiltDomainName\": \"Camera\",    \"customPrebuiltModelName\": \"AppName\"  },  {    \"id\": \"9500536f-ffec-4fab-93ad-6268abb0f73c\",    \"name\": \"$Camera.CapturePhoto\",    \"typeId\": 0,    \"readableType\": \"Intent Classifier\",    \"customPrebuiltDomainName\": \"Camera\",    \"customPrebuiltModelName\": \"CapturePhoto\"  }]"
+            },
+            "schema": {
+              "$ref": "#/definitions/ModelsResponseObject"
             }
           }
         },
@@ -1021,7 +1054,7 @@
       },
       "put": {
         "description": "Updates the name of an entity extractor.",
-        "operationId": "Models_RenameEntityModel",
+        "operationId": "Model_RenameEntityModel",
         "parameters": [
           {
             "name": "modelUpdateObject",
@@ -1043,7 +1076,7 @@
       },
       "delete": {
         "description": "Deletes an entity extractor from the application.",
-        "operationId": "Models_DeleteEntityModel",
+        "operationId": "Model_DeleteEntityModel",
         "responses": {
           "200": {
             "description": ""
@@ -1095,7 +1128,7 @@
       },
       "put": {
         "description": "Updates the name and children of a hierarchical entity model.",
-        "operationId": "Models_UpdateHierarchicalEntityModel",
+        "operationId": "Model_UpdateHierarchicalEntityModel",
         "parameters": [
           {
             "name": "hierarchicalModelUpdateObject",
@@ -1117,7 +1150,7 @@
       },
       "delete": {
         "description": "Deletes a hierarchical entity extractor from the application version.",
-        "operationId": "Models_DeleteHierarchicalEntityModel",
+        "operationId": "Model_DeleteHierarchicalEntityModel",
         "responses": {
           "200": {
             "description": ""
@@ -1169,7 +1202,7 @@
       },
       "put": {
         "description": "Updates the composite entity extractor.",
-        "operationId": "Models_UpdateCompositeEntityModel",
+        "operationId": "Model_UpdateCompositeEntityModel",
         "parameters": [
           {
             "name": "hierarchicalModelUpdateObject",
@@ -1191,7 +1224,7 @@
       },
       "delete": {
         "description": "Deletes a composite entity extractor from the application.",
-        "operationId": "Models_DeleteCompositeEntityModel",
+        "operationId": "Model_DeleteCompositeEntityModel",
         "responses": {
           "200": {
             "description": ""
@@ -1265,7 +1298,7 @@
       },
       "put": {
         "description": "Updates the closed list model.",
-        "operationId": "Models_UpdateClosedListEntityModel",
+        "operationId": "Model_UpdateClosedListEntityModel",
         "parameters": [
           {
             "name": "closedListModelUpdateObject",
@@ -1287,7 +1320,7 @@
       },
       "patch": {
         "description": "Adds a batch of sublists to an existing closedlist.",
-        "operationId": "Models_PatchClosedListEntityModel",
+        "operationId": "Model_PatchClosedListEntityModel",
         "parameters": [
           {
             "name": "closedListModelPatchObject",
@@ -1309,7 +1342,7 @@
       },
       "delete": {
         "description": "Deletes a closed list model from the application.",
-        "operationId": "Models_DeleteClosedListEntityModel",
+        "operationId": "Model_DeleteClosedListEntityModel",
         "responses": {
           "200": {
             "description": ""
@@ -1355,8 +1388,7 @@
       },
       "delete": {
         "description": "Deletes a prebuilt entity extractor from the application.",
-        "operationId": "Models_DeletePrebuiltModel",
-
+        "operationId": "Model_DeletePrebuiltModel",
         "responses": {
           "200": {
             "description": ""
@@ -1389,7 +1421,7 @@
       ],
       "delete": {
         "description": "Deletes a sublist of a specific closed list model.",
-        "operationId": "Models_DeleteSubList",
+        "operationId": "Model_DeleteSubList",
         "responses": {
           "200": {
             "description": ""
@@ -1398,7 +1430,7 @@
       },
       "put": {
         "description": "Updates one of the closed list's sublists",
-        "operationId": "Models_UpdateSubList",
+        "operationId": "Model_UpdateSubList",
         "parameters": [
           {
             "name": "wordListBaseUpdateObject",
@@ -1507,6 +1539,9 @@
             "description": "The ID of the created application.",
             "examples": {
               "application/json": "\"363187f1-c573-46b3-bc4c-ae01d686e68e\""
+            },
+            "schema": {
+              "$ref": "#/definitions/GuidResponse"
             }
           }
         },
@@ -1592,6 +1627,9 @@
                   "Italian": "ItalianDummyURL"
                 }
               }
+            },
+            "schema": {
+              "$ref": "#/definitions/PersonalAssistantsResponse"
             }
           }
         },
@@ -2710,6 +2748,9 @@
             "description": "The ID of the created model.",
             "examples": {
               "application/json": "\"c0d59374-cf44-4302-98d1-e853886a4674\""
+            },
+            "schema": {
+              "$ref": "#/definitions/GuidResponse"
             }
           }
         },
@@ -2814,7 +2855,7 @@
     "/apps/{appId}/versions/{versionId}/customprebuiltdomains/{domainName}": {
       "delete": {
         "description": "Deletes a prebuilt domain's models from the application.",
-        "operationId": "Models_DeleteCustomPrebuiltDomainModels",
+        "operationId": "Model_DeleteCustomPrebuiltDomainModels",
         "parameters": [
           {
             "$ref": "#/parameters/AppIdInPath"
@@ -2874,6 +2915,9 @@
             "description": "The ID of the created application.",
             "examples": {
               "application/json": "\"739f1513-11f0-4aae-8a19-f660804e6da5\""
+            },
+            "schema": {
+              "$ref": "#/definitions/GuidResponse"
             }
           }
         },
@@ -2949,7 +2993,7 @@
       },
       "put": {
         "description": "Renames a single child in an existing hierarchical entity model.",
-        "operationId": "Models_UpdateHierarchicalEntityChildModel",
+        "operationId": "Model_UpdateHierarchicalEntityChildModel",
         "parameters": [
           {
             "name": "body",
@@ -2971,7 +3015,7 @@
       },
       "delete": {
         "description": "Deletes a hierarchical entity extractor child from the application.",
-        "operationId": "Models_DeleteHierarchicalEntityChildModel",
+        "operationId": "Model_DeleteHierarchicalEntityChildModel",
         "responses": {
           "200": {
             "description": ""
@@ -2982,7 +3026,7 @@
     "/apps/{appId}/versions/{versionId}/hierarchicalentities/{hEntityId}/children": {
       "post": {
         "description": "Creates a single child in an existing hierarchical entity model.",
-        "operationId": "Models_CreateHierarchicalEntityChildModel",
+        "operationId": "Model_CreateHierarchicalEntityChildModel",
         "parameters": [
           {
             "$ref": "#/parameters/AppIdInPath"
@@ -3010,6 +3054,9 @@
             "description": "The ID of the created model.",
             "examples": {
               "application/json": "\"891c235f-4f42-4320-bc36-b6256b6c3f2b\""
+            },
+            "schema": {
+              "$ref": "#/definitions/GuidResponse"
             }
           }
         },
@@ -3021,7 +3068,7 @@
     "/apps/{appId}/versions/{versionId}/compositeentities/{cEntityId}/children": {
       "post": {
         "description": "Creates a single child in an existing composite entity model.",
-        "operationId": "Models_CreateCompositeEntityChildModel",
+        "operationId": "Model_CreateCompositeEntityChildModel",
         "parameters": [
           {
             "$ref": "#/parameters/AppIdInPath"
@@ -3049,6 +3096,9 @@
             "description": "The ID of the created model.",
             "examples": {
               "application/json": "\"891c235f-4f42-4320-bc36-b6256b6c3f2b\""
+            },
+            "schema": {
+              "$ref": "#/definitions/GuidResponse"
             }
           }
         },
@@ -3060,7 +3110,7 @@
     "/apps/{appId}/versions/{versionId}/compositeentities/{cEntityId}/children/{cChildId}": {
       "delete": {
         "description": "Deletes a composite entity extractor child from the application.",
-        "operationId": "Models_DeleteCompositeEntityChildModel",
+        "operationId": "Model_DeleteCompositeEntityChildModel",
         "parameters": [
           {
             "$ref": "#/parameters/AppIdInPath"
@@ -3778,6 +3828,348 @@
         }
       },
       "example": "{  \"luis_schema_version\": \"1.3.1\",  \"name\": \"DummyImportedApp\",  \"versionId\": \"0.2\",  \"desc\": \"This is my dummy imported application\",  \"culture\": \"en-us\",  \"intents\": [    {      \"name\": \"BookFlight\"    },    {      \"name\": \"GetWeather\"    },    {      \"name\": \"None\"    }  ],  \"entities\": [    {      \"name\": \"Location\",      \"children\": [        \"To\",        \"From\"      ]    }  ],  \"composites\": [],  \"closedLists\": [],  \"bing_entities\": [    \"datetime\"  ],  \"actions\": [],  \"model_features\": [    {      \"name\": \"Cities\",      \"mode\": true,      \"words\": \"Seattle,New York,Paris,Moscow,Beijin\",      \"activated\": true    }  ],  \"regex_features\": [],  \"utterances\": [    {      \"text\": \"book me a flight from redmond to new york next saturday\",      \"intent\": \"BookFlight\",      \"entities\": [        {          \"entity\": \"Location::From\",          \"startPos\": 5,          \"endPos\": 5        },        {          \"entity\": \"Location::To\",          \"startPos\": 7,          \"endPos\": 8        }      ]    },    {      \"text\": \"what's the weather like in paris?\",      \"intent\": \"GetWeather\",      \"entities\": [        {          \"entity\": \"Location\",          \"startPos\": 7,          \"endPos\": 7        }      ]    }  ]}"
+    },
+    "GuidResponse": {
+      "additionalProperties": false,
+      "type": "string",
+      "example": "\"363187f1-c573-46b3-bc4c-ae01d686e68e\""
+    },
+    "LabeledUtterances": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/LabeledUtterance"
+      }
+    },
+    "LabeledUtterance": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number",
+          "description": "ID of Labeled Utterance."
+        },
+        "text": {
+          "type": "string",
+          "description": "what's the weather like in seattle?"
+        },
+        "tokenizedText": {
+          "type": "array",
+          "description": "the utterance tokenized",
+          "items": {
+            "type": "string"
+          }
+        },
+        "intentLabel": {
+          "type": "string"
+        },
+        "entityLabels": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/EntityLabel"
+          },
+          "x-nullable": true
+        },
+        "intentPredictions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/IntentPrediction"
+          }
+        },
+        "entityPredictions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/EntityPrediction"
+          },
+          "x-nullable": true
+        }
+      },
+      "required": [
+        "id", "text", "tokenizedText",
+        "intentLabel", "intentPredictions"
+      ]
+    },
+    "EntityLabel": {
+      "type": "object",
+      "properties": {
+        "entityName": {
+          "type": "string"
+        },
+        "startTokenIndex": {
+          "type": "number"
+        },
+        "endTokenIndex": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "entityName", "startTokenIndex", "endTokenIndex"
+      ]
+    },
+    "IntentPrediction": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "score": {
+          "type": "number"
+        }
+      }
+    },
+    "EntityPrediction": {
+      "type": "object",
+      "properties": {
+        "entityName": {
+          "type": "string"
+        },
+        "startIndex": {
+          "type": "number"
+        },
+        "endIndex": {
+          "type": "number"
+        },
+        "phrase": {
+          "type": "string",
+          "description": "The actual token(s) that comprise the entity."
+        }
+      }
+    },
+    "PersonalAssistantsResponse": {
+      "type": "object",
+      "description": "Response containing user's endpoint keys and the endpoint URLs of the prebuilt Cortana applications.",
+      "properties": {
+        "endpointKeys": {
+          "$ref": "#/definitions/EndpointKeys"   
+        },
+        "endpointUrls": {
+          "$ref": "#/definitions/PersonalAssistantUrls"
+        }
+      }
+    },
+    "EndpointKeys": {
+      "type": "array",
+      "description": "An a array of GUIDs, comprised of Azure Endpoint Keys and the Programmatic API key.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "PersonalAssistantUrls": {
+      "type": "object",
+      "description": "Endpoint URLs for prebuilt Cortana applications.",
+      "properties": {
+        "English": {
+          "type":"string"
+        },
+        "Chinese": {
+          "type":"string"
+        },
+        "French": {
+          "type":"string"
+        },
+        "Spanish": {
+          "type":"string"
+        },
+        "Italian": {
+          "type":"string"
+        }
+      }
+    },
+    "ModelsResponseObject" : {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ModelInfo"
+      }
+    },
+    "ModelInfo": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The GUID of the Entity Model."
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the Entity Model."
+        },
+        "typeId": {
+          "type": "number",
+          "description": "The type ID of the Entity Model."
+        },
+        "readableType": {
+          "$ref": "#/definitions/ReadableType"
+        }
+      },
+      "required": [
+        "readableType"
+      ],
+      "discriminator": "readableType"
+    },
+    "ModelInfoResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The GUID of the Entity Model."
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the Entity Model."
+        },
+        "typeId": {
+          "type": "number",
+          "description": "The type ID of the Entity Model."
+        },
+        "readableType": {
+          "$ref": "#/definitions/ReadableType"
+        }
+      },
+      "required": [
+        "readableType"
+      ],
+      "discriminator": "readableType",
+      "allOf": [
+        { "$ref": "#/definitions/HierarchicalEntityExtractor" },
+        { "$ref": "#/definitions/CompositeEntityExtractor"},
+        { "$ref": "#/definitions/ClosedListEntityExtractor" },
+        { "$ref": "#/definitions/IntentClassifier" },
+        { "$ref": "#/definitions/EntityExtractor" }
+      ]
+    },
+    "ReadableType": {
+      "type": "string",
+      "enum": [
+        "Entity Extractor",
+        "Hierarchical Entity Extractor",
+        "Composite Entity Extractor",
+        "Closed List Entity Extractor",
+        "Prebuilt Entity Extractor",
+        "Intent Classifier"
+      ]
+    },
+    "HierarchicalEntityExtractor": {
+      "type": "object",
+      "x-ms-discriminator-value": "Hierarchical Entity Extractor",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ModelInfo"
+        }
+      ],
+      "properties": {
+        "children": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ChildEntity"
+          }
+        }
+      }
+    },
+    "HierarchicalEntityExtractorResponse": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/HierarchicalEntityExtractor"
+      }
+    },
+    "CompositeEntityExtractor": {
+      "type": "object",
+      "x-ms-discriminator-value": "Composite Entity Extractor",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ModelInfo"
+        }
+      ],
+      "properties": {
+        "children": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ChildEntity"
+          }
+        }
+      }
+    },
+    "CompositeEntityExtractorResponse": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/CompositeEntityExtractor"
+      }
+    },
+    "ClosedListEntityExtractor": {
+      "type": "object",
+      "x-ms-discriminator-value": "Closed List Entity Extractor",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ModelInfo"
+        }
+      ]
+    },
+    "ClosedListEntityExtractorResponse": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ClosedListEntityExtractor"
+      }
+    },
+    "PrebuiltEntityExtractor": {
+      "type": "object",
+      "x-ms-discriminator-value": "Prebuilt Entity Extractor",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ModelInfo"
+        }
+      ]
+    },
+    "PrebuiltEntityExtractorResponse": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/PrebuiltEntityExtractor"
+      }
+    },
+    "ChildEntity": {
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The GUID belonging to a child entity."
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of a child entity."
+        }
+      }
+    },
+    "IntentClassifier": {
+      "type": "object",
+      "x-ms-discriminator-value": "Intent Classifier",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ModelInfo"
+        }
+      ],
+      "properties": {
+        "customPrebuiltDomainName": {
+          "type": "string",
+          "x-nullable": true
+        },
+        "customPrebuiltModelName": {
+          "type": "string",
+          "x-nullable": true
+        }
+      }
+    },
+    "EntityExtractor": {
+      "type": "object",
+      "x-ms-discriminator-value": "Entity Extractor",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ModelInfo"
+        }
+      ],
+      "properties": {
+        "customPrebuiltDomainName": {
+          "type": "string",
+          "x-nullable": true
+        },
+        "customPrebuiltModelName": {
+          "type": "string",
+          "x-nullable": true
+        }
+      }
     }
   },
   "parameters": {
@@ -3828,13 +4220,6 @@
       "type": "integer",
       "default": 0,
       "x-nullable": "false",
-      "x-ms-enum": {
-        "name": "SkipParameter",
-        "modelAsString": false
-      },
-      "enum": [
-        0
-      ],
       "x-ms-parameter-location": "method"
     },
     "TakeInPath": {
@@ -3844,13 +4229,6 @@
       "type": "integer",
       "default": 100,
       "x-nullable": "false",
-      "x-ms-enum": {
-        "name": "TakeParameter",
-        "modelAsString": false
-      },
-      "enum": [
-        100
-      ],
       "x-ms-parameter-location": "method"
     }
   }
