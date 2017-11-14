@@ -74,6 +74,9 @@
             "description": "The ID of the created feature.",
             "examples": {
               "application/json": "83147"
+            },
+            "schema": {
+              "$ref": "#/definitions/FeatureIDResponse"
             }
           },
           "400": {
@@ -108,6 +111,9 @@
             "description": "A JSON object containing a list of all pattern features.",
             "examples": {
               "application/json": "[  {    \"id\": 89178,    \"name\": \"EmailPattern\",    \"pattern\": \"\\\\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\\\\.[A-Z]{2,}\\\\b\",    \"isActive\": true  }]"
+            },
+            "schema": {
+              "$ref": "#/definitions/PatternFeatureInfoList"
             }
           }
         },
@@ -146,6 +152,9 @@
             "description": "The ID of the created feature.",
             "examples": {
               "application/json": "1823"
+            },
+            "schema": {
+              "$ref": "#/definitions/FeatureIDResponse"
             }
           }
         },
@@ -169,6 +178,9 @@
             "description": "A JSON object containing a list of all phraselist features.",
             "examples": {
               "application/json": "[  {    \"id\": 321421,    \"name\": \"Cities\",    \"phrases\": \"Seattle,New York,Paris,Moscow,Beijin\",    \"isExchangeable\": true,    \"isActive\": true  },  {    \"id\": 97832,    \"name\": \"DaysOfWeek\",    \"phrases\": \"monday,tuesday,wednesday,thursday,friday,saturday,sunday\",    \"isExchangeable\": true,    \"isActive\": true  }]"
+            },
+            "schema": {
+              "$ref": "#/definitions/PhraseListFeatureInfoList"
             }
           }
         },
@@ -225,6 +237,9 @@
                   }
                 ]
               }
+            },
+            "schema": {
+              "$ref": "#/definitions/FeaturesResponseObject"
             }
           }
         },
@@ -262,6 +277,9 @@
                 "pattern": "\\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,}\\b",
                 "isActive": true
               }
+            },
+            "schema": {
+              "$ref": "#/definitions/PatternFeatureInfo"
             }
           }
         },
@@ -331,6 +349,9 @@
                 "isExchangeable": true,
                 "isActive": true
               }
+            },
+            "schema": {
+              "$ref": "#/definitions/PhraseListFeatureInfo"
             }
           }
         },
@@ -401,6 +422,9 @@
                 "UtteranceText": "book me a flight from cairo to redmond next thursday",
                 "ExampleId": -11
               }
+            },
+            "schema": {
+              "$ref": "#/definitions/LabelExampleResponse"
             }
           }
         },
@@ -440,6 +464,9 @@
             "description": "A string array determining which labels were added successfully.",
             "examples": {
               "application/json": "[  {    \"value\": {      \"UtteranceText\": \"book me a flight from cairo to redmond next thursday\",      \"ExampleId\": -11    },    \"hasError\": false  },  {    \"value\": {      \"UtteranceText\": \"what's the weather like in seattle?\",      \"ExampleId\": -12    },    \"hasError\": false  }]"
+            },
+            "schema": {
+              "$ref": "#/definitions/BatchLabelExampleResponse"
             }
           }
         },
@@ -553,6 +580,9 @@
             "description": "A list of intent model infos.",
             "examples": {
               "application/json": "[  {    \"id\": \"227a71ed-7d4b-4dce-8f3a-16c4e5cc06e8\",    \"name\": \"BookFlight\",    \"typeId\": 0,    \"readableType\": \"Intent Classifier\"  },  {    \"id\": \"8285a9ee-6bc0-4409-87f4-82d539f70529\",    \"name\": \"None\",    \"typeId\": 0,    \"readableType\": \"Intent Classifier\"  },  {    \"id\": \"9500536f-ffec-4fab-93ad-6268abb0f73c\",    \"name\": \"$Camera.CapturePhoto\",    \"typeId\": 0,    \"readableType\": \"Intent Classifier\",    \"customPrebuiltDomainName\": \"Camera\",    \"customPrebuiltModelName\": \"CapturePhoto\"  },]"
+            },
+            "schema": {
+              "$ref": "#/definitions/IntentClassifiersList"
             }
           }
         },
@@ -617,6 +647,9 @@
             "description": "A list of entity model infos.",
             "examples": {
               "application/json": "[  {    \"id\": \"3d73462d-98f0-4dcd-8d30-fab9e65f2e73\",    \"name\": \"DayOfWeek\",    \"typeId\": 1,    \"readableType\": \"Entity Extractor\"  },  {    \"id\": \"b8e31be4-300f-455e-894b-6f079abca0a2\",    \"name\": \"$Camera.AppName\",    \"typeId\": 1,    \"readableType\": \"Entity Extractor\",    \"customPrebuiltDomainName\": \"Camera\",    \"customPrebuiltModelName\": \"AppName\"  }]"
+            },
+            "schema": {
+              "$ref": "#/definitions/EntityExtractorsList"
             }
           }
         },
@@ -683,7 +716,7 @@
               "application/json": "[  {    \"id\": \"fe559c31-9778-42ea-ba45-94e0bd7cf767\",    \"name\": \"Location\",    \"typeId\": 3,    \"readableType\": \"Hierarchical Entity Extractor\",    \"children\": [      {        \"id\": \"ec076676-d8d9-42fa-a44e-87989c0a2f82\",        \"name\": \"From\"      },      {        \"id\": \"63ebd752-4e81-4ce7-a698-b59b82bf5519\",        \"name\": \"To\"      }    ]  }]"
             },
             "schema": {
-              "$ref": "#/definitions/HierarchicalEntityExtractorResponse"
+              "$ref": "#/definitions/HierarchicalEntityExtractorsList"
             }
           }
         },
@@ -750,7 +783,7 @@
               "application/json": "[  {    \"id\": \"bc1bae43-7904-48ad-a165-88b1910174f9\",    \"name\": \"Reservation\",    \"typeId\": 4,    \"readableType\": \"Composite Entity Extractor\",    \"children\": [      {        \"id\": \"63ebd752-4e81-4ce7-a698-b59b82bf5519\",        \"name\": \"Location::To\"      },      {        \"id\": \"a18eaa87-ecd9-4a67-a951-e70cf5b87c7e\",        \"name\": \"datetime\"      }    ]  }]"
             },
             "schema": {
-              "$ref": "#/definitions/CompositeEntityExtractorResponse"
+              "$ref": "#/definitions/CompositeEntityExtractorsList"
             }
           }
         },
@@ -817,7 +850,7 @@
               "application/json": "[  {    \"id\": \"8713b104-78ec-4c4f-9f96-f2e53562cc16\",    \"name\": \"States\",    \"typeId\": 5,    \"readableType\": \"Closed List Entity Extractor\",    \"subLists\": [      {        \"id\": 1,        \"canonicalForm\": \"new york\",        \"list\": [          \"ny\",          \"new york\"        ]      },      {        \"id\": 2,        \"canonicalForm\": \"washington\",        \"list\": [          \"washington\",          \"wa\"        ]      },      {        \"id\": 3,        \"canonicalForm\": \"california\",        \"list\": [          \"california\",          \"ca\",          \"calif.\",          \"cal.\"        ]      }    ]  }]"
             },
             "schema": {
-              "$ref": "#/definitions/ClosedListEntityExtractorResponse"
+              "$ref": "#/definitions/ClosedListEntityExtractorsList"
             }
           }
         },
@@ -858,7 +891,7 @@
               "application/json": "[  {    \"id\": \"a18eaa87-ecd9-4a67-a951-e70cf5b87c7e\",    \"name\": \"datetime\",    \"typeId\": 2,    \"readableType\": \"Prebuilt Entity Extractor\"  }]"
             },
             "schema": {
-              "$ref": "#/definitions/PrebuiltEntityExtractorResponse"
+              "$ref": "#/definitions/PrebuiltEntityExtractorsList"
             }
           }
         },
@@ -884,7 +917,7 @@
               "application/json": "[  {    \"id\": \"a18eaa87-ecd9-4a67-a951-e70cf5b87c7e\",    \"name\": \"datetime\",    \"typeId\": 2,    \"readableType\": \"Prebuilt Entity Extractor\"  }]"
             },
             "schema": {
-              "$ref": "#/definitions/PrebuiltEntityExtractorResponse"
+              "$ref": "#/definitions/PrebuiltEntityExtractorsList"
             }
           }
         },
@@ -966,7 +999,7 @@
       ],
       "get": {
         "description": "Gets information about the intent model.",
-        "operationId": "Models_GetIntentInfo",
+        "operationId": "Model_GetIntentInfo",
         "responses": {
           "200": {
             "description": "An intent model info.",
@@ -977,6 +1010,9 @@
                 "typeId": 0,
                 "readableType": "Intent Classifier"
               }
+            },
+            "schema": {
+              "$ref": "#/definitions/IntentClassifier"
             }
           }
         },
@@ -986,7 +1022,7 @@
       },
       "put": {
         "description": "Updates the name of an intent classifier.",
-        "operationId": "Models_RenameIntentModel",
+        "operationId": "Model_RenameIntentModel",
         "parameters": [
           {
             "name": "modelUpdateObject",
@@ -1008,7 +1044,7 @@
       },
       "delete": {
         "description": "Deletes an intent classifier from the application.",
-        "operationId": "Models_DeleteIntentModel",
+        "operationId": "Model_DeleteIntentModel",
         "responses": {
           "200": {
             "description": ""
@@ -1045,6 +1081,9 @@
                 "typeId": 1,
                 "readableType": "Entity Extractor"
               }
+            },
+            "schema": {
+              "$ref": "#/definitions/EntityExtractor"
             }
           }
         },
@@ -1119,6 +1158,9 @@
                   }
                 ]
               }
+            },
+            "schema": {
+              "$ref": "#/definitions/HierarchicalEntityExtractor"
             }
           }
         },
@@ -1193,6 +1235,9 @@
                   }
                 ]
               }
+            },
+            "schema": {
+              "$ref": "#/definitions/CompositeEntityExtractor"
             }
           }
         },
@@ -1289,6 +1334,9 @@
                   }
                 ]
               }
+            },
+            "schema": {
+              "$ref": "#/definitions/ClosedListEntityExtractor"
             }
           }
         },
@@ -1379,6 +1427,9 @@
                 "typeId": 2,
                 "readableType": "Prebuilt Entity Extractor"
               }
+            },
+            "schema": {
+              "$ref": "#/definitions/PrebuiltEntityExtractor"
             }
           }
         },
@@ -2201,7 +2252,10 @@
         "operationId": "Train_TrainApplicationVersion",
         "responses": {
           "202": {
-            "description": ""
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/EnqueueTrainingResponse"
+            }
           },
           "400": {
             "description": "This response can occur if either of the <b>appId</b> or <b>versionId</b> parameters are incorrect.",
@@ -2288,6 +2342,9 @@
             "description": "A list containing subscription keys info.",
             "examples": {
               "application/json": "[  {    \"subscriptionKey\": \"dummykey\",    \"subscriptionName\": \"DummyName\",    \"subscriptionRegion\":\"westus\"  }]"
+            },
+            "schema": {
+              "$ref": "#/definitions/SubscriptionKeyList"
             }
           }
         },
@@ -2674,6 +2731,9 @@
             "description": "The id of the newly created list",
             "examples": {
               "application/json": "90440"
+            },
+            "schema": {
+              "$ref": "#/definitions/ApplicationsInfoList"
             }
           }
         },
@@ -2710,6 +2770,9 @@
             "description": "An array of the created custom prebuilt domain model Ids.",
             "examples": {
               "application/json": "[  \"9500536f-ffec-4fab-93ad-6268abb0f73c\",  \"72a15bcc-538a-4e59-be8c-9fdd43b5338f\",  \"3397fc83-5b1d-4f5f-b4cd-0f2169f076c6\",  \"d116d287-3e53-4bd8-8b7b-4728c58c34d1\",  \"facd34fa-86a3-4805-8bf3-b99e40043b10\",  \"ad2cac73-2abf-41cb-99e2-f79d0dd6ca46\",  \"b8e31be4-300f-455e-894b-6f079abca0a2\",  \"70de3f00-3943-4a93-a88c-09392016b776\"]"
+            },
+            "schema": {
+              "$ref": "#/definitions/GuidList"
             }
           }
         },
@@ -2766,6 +2829,9 @@
             "description": "Returns a list of all custom prebuilt intents and their representations.",
             "examples": {
               "application/json": "[  {    \"id\": \"9500536f-ffec-4fab-93ad-6268abb0f73c\",    \"name\": \"$Camera.CapturePhoto\",    \"typeId\": 0,    \"readableType\": \"Intent Classifier\",    \"customPrebuiltDomainName\": \"Camera\",    \"customPrebuiltModelName\": \"CapturePhoto\"  },  {    \"id\": \"facd34fa-86a3-4805-8bf3-b99e40043b10\",    \"name\": \"$Camera.CaptureScreenshot\",    \"typeId\": 0,    \"readableType\": \"Intent Classifier\",    \"customPrebuiltDomainName\": \"Camera\",    \"customPrebuiltModelName\": \"CaptureScreenshot\"  },  {    \"id\": \"d116d287-3e53-4bd8-8b7b-4728c58c34d1\",    \"name\": \"$Camera.CaptureSelfie\",    \"typeId\": 0,    \"readableType\": \"Intent Classifier\",    \"customPrebuiltDomainName\": \"Camera\",    \"customPrebuiltModelName\": \"CaptureSelfie\"  },  {    \"id\": \"ad2cac73-2abf-41cb-99e2-f79d0dd6ca46\",    \"name\": \"$Camera.CaptureVideo\",    \"typeId\": 0,    \"readableType\": \"Intent Classifier\",    \"customPrebuiltDomainName\": \"Camera\",    \"customPrebuiltModelName\": \"CaptureVideo\"  },  {    \"id\": \"70de3f00-3943-4a93-a88c-09392016b776\",    \"name\": \"$Camera.StartBroadcasting\",    \"typeId\": 0,    \"readableType\": \"Intent Classifier\",    \"customPrebuiltDomainName\": \"Camera\",    \"customPrebuiltModelName\": \"StartBroadcasting\"  },  {    \"id\": \"3397fc83-5b1d-4f5f-b4cd-0f2169f076c6\",    \"name\": \"$Camera.StopBroadcasting\",    \"typeId\": 0,    \"readableType\": \"Intent Classifier\",    \"customPrebuiltDomainName\": \"Camera\",    \"customPrebuiltModelName\": \"StopBroadcasting\"  },  {    \"id\": \"72a15bcc-538a-4e59-be8c-9fdd43b5338f\",    \"name\": \"$Camera.StopVideoRecording\",    \"typeId\": 0,    \"readableType\": \"Intent Classifier\",    \"customPrebuiltDomainName\": \"Camera\",    \"customPrebuiltModelName\": \"StopVideoRecording\"  }]"
+            },
+            "schema": {
+              "$ref": "#/definitions/ModelsResponseObject"
             }
           }
         },
@@ -2804,6 +2870,9 @@
             "description": "The ID of the created model.",
             "examples": {
               "application/json": "\"1c2e70c1-3cbf-4e89-9703-9583b81102b9\""
+            },
+            "schema": {
+              "$ref": "#/definitions/GuidResponse"
             }
           }
         },
@@ -2819,6 +2888,9 @@
             "description": "Returns a list of all custom prebuilt entities and their representations.",
             "examples": {
               "application/json": "[  {    \"id\": \"b8e31be4-300f-455e-894b-6f079abca0a2\",    \"name\": \"$Camera.AppName\",    \"typeId\": 1,    \"readableType\": \"Entity Extractor\",    \"customPrebuiltDomainName\": \"Camera\",    \"customPrebuiltModelName\": \"AppName\"  }]"
+            },
+            "schema": {
+              "$ref": "#/definitions/ModelsResponseObject"
             }
           }
         },
@@ -2844,6 +2916,9 @@
             "description": "Returns a list of all custom prebuilt models and their representations.",
             "examples": {
               "application/json": "[  {    \"id\": \"b8e31be4-300f-455e-894b-6f079abca0a2\",    \"name\": \"$Camera.AppName\",    \"typeId\": 1,    \"readableType\": \"Entity Extractor\",    \"customPrebuiltDomainName\": \"Camera\",    \"customPrebuiltModelName\": \"AppName\"  },  {    \"id\": \"9500536f-ffec-4fab-93ad-6268abb0f73c\",    \"name\": \"$Camera.CapturePhoto\",    \"typeId\": 0,    \"readableType\": \"Intent Classifier\",    \"customPrebuiltDomainName\": \"Camera\",    \"customPrebuiltModelName\": \"CapturePhoto\"  },  {    \"id\": \"facd34fa-86a3-4805-8bf3-b99e40043b10\",    \"name\": \"$Camera.CaptureScreenshot\",    \"typeId\": 0,    \"readableType\": \"Intent Classifier\",    \"customPrebuiltDomainName\": \"Camera\",    \"customPrebuiltModelName\": \"CaptureScreenshot\"  },  {    \"id\": \"d116d287-3e53-4bd8-8b7b-4728c58c34d1\",    \"name\": \"$Camera.CaptureSelfie\",    \"typeId\": 0,    \"readableType\": \"Intent Classifier\",    \"customPrebuiltDomainName\": \"Camera\",    \"customPrebuiltModelName\": \"CaptureSelfie\"  },  {    \"id\": \"ad2cac73-2abf-41cb-99e2-f79d0dd6ca46\",    \"name\": \"$Camera.CaptureVideo\",    \"typeId\": 0,    \"readableType\": \"Intent Classifier\",    \"customPrebuiltDomainName\": \"Camera\",    \"customPrebuiltModelName\": \"CaptureVideo\"  },  {    \"id\": \"70de3f00-3943-4a93-a88c-09392016b776\",    \"name\": \"$Camera.StartBroadcasting\",    \"typeId\": 0,    \"readableType\": \"Intent Classifier\",    \"customPrebuiltDomainName\": \"Camera\",    \"customPrebuiltModelName\": \"StartBroadcasting\"  },  {    \"id\": \"3397fc83-5b1d-4f5f-b4cd-0f2169f076c6\",    \"name\": \"$Camera.StopBroadcasting\",    \"typeId\": 0,    \"readableType\": \"Intent Classifier\",    \"customPrebuiltDomainName\": \"Camera\",    \"customPrebuiltModelName\": \"StopBroadcasting\"  },  {    \"id\": \"72a15bcc-538a-4e59-be8c-9fdd43b5338f\",    \"name\": \"$Camera.StopVideoRecording\",    \"typeId\": 0,    \"readableType\": \"Intent Classifier\",    \"customPrebuiltDomainName\": \"Camera\",    \"customPrebuiltModelName\": \"StopVideoRecording\"  }]"
+            },
+            "schema": {
+              "$ref": "#/definitions/ModelsResponseObject"
             }
           }
         },
@@ -2887,6 +2962,9 @@
             "description": "Returns a list of all custom prebuilt domains and their intents/entities representation",
             "examples": {
               "application/json": "[ {    \"name\": \"taxi\",    \"culture\": \"en-us\",    \"description\": \"A custom prebuilt domain for taxi booking\",    \"examples\": \"book taxi x on friday at 6 pm, take me to Tinga's from Westin hotel with taxi lux\",    \"intents\": [      {        \"name\": \"book_taxi\",        \"description\": \"Requests/Books taxi\",        \"examples\": \"book taxi x on friday at 6 pm\"      },      {        \"name\": \"cancel_taxi\",        \"description\": \"Cancels taxi request\",        \"examples\": \"I just called an taxi SUV , please cancel, Cancel my taxi\"      }    ],    \"entities\": [      {        \"name\": \"from_place_name\",        \"description\": \"Route starting point\",        \"examples\": \"find taxi x to take me to 9th street from space needle\"      }    ]  },  {    \"name\": \"weather\",    \"culture\": \"en-us\",    \"description\": \"A custom prebuilt domain that gets weather forecast and condition\",    \"examples\": \"Show me the weather for this weekend, What's the weather?\",    \"intents\": [      {        \"name\": \"get_forecast\",        \"description\": \"Gets weather forecast\",        \"examples\": \"What's the weather like tomorrow?\"      },      {        \"name\": \"get_condition\",        \"description\": \"Gets weather condition\",        \"examples\": \"what's the average temperature in India in September?\"      }    ],    \"entities\": [      {        \"name\": \"location\",        \"description\": \"Location of the queried weather\",        \"examples\": \"What's the weather like in Minneapolis\"      },      {        \"name\": \"unit\",        \"description\": \"Temperature measurement unit\",        \"examples\": \"Please change the weather from Fahrenheit to Celsius\"      }    ]  }]"
+            },
+            "schema": {
+              "$ref": "#/definitions/PrebuiltDomainsList"
             }
           }
         },
@@ -2944,6 +3022,9 @@
             "description": "Returns a list of all domains and their intents/entities representation for a specific culture",
             "examples": {
               "application/json": "[ {    \"name\": \"taxi\",    \"culture\": \"en-us\",    \"description\": \"A custom prebuilt domain for taxi booking\",    \"examples\": \"book taxi x on friday at 6 pm, take me to Tinga's from Westin hotel with taxi lux\",    \"intents\": [      {        \"name\": \"book_taxi\",        \"description\": \"Requests/Books taxi\",        \"examples\": \"book taxi x on friday at 6 pm\"      },      {        \"name\": \"cancel_taxi\",        \"description\": \"Cancels taxi request\",        \"examples\": \"I just called an taxi SUV , please cancel, Cancel my taxi\"      }    ],    \"entities\": [      {        \"name\": \"from_place_name\",        \"description\": \"Route starting point\",        \"examples\": \"find taxi x to take me to 9th street from space needle\"      }    ]  },  {    \"name\": \"weather\",    \"culture\": \"en-us\",    \"description\": \"A custom prebuilt domain that gets weather forecast and condition\",    \"examples\": \"Show me the weather for this weekend, What's the weather?\",    \"intents\": [      {        \"name\": \"get_forecast\",        \"description\": \"Gets weather forecast\",        \"examples\": \"What's the weather like tomorrow?\"      },      {        \"name\": \"get_condition\",        \"description\": \"Gets weather condition\",        \"examples\": \"what's the average temperature in India in September?\"      }    ],    \"entities\": [      {        \"name\": \"location\",        \"description\": \"Location of the queried weather\",        \"examples\": \"What's the weather like in Minneapolis\"      },      {        \"name\": \"unit\",        \"description\": \"Temperature measurement unit\",        \"examples\": \"Please change the weather from Fahrenheit to Celsius\"      }    ]  }]"
+            },
+            "schema": {
+              "$ref": "#/definitions/PrebuiltDomainsList"
             }
           }
         },
@@ -3325,6 +3406,20 @@
             "type": "string"
           },
           "type": "array"
+        }
+      }
+    },
+    "JSONSubClosedListResponse": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/JSONSubClosedList"
+        }
+      ],
+      "properties": {
+        "id": {
+          "type": "number",
+          "example": "123456"
         }
       }
     },
@@ -3830,9 +3925,12 @@
       "example": "{  \"luis_schema_version\": \"1.3.1\",  \"name\": \"DummyImportedApp\",  \"versionId\": \"0.2\",  \"desc\": \"This is my dummy imported application\",  \"culture\": \"en-us\",  \"intents\": [    {      \"name\": \"BookFlight\"    },    {      \"name\": \"GetWeather\"    },    {      \"name\": \"None\"    }  ],  \"entities\": [    {      \"name\": \"Location\",      \"children\": [        \"To\",        \"From\"      ]    }  ],  \"composites\": [],  \"closedLists\": [],  \"bing_entities\": [    \"datetime\"  ],  \"actions\": [],  \"model_features\": [    {      \"name\": \"Cities\",      \"mode\": true,      \"words\": \"Seattle,New York,Paris,Moscow,Beijin\",      \"activated\": true    }  ],  \"regex_features\": [],  \"utterances\": [    {      \"text\": \"book me a flight from redmond to new york next saturday\",      \"intent\": \"BookFlight\",      \"entities\": [        {          \"entity\": \"Location::From\",          \"startPos\": 5,          \"endPos\": 5        },        {          \"entity\": \"Location::To\",          \"startPos\": 7,          \"endPos\": 8        }      ]    },    {      \"text\": \"what's the weather like in paris?\",      \"intent\": \"GetWeather\",      \"entities\": [        {          \"entity\": \"Location\",          \"startPos\": 7,          \"endPos\": 7        }      ]    }  ]}"
     },
     "GuidResponse": {
-      "additionalProperties": false,
       "type": "string",
       "example": "\"363187f1-c573-46b3-bc4c-ae01d686e68e\""
+    },
+    "FeatureIDResponse": {
+      "type": "number",
+      "example": "398102"
     },
     "LabeledUtterances": {
       "type": "array",
@@ -4062,7 +4160,7 @@
         }
       }
     },
-    "HierarchicalEntityExtractorResponse": {
+    "HierarchicalEntityExtractorsList": {
       "type": "array",
       "items": {
         "$ref": "#/definitions/HierarchicalEntityExtractor"
@@ -4085,7 +4183,7 @@
         }
       }
     },
-    "CompositeEntityExtractorResponse": {
+    "CompositeEntityExtractorsList": {
       "type": "array",
       "items": {
         "$ref": "#/definitions/CompositeEntityExtractor"
@@ -4098,9 +4196,17 @@
         {
           "$ref": "#/definitions/ModelInfo"
         }
-      ]
+      ],
+      "properties": {
+        "subLists": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/JSONSubClosedListResponse"
+          }
+        }
+      }
     },
-    "ClosedListEntityExtractorResponse": {
+    "ClosedListEntityExtractorsList": {
       "type": "array",
       "items": {
         "$ref": "#/definitions/ClosedListEntityExtractor"
@@ -4115,7 +4221,7 @@
         }
       ]
     },
-    "PrebuiltEntityExtractorResponse": {
+    "PrebuiltEntityExtractorsList": {
       "type": "array",
       "items": {
         "$ref": "#/definitions/PrebuiltEntityExtractor"
@@ -4168,6 +4274,288 @@
         "customPrebuiltModelName": {
           "type": "string",
           "x-nullable": true
+        }
+      }
+    },
+    "IntentClassifiersList": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/IntentClassifier"
+      }
+    },
+    "EntityExtractorsList": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/EntityExtractor"
+      }
+    },
+    "FeaturesResponseObject": {
+      "type": "object",
+      "properties": {
+        "phraselistFeatures": {
+          "$ref": "#/definitions/PhraseListFeatureInfoList"
+        },
+        "patternFeatures": {
+            "$ref": "#/definitions/PatternFeatureInfoList"
+        }
+      }
+    },
+    "FeatureInfoObject": {
+      "description": "The base class Features-related response objects inherit from.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number",
+          "description": "A six-digit ID used for Features."
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the Feature."
+        },
+        "isActive": {
+          "type": "boolean"
+        }
+      }
+    },
+    "PatternFeatureInfo": {
+      "type": "object",
+      "properties": {
+        "pattern": {
+          "type": "string"
+        }
+      },
+      "allOf": [
+        { "$ref": "#/definitions/FeatureInfoObject" }
+      ]
+    },
+    "PatternFeatureInfoList": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/PatternFeatureInfo"
+      }
+    },
+    "PhraseListFeatureInfo": {
+      "type": "object",
+      "properties": {
+        "phrases": {
+          "type": "string",
+          "description": "A list of comma-separated values."
+        },
+        "isExchangeable": {
+          "type": "boolean"
+        }
+      },
+      "allOf": [
+        { "$ref": "#/definitions/FeatureInfoObject" }
+      ]
+    },
+    "PhraseListFeatureInfoList": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/PhraseListFeatureInfo"
+      }
+    },
+    "LabelExampleResponse": {
+      "type": "object",
+      "properties": {
+        "UtteranceText": {
+          "type": "string",
+          "example": "book me a flight from cairo to redmond next thursday"
+        },
+        "ExampleId": {
+          "type": "number",
+          "example": "-6830368"
+        }
+      }
+    },
+    "BatchLabelExample": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/LabelExampleResponse" 
+        },
+        "hasError": {
+          "type": "boolean"
+        }
+      }
+    },
+    "BatchLabelExampleResponse": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/BatchLabelExample"
+      }
+    },
+    "ApplicationInfoResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The GUID of the application."
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "culture": {
+          "type": "string"
+        },
+        "usageScenario": {
+          "type": "string"
+        },
+        "domain": {
+          "type": "string"
+        },
+        "versionsCount": {
+          "type": "number"
+        },
+        "createdDateTime": {
+          "type": "string"
+        },
+        "endpoints": {
+          "type": "object"
+        },
+        "endpointHitsCount": {
+          "type": "number"
+        },
+        "activeVersion": {
+          "type": "string"
+        }
+      }
+    },
+    "ApplicationsInfoList": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ApplicationInfoResponse"
+      }
+    },
+    "ProductionOrStagingEndpointInfo": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/EndpointInfo"
+        }
+      ]
+    },
+    "EndpointInfo": {
+      "type": "object",
+      "description": "The base class \"ProductionOrStagingEndpointInfo\" inherits from.",
+      "properties": {
+        "versionId": {
+
+        },
+        "isStaging": {
+          "type": "boolean"
+        },
+        "endpointUrl": {
+          "type": "string"
+        },
+        "region": {
+          "type": "string",
+          "x-nullable": true
+        },
+        "assignedEndpointKey": {
+          "type": "string"
+        },
+        "endpointRegion": {
+          "type": "string",
+          "description": "The endpoint's region."
+        },
+        "publishedDateTime": {
+          "type": "string"
+        }
+      }
+    },
+    "EnqueueTrainingResponse": {
+      "type": "object",
+      "properties": {
+        "statusId": {
+          "type": "number"
+        },
+        "status": {
+          "$ref": "#/definitions/TrainingStatus"
+        }
+      }
+    },
+    "TrainingStatus": {
+      "type": "string",
+      "enum": [
+        "Queued"
+      ]
+    },
+    "PrebuiltDomain": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "culture": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "examples": {
+          "type": "string"
+        },
+        "intents": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PrebuiltDomainModel"
+          }
+        },
+        "entities": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PrebuiltDomainModel"
+          }
+        }
+      }
+    },
+    "PrebuiltDomainsList": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/PrebuiltDomain"
+      }
+    },
+    "PrebuiltDomainModel": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "examples": {
+          "type": "string"
+        }
+      }
+    },
+    "GuidList": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/GuidResponse"
+      }
+    },
+    "SubscriptionKeyList": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/SubscriptionKeyInfo"
+      }
+    },
+    "SubscriptionKeyInfo": {
+      "type": "object",
+      "properties": {
+        "subscriptionKey": {
+          "type": "string"
+        },
+        "subscriptionName": {
+          "type": "string"
+        },
+        "subscriptionRegion": {
+          "type": "string"
         }
       }
     }
