@@ -716,7 +716,7 @@
               "application/json": "[  {    \"id\": \"fe559c31-9778-42ea-ba45-94e0bd7cf767\",    \"name\": \"Location\",    \"typeId\": 3,    \"readableType\": \"Hierarchical Entity Extractor\",    \"children\": [      {        \"id\": \"ec076676-d8d9-42fa-a44e-87989c0a2f82\",        \"name\": \"From\"      },      {        \"id\": \"63ebd752-4e81-4ce7-a698-b59b82bf5519\",        \"name\": \"To\"      }    ]  }]"
             },
             "schema": {
-              "$ref": "#/definitions/HierarchicalEntityExtractorResponse"
+              "$ref": "#/definitions/HierarchicalEntityExtractorsList"
             }
           }
         },
@@ -783,7 +783,7 @@
               "application/json": "[  {    \"id\": \"bc1bae43-7904-48ad-a165-88b1910174f9\",    \"name\": \"Reservation\",    \"typeId\": 4,    \"readableType\": \"Composite Entity Extractor\",    \"children\": [      {        \"id\": \"63ebd752-4e81-4ce7-a698-b59b82bf5519\",        \"name\": \"Location::To\"      },      {        \"id\": \"a18eaa87-ecd9-4a67-a951-e70cf5b87c7e\",        \"name\": \"datetime\"      }    ]  }]"
             },
             "schema": {
-              "$ref": "#/definitions/CompositeEntityExtractorResponse"
+              "$ref": "#/definitions/CompositeEntityExtractorsList"
             }
           }
         },
@@ -850,7 +850,7 @@
               "application/json": "[  {    \"id\": \"8713b104-78ec-4c4f-9f96-f2e53562cc16\",    \"name\": \"States\",    \"typeId\": 5,    \"readableType\": \"Closed List Entity Extractor\",    \"subLists\": [      {        \"id\": 1,        \"canonicalForm\": \"new york\",        \"list\": [          \"ny\",          \"new york\"        ]      },      {        \"id\": 2,        \"canonicalForm\": \"washington\",        \"list\": [          \"washington\",          \"wa\"        ]      },      {        \"id\": 3,        \"canonicalForm\": \"california\",        \"list\": [          \"california\",          \"ca\",          \"calif.\",          \"cal.\"        ]      }    ]  }]"
             },
             "schema": {
-              "$ref": "#/definitions/ClosedListEntityExtractorResponse"
+              "$ref": "#/definitions/ClosedListEntityExtractorsList"
             }
           }
         },
@@ -891,7 +891,7 @@
               "application/json": "[  {    \"id\": \"a18eaa87-ecd9-4a67-a951-e70cf5b87c7e\",    \"name\": \"datetime\",    \"typeId\": 2,    \"readableType\": \"Prebuilt Entity Extractor\"  }]"
             },
             "schema": {
-              "$ref": "#/definitions/PrebuiltEntityExtractorResponse"
+              "$ref": "#/definitions/PrebuiltEntityExtractorsList"
             }
           }
         },
@@ -917,7 +917,7 @@
               "application/json": "[  {    \"id\": \"a18eaa87-ecd9-4a67-a951-e70cf5b87c7e\",    \"name\": \"datetime\",    \"typeId\": 2,    \"readableType\": \"Prebuilt Entity Extractor\"  }]"
             },
             "schema": {
-              "$ref": "#/definitions/PrebuiltEntityExtractorResponse"
+              "$ref": "#/definitions/PrebuiltEntityExtractorsList"
             }
           }
         },
@@ -3925,9 +3925,12 @@
       "example": "{  \"luis_schema_version\": \"1.3.1\",  \"name\": \"DummyImportedApp\",  \"versionId\": \"0.2\",  \"desc\": \"This is my dummy imported application\",  \"culture\": \"en-us\",  \"intents\": [    {      \"name\": \"BookFlight\"    },    {      \"name\": \"GetWeather\"    },    {      \"name\": \"None\"    }  ],  \"entities\": [    {      \"name\": \"Location\",      \"children\": [        \"To\",        \"From\"      ]    }  ],  \"composites\": [],  \"closedLists\": [],  \"bing_entities\": [    \"datetime\"  ],  \"actions\": [],  \"model_features\": [    {      \"name\": \"Cities\",      \"mode\": true,      \"words\": \"Seattle,New York,Paris,Moscow,Beijin\",      \"activated\": true    }  ],  \"regex_features\": [],  \"utterances\": [    {      \"text\": \"book me a flight from redmond to new york next saturday\",      \"intent\": \"BookFlight\",      \"entities\": [        {          \"entity\": \"Location::From\",          \"startPos\": 5,          \"endPos\": 5        },        {          \"entity\": \"Location::To\",          \"startPos\": 7,          \"endPos\": 8        }      ]    },    {      \"text\": \"what's the weather like in paris?\",      \"intent\": \"GetWeather\",      \"entities\": [        {          \"entity\": \"Location\",          \"startPos\": 7,          \"endPos\": 7        }      ]    }  ]}"
     },
     "GuidResponse": {
-      "additionalProperties": false,
       "type": "string",
       "example": "\"363187f1-c573-46b3-bc4c-ae01d686e68e\""
+    },
+    "FeatureIDResponse": {
+      "type": "number",
+      "example": "398102"
     },
     "LabeledUtterances": {
       "type": "array",
@@ -4157,7 +4160,7 @@
         }
       }
     },
-    "HierarchicalEntityExtractorResponse": {
+    "HierarchicalEntityExtractorsList": {
       "type": "array",
       "items": {
         "$ref": "#/definitions/HierarchicalEntityExtractor"
@@ -4180,7 +4183,7 @@
         }
       }
     },
-    "CompositeEntityExtractorResponse": {
+    "CompositeEntityExtractorsList": {
       "type": "array",
       "items": {
         "$ref": "#/definitions/CompositeEntityExtractor"
@@ -4193,9 +4196,17 @@
         {
           "$ref": "#/definitions/ModelInfo"
         }
-      ]
+      ],
+      "properties": {
+        "subLists": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/JSONSubClosedListResponse"
+          }
+        }
+      }
     },
-    "ClosedListEntityExtractorResponse": {
+    "ClosedListEntityExtractorsList": {
       "type": "array",
       "items": {
         "$ref": "#/definitions/ClosedListEntityExtractor"
@@ -4210,7 +4221,7 @@
         }
       ]
     },
-    "PrebuiltEntityExtractorResponse": {
+    "PrebuiltEntityExtractorsList": {
       "type": "array",
       "items": {
         "$ref": "#/definitions/PrebuiltEntityExtractor"
