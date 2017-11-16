@@ -47,18 +47,10 @@
     "/apps/{appId}/versions/{versionId}/patterns": {
       "parameters": [
         {
-          "name": "appId",
-          "in": "path",
-          "description": "Format - guid. The application ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/AppIdInPath"
         },
         {
-          "name": "versionId",
-          "in": "path",
-          "description": "The version ID of the task.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/VersionIdInPath"
         } 
       ],
       "post": {
@@ -82,6 +74,9 @@
             "description": "The ID of the created feature.",
             "examples": {
               "application/json": "83147"
+            },
+            "schema": {
+              "$ref": "#/definitions/FeatureIDResponse"
             }
           },
           "400": {
@@ -102,37 +97,13 @@
       },
       "get": {
         "description": "Gets all application version pattern features.",
-        "operationId": "Features_GetApplicationVersionPatternFeatures",
+        "operationId": "Features_ListApplicationVersionPatternFeatures",
         "parameters": [
           {
-            "name": "skip",
-            "in": "query",
-            "description": "The number of entries to skip. Default value is 0.",
-            "type": "integer",
-            "default": 0,
-            "x-nullable": "false",
-            "x-ms-enum": {
-              "name": "SkipParameter",
-              "modelAsString": false
-            },
-            "enum": [
-              0
-            ]
+            "$ref": "#/parameters/SkipInPath"
           },
           {
-            "name": "take",
-            "in": "query",
-            "description": "The number of entries to return. Maximum page size is 500. Default is 100.",
-            "type": "integer",
-            "default": 100,
-            "x-nullable": "false",
-            "x-ms-enum": {
-              "name": "TakeParameter",
-              "modelAsString": false
-            },
-            "enum": [
-              100
-            ]
+            "$ref": "#/parameters/TakeInPath"
           }
         ],
         "responses": {
@@ -140,6 +111,9 @@
             "description": "A JSON object containing a list of all pattern features.",
             "examples": {
               "application/json": "[  {    \"id\": 89178,    \"name\": \"EmailPattern\",    \"pattern\": \"\\\\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\\\\.[A-Z]{2,}\\\\b\",    \"isActive\": true  }]"
+            },
+            "schema": {
+              "$ref": "#/definitions/PatternFeatureInfoList"
             }
           }
         },
@@ -151,19 +125,11 @@
     "/apps/{appId}/versions/{versionId}/phraselists": {
       "parameters": [
         {
-          "name": "appId",
-          "in": "path",
-          "description": "Format - guid. The application ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/AppIdInPath"
         },
         {
-          "name": "versionId",
-          "in": "path",
-          "description": "The version ID of the task.",
-          "required": true,
-          "type": "string"
-        }
+          "$ref": "#/parameters/VersionIdInPath"
+        } 
       ],
       "post": {
         "description": "Creates a new phraselist feature.",
@@ -186,6 +152,9 @@
             "description": "The ID of the created feature.",
             "examples": {
               "application/json": "1823"
+            },
+            "schema": {
+              "$ref": "#/definitions/FeatureIDResponse"
             }
           }
         },
@@ -195,37 +164,13 @@
       },
       "get": {
         "description": "Gets all application phraselist features.",
-        "operationId": "Features_GetApplicationVersionPhraselistFeatures",
+        "operationId": "Features_ListApplicationVersionPhraselistFeatures",
         "parameters": [
           {
-            "name": "skip",
-            "in": "query",
-            "description": "The number of entries to skip. Default value is 0.",
-            "type": "integer",
-            "default": 0,
-            "x-nullable": "false",
-            "x-ms-enum": {
-              "name": "SkipParameter",
-              "modelAsString": false
-            },
-            "enum": [
-              0
-            ]
+            "$ref": "#/parameters/SkipInPath"
           },
           {
-            "name": "take",
-            "in": "query",
-            "description": "The number of entries to return. Maximum page size is 500. Default is 100.",
-            "type": "integer",
-            "default": 100,
-            "x-nullable": "false",
-            "x-ms-enum": {
-              "name": "TakeParameter",
-              "modelAsString": false
-            },
-            "enum": [
-              100
-            ]
+            "$ref": "#/parameters/TakeInPath"
           }
         ],
         "responses": {
@@ -233,6 +178,9 @@
             "description": "A JSON object containing a list of all phraselist features.",
             "examples": {
               "application/json": "[  {    \"id\": 321421,    \"name\": \"Cities\",    \"phrases\": \"Seattle,New York,Paris,Moscow,Beijin\",    \"isExchangeable\": true,    \"isActive\": true  },  {    \"id\": 97832,    \"name\": \"DaysOfWeek\",    \"phrases\": \"monday,tuesday,wednesday,thursday,friday,saturday,sunday\",    \"isExchangeable\": true,    \"isActive\": true  }]"
+            },
+            "schema": {
+              "$ref": "#/definitions/PhraseListFeatureInfoList"
             }
           }
         },
@@ -244,51 +192,19 @@
     "/apps/{appId}/versions/{versionId}/features": {
       "get": {
         "description": "Gets all application version features.",
-        "operationId": "Features_GetApplicationVersionFeatures",
+        "operationId": "Features_ListApplicationVersionFeatures",
         "parameters": [
           {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/AppIdInPath"
           },
           {
-            "name": "versionId",
-            "in": "path",
-            "description": "The version ID of the task.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/VersionIdInPath"
           },
           {
-            "name": "skip",
-            "in": "query",
-            "description": "The number of entries to skip. Default value is 0.",
-            "type": "integer",
-            "default": 0,
-            "x-nullable": "false",
-            "x-ms-enum": {
-              "name": "SkipParameter",
-              "modelAsString": false
-            },
-            "enum": [
-              0
-            ]
+            "$ref": "#/parameters/SkipInPath"
           },
           {
-            "name": "take",
-            "in": "query",
-            "description": "The number of entries to return. Maximum page size is 500. Default is 100.",
-            "type": "integer",
-            "default": 100,
-            "x-nullable": "false",
-            "x-ms-enum": {
-              "name": "TakeParameter",
-              "modelAsString": false
-            },
-            "enum": [
-              100
-            ]
+            "$ref": "#/parameters/TakeInPath"
           }
         ],
         "responses": {
@@ -321,6 +237,9 @@
                   }
                 ]
               }
+            },
+            "schema": {
+              "$ref": "#/definitions/FeaturesResponseObject"
             }
           }
         },
@@ -332,18 +251,10 @@
     "/apps/{appId}/versions/{versionId}/patterns/{patternId}": {
       "parameters": [
         {
-          "name": "appId",
-          "in": "path",
-          "description": "Format - guid. The application ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/AppIdInPath"
         },
         {
-          "name": "versionId",
-          "in": "path",
-          "description": "The version ID of the task.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/VersionIdInPath"
         },
         {
           "name": "patternId",
@@ -366,6 +277,9 @@
                 "pattern": "\\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,}\\b",
                 "isActive": true
               }
+            },
+            "schema": {
+              "$ref": "#/definitions/PatternFeatureInfo"
             }
           }
         },
@@ -408,18 +322,10 @@
     "/apps/{appId}/versions/{versionId}/phraselists/{phraselistId}": {
       "parameters": [
         {
-          "name": "appId",
-          "in": "path",
-          "description": "Format - guid. The application ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/AppIdInPath"
         },
         {
-          "name": "versionId",
-          "in": "path",
-          "description": "The version ID of the task.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/VersionIdInPath"
         },
         {
           "name": "phraselistId",
@@ -443,6 +349,9 @@
                 "isExchangeable": true,
                 "isActive": true
               }
+            },
+            "schema": {
+              "$ref": "#/definitions/PhraseListFeatureInfo"
             }
           }
         },
@@ -488,18 +397,10 @@
         "operationId": "Examples_AddLabel",
         "parameters": [
           {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/AppIdInPath"
           },
           {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/VersionIdInPath"
           },
           {
             "name": "exampleLabelObject",
@@ -521,6 +422,9 @@
                 "UtteranceText": "book me a flight from cairo to redmond next thursday",
                 "ExampleId": -11
               }
+            },
+            "schema": {
+              "$ref": "#/definitions/LabelExampleResponse"
             }
           }
         },
@@ -532,18 +436,10 @@
     "/apps/{appId}/versions/{versionId}/examples": {
       "parameters": [
         {
-          "name": "appId",
-          "in": "path",
-          "description": "Format - guid. The application ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/AppIdInPath"
         },
         {
-          "name": "versionId",
-          "in": "path",
-          "description": "The task version ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/VersionIdInPath"
         }
       ],
       "post": {
@@ -568,6 +464,9 @@
             "description": "A string array determining which labels were added successfully.",
             "examples": {
               "application/json": "[  {    \"value\": {      \"UtteranceText\": \"book me a flight from cairo to redmond next thursday\",      \"ExampleId\": -11    },    \"hasError\": false  },  {    \"value\": {      \"UtteranceText\": \"what's the weather like in seattle?\",      \"ExampleId\": -12    },    \"hasError\": false  }]"
+            },
+            "schema": {
+              "$ref": "#/definitions/BatchLabelExampleResponse"
             }
           }
         },
@@ -580,34 +479,10 @@
         "operationId": "Examples_ReviewLabeledExamples",
         "parameters": [
           {
-            "name": "skip",
-            "in": "query",
-            "description": "The number of entries to skip. Default value is 0.",
-            "type": "integer",
-            "default": 0,
-            "x-nullable": "false",
-            "x-ms-enum": {
-              "name": "SkipParameter",
-              "modelAsString": false
-            },
-            "enum": [
-              0
-            ]
+            "$ref": "#/parameters/SkipInPath"
           },
           {
-            "name": "take",
-            "in": "query",
-            "description": "The number of entries to return. Maximum page size is 500. Default is 100.",
-            "type": "integer",
-            "default": 100,
-            "x-nullable": "false",
-            "x-ms-enum": {
-              "name": "TakeParameter",
-              "modelAsString": false
-            },
-            "enum": [
-              100
-            ]
+            "$ref": "#/parameters/TakeInPath"
           }
         ],
         "responses": {
@@ -629,18 +504,10 @@
         "operationId": "Examples_DeleteExampleLabels",
         "parameters": [
           {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/AppIdInPath"
           },
           {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/VersionIdInPath"
           },
           {
             "name": "exampleId",
@@ -660,23 +527,15 @@
     "/apps/{appId}/versions/{versionId}/intents": {
       "parameters": [
         {
-          "name": "appId",
-          "in": "path",
-          "description": "Format - guid. ID of the application.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/AppIdInPath"
         },
         {
-          "name": "versionId",
-          "in": "path",
-          "description": "The task version ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/VersionIdInPath"
         }
       ],
       "post": {
         "description": "Adds an intent classifier to the application.",
-        "operationId": "Models_CreateIntentClassifier",
+        "operationId": "Model_CreateIntentClassifier",
         "parameters": [
           {
             "name": "modelCreateObject",
@@ -695,6 +554,9 @@
             "description": "The ID of the created model.",
             "examples": {
               "application/json": "\"227a71ed-7d4b-4dce-8f3a-16c4e5cc06e8\""
+            },
+            "schema": {
+              "$ref": "#/definitions/GuidResponse"
             }
           }
         },
@@ -704,37 +566,13 @@
       },
       "get": {
         "description": "Gets information about the intent models.",
-        "operationId": "Models_GetApplicationVersionIntentInfos",
+        "operationId": "Model_ListApplicationVersionIntentInfo",
         "parameters": [
           {
-            "name": "skip",
-            "in": "query",
-            "description": "The number of entries to skip. Default value is 0.",
-            "type": "integer",
-            "default": 0,
-            "x-nullable": "false",
-            "x-ms-enum": {
-              "name": "SkipParameter",
-              "modelAsString": false
-            },
-            "enum": [
-              0
-            ]
+            "$ref": "#/parameters/SkipInPath"
           },
           {
-            "name": "take",
-            "in": "query",
-            "description": "The number of entries to return. Maximum page size is 500. Default is 100.",
-            "type": "integer",
-            "default": 100,
-            "x-nullable": "false",
-            "x-ms-enum": {
-              "name": "TakeParameter",
-              "modelAsString": false
-            },
-            "enum": [
-              100
-            ]
+            "$ref": "#/parameters/TakeInPath"
           }
         ],
         "responses": {
@@ -742,6 +580,9 @@
             "description": "A list of intent model infos.",
             "examples": {
               "application/json": "[  {    \"id\": \"227a71ed-7d4b-4dce-8f3a-16c4e5cc06e8\",    \"name\": \"BookFlight\",    \"typeId\": 0,    \"readableType\": \"Intent Classifier\"  },  {    \"id\": \"8285a9ee-6bc0-4409-87f4-82d539f70529\",    \"name\": \"None\",    \"typeId\": 0,    \"readableType\": \"Intent Classifier\"  },  {    \"id\": \"9500536f-ffec-4fab-93ad-6268abb0f73c\",    \"name\": \"$Camera.CapturePhoto\",    \"typeId\": 0,    \"readableType\": \"Intent Classifier\",    \"customPrebuiltDomainName\": \"Camera\",    \"customPrebuiltModelName\": \"CapturePhoto\"  },]"
+            },
+            "schema": {
+              "$ref": "#/definitions/IntentClassifiersList"
             }
           }
         },
@@ -753,23 +594,15 @@
     "/apps/{appId}/versions/{versionId}/entities": {
       "parameters": [
         {
-          "name": "appId",
-          "in": "path",
-          "description": "Format - guid. ID of the application.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/AppIdInPath"
         },
         {
-          "name": "versionId",
-          "in": "path",
-          "description": "The task version ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/VersionIdInPath"
         }
       ],
       "post": {
         "description": "Adds an entity extractor to the application.",
-        "operationId": "Models_CreateEntityExtractor",
+        "operationId": "Model_CreateEntityExtractor",
         "parameters": [
           {
             "name": "modelCreateObject",
@@ -788,6 +621,9 @@
             "description": "The ID of the created model.",
             "examples": {
               "application/json": "\"3d73462d-98f0-4dcd-8d30-fab9e65f2e73\""
+            },
+            "schema": {
+              "$ref": "#/definitions/GuidResponse"
             }
           }
         },
@@ -797,37 +633,13 @@
       },
       "get": {
         "description": "Gets information about the entity models.",
-        "operationId": "Models_GetApplicationVersionEntityInfos",
+        "operationId": "Model_ListApplicationVersionEntityInfo",
         "parameters": [
           {
-            "name": "skip",
-            "in": "query",
-            "description": "The number of entries to skip. Default value is 0.",
-            "type": "integer",
-            "default": 0,
-            "x-nullable": "false",
-            "x-ms-enum": {
-              "name": "SkipParameter",
-              "modelAsString": false
-            },
-            "enum": [
-              0
-            ]
+            "$ref": "#/parameters/SkipInPath"
           },
           {
-            "name": "take",
-            "in": "query",
-            "description": "The number of entries to return. Maximum page size is 500. Default is 100.",
-            "type": "integer",
-            "default": 100,
-            "x-nullable": "false",
-            "x-ms-enum": {
-              "name": "TakeParameter",
-              "modelAsString": false
-            },
-            "enum": [
-              100
-            ]
+            "$ref": "#/parameters/TakeInPath"
           }
         ],
         "responses": {
@@ -835,6 +647,9 @@
             "description": "A list of entity model infos.",
             "examples": {
               "application/json": "[  {    \"id\": \"3d73462d-98f0-4dcd-8d30-fab9e65f2e73\",    \"name\": \"DayOfWeek\",    \"typeId\": 1,    \"readableType\": \"Entity Extractor\"  },  {    \"id\": \"b8e31be4-300f-455e-894b-6f079abca0a2\",    \"name\": \"$Camera.AppName\",    \"typeId\": 1,    \"readableType\": \"Entity Extractor\",    \"customPrebuiltDomainName\": \"Camera\",    \"customPrebuiltModelName\": \"AppName\"  }]"
+            },
+            "schema": {
+              "$ref": "#/definitions/EntityExtractorsList"
             }
           }
         },
@@ -846,23 +661,15 @@
     "/apps/{appId}/versions/{versionId}/hierarchicalentities": {
       "parameters": [
         {
-          "name": "appId",
-          "in": "path",
-          "description": "Format - guid. ID of the application.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/AppIdInPath"
         },
         {
-          "name": "versionId",
-          "in": "path",
-          "description": "The task version ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/VersionIdInPath"
         }
       ],
       "post": {
         "description": "Adds a hierarchical entity extractor to the application version.",
-        "operationId": "Models_CreateHierarchicalEntityExtractor",
+        "operationId": "Model_CreateHierarchicalEntityExtractor",
         "parameters": [
           {
             "name": "hierarchicalModelCreateObject",
@@ -881,6 +688,9 @@
             "description": "The ID of the created model.",
             "examples": {
               "application/json": "\"fe559c31-9778-42ea-ba45-94e0bd7cf767\""
+            },
+            "schema": {
+              "$ref": "#/definitions/GuidResponse"
             }
           }
         },
@@ -890,37 +700,13 @@
       },
       "get": {
         "description": "Gets information about the hierarchical entity models.",
-        "operationId": "Models_GetApplicationVersionHierarchicalEntityInfos",
+        "operationId": "Model_ListApplicationVersionHierarchicalEntityInfo",
         "parameters": [
           {
-            "name": "skip",
-            "in": "query",
-            "description": "The number of entries to skip. Default value is 0.",
-            "type": "integer",
-            "default": 0,
-            "x-nullable": "false",
-            "x-ms-enum": {
-              "name": "SkipParameter",
-              "modelAsString": false
-            },
-            "enum": [
-              0
-            ]
+            "$ref": "#/parameters/SkipInPath"
           },
           {
-            "name": "take",
-            "in": "query",
-            "description": "The number of entries to return. Maximum page size is 500. Default is 100.",
-            "type": "integer",
-            "default": 100,
-            "x-nullable": "false",
-            "x-ms-enum": {
-              "name": "TakeParameter",
-              "modelAsString": false
-            },
-            "enum": [
-              100
-            ]
+            "$ref": "#/parameters/TakeInPath"
           }
         ],
         "responses": {
@@ -928,6 +714,9 @@
             "description": "A list of hierarchical entity model infos.",
             "examples": {
               "application/json": "[  {    \"id\": \"fe559c31-9778-42ea-ba45-94e0bd7cf767\",    \"name\": \"Location\",    \"typeId\": 3,    \"readableType\": \"Hierarchical Entity Extractor\",    \"children\": [      {        \"id\": \"ec076676-d8d9-42fa-a44e-87989c0a2f82\",        \"name\": \"From\"      },      {        \"id\": \"63ebd752-4e81-4ce7-a698-b59b82bf5519\",        \"name\": \"To\"      }    ]  }]"
+            },
+            "schema": {
+              "$ref": "#/definitions/HierarchicalEntityExtractorsList"
             }
           }
         },
@@ -939,23 +728,15 @@
     "/apps/{appId}/versions/{versionId}/compositeentities": {
       "parameters": [
         {
-          "name": "appId",
-          "in": "path",
-          "description": "Format - guid. ID of the application.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/AppIdInPath"
         },
         {
-          "name": "versionId",
-          "in": "path",
-          "description": "The task version ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/VersionIdInPath"
         }
       ],
       "post": {
         "description": "Adds a composite entity extractor to the application.",
-        "operationId": "Models_CreateCompositeEntityExtractor",
+        "operationId": "Model_CreateCompositeEntityExtractor",
         "parameters": [
           {
             "name": "hierarchicalModelCreateObject",
@@ -974,6 +755,9 @@
             "description": "The ID of the created Model.",
             "examples": {
               "application/json": "\"bc1bae43-7904-48ad-a165-88b1910174f9\""
+            },
+            "schema": {
+              "$ref": "#/definitions/GuidResponse"
             }
           }
         },
@@ -983,37 +767,13 @@
       },
       "get": {
         "description": "Gets information about the composite entity models.",
-        "operationId": "Models_GetApplicationVersionCompositeEntityInfos",
+        "operationId": "Model_ListApplicationVersionCompositeEntityInfo",
         "parameters": [
           {
-            "name": "skip",
-            "in": "query",
-            "description": "The number of entries to skip. Default value is 0.",
-            "type": "integer",
-            "default": 0,
-            "x-nullable": "false",
-            "x-ms-enum": {
-              "name": "SkipParameter",
-              "modelAsString": false
-            },
-            "enum": [
-              0
-            ]
+            "$ref": "#/parameters/SkipInPath"
           },
           {
-            "name": "take",
-            "in": "query",
-            "description": "The number of entries to return. Maximum page size is 500. Default is 100.",
-            "type": "integer",
-            "default": 100,
-            "x-nullable": "false",
-            "x-ms-enum": {
-              "name": "TakeParameter",
-              "modelAsString": false
-            },
-            "enum": [
-              100
-            ]
+            "$ref": "#/parameters/TakeInPath"
           }
         ],
         "responses": {
@@ -1021,6 +781,9 @@
             "description": "A list of composite entity model infos.",
             "examples": {
               "application/json": "[  {    \"id\": \"bc1bae43-7904-48ad-a165-88b1910174f9\",    \"name\": \"Reservation\",    \"typeId\": 4,    \"readableType\": \"Composite Entity Extractor\",    \"children\": [      {        \"id\": \"63ebd752-4e81-4ce7-a698-b59b82bf5519\",        \"name\": \"Location::To\"      },      {        \"id\": \"a18eaa87-ecd9-4a67-a951-e70cf5b87c7e\",        \"name\": \"datetime\"      }    ]  }]"
+            },
+            "schema": {
+              "$ref": "#/definitions/CompositeEntityExtractorsList"
             }
           }
         },
@@ -1032,23 +795,15 @@
     "/apps/{appId}/versions/{versionId}/closedlists": {
       "parameters": [
         {
-          "name": "appId",
-          "in": "path",
-          "description": "Format - guid. ID of the application.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/AppIdInPath"
         },
         {
-          "name": "versionId",
-          "in": "path",
-          "description": "The task version ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/VersionIdInPath"
         }
       ],
       "post": {
         "description": "Adds a closed list model to the application.",
-        "operationId": "Models_CreateClosedListEntityModel",
+        "operationId": "Model_CreateListEntityModel",
         "parameters": [
           {
             "name": "closedListModelCreateObject",
@@ -1056,7 +811,7 @@
             "schema": {
               "$ref": "#/definitions/ClosedListModelCreateObject"
             },
-            "description": "A model object containing the name and words for the new closed list entity extractor."
+            "description": "A model object containing the name and words for the new list entity extractor."
           }
         ],
         "consumes": [
@@ -1067,6 +822,9 @@
             "description": "The ID of the created model.",
             "examples": {
               "application/json": "\"8713b104-78ec-4c4f-9f96-f2e53562cc16\""
+            },
+            "schema": {
+              "$ref": "#/definitions/GuidResponse"
             }
           }
         },
@@ -1075,45 +833,24 @@
         ]
       },
       "get": {
-        "description": "Gets information about the closedlist models.",
-        "operationId": "Models_GetApplicationVersionClosedListInfos",
+        "description": "Gets information about list entities in the specified LUIS app.",
+        "operationId": "Model_ListApplicationVersionListEntityInfo",
         "parameters": [
           {
-            "name": "skip",
-            "in": "query",
-            "description": "The number of entries to skip. Default value is 0.",
-            "type": "integer",
-            "default": 0,
-            "x-nullable": "false",
-            "x-ms-enum": {
-              "name": "SkipParameter",
-              "modelAsString": false
-            },
-            "enum": [
-              0
-            ]
+            "$ref": "#/parameters/SkipInPath"
           },
           {
-            "name": "take",
-            "in": "query",
-            "description": "The number of entries to return. Maximum page size is 500. Default is 100.",
-            "type": "integer",
-            "default": 100,
-            "x-nullable": "false",
-            "x-ms-enum": {
-              "name": "TakeParameter",
-              "modelAsString": false
-            },
-            "enum": [
-              100
-            ]
+            "$ref": "#/parameters/TakeInPath"
           }
         ],
         "responses": {
           "200": {
-            "description": "A list of closedlist entity model infos.",
+            "description": "A list that contains information about each list entity in the LUIS app.",
             "examples": {
               "application/json": "[  {    \"id\": \"8713b104-78ec-4c4f-9f96-f2e53562cc16\",    \"name\": \"States\",    \"typeId\": 5,    \"readableType\": \"Closed List Entity Extractor\",    \"subLists\": [      {        \"id\": 1,        \"canonicalForm\": \"new york\",        \"list\": [          \"ny\",          \"new york\"        ]      },      {        \"id\": 2,        \"canonicalForm\": \"washington\",        \"list\": [          \"washington\",          \"wa\"        ]      },      {        \"id\": 3,        \"canonicalForm\": \"california\",        \"list\": [          \"california\",          \"ca\",          \"calif.\",          \"cal.\"        ]      }    ]  }]"
+            },
+            "schema": {
+              "$ref": "#/definitions/ClosedListEntityExtractorsList"
             }
           }
         },
@@ -1125,23 +862,15 @@
     "/apps/{appId}/versions/{versionId}/prebuilts": {
       "parameters": [
         {
-          "name": "appId",
-          "in": "path",
-          "description": "Format - guid. ID of the application.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/AppIdInPath"
         },
         {
-          "name": "versionId",
-          "in": "path",
-          "description": "The task version ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/VersionIdInPath"
         }
       ],
       "post": {
         "description": "Adds a list of prebuilt entity extractors to the application.",
-        "operationId": "Models_AddPrebuiltEntityExtractors",
+        "operationId": "Model_AddPrebuiltEntityExtractors",
         "parameters": [
           {
             "name": "prebuiltExtractorNames",
@@ -1160,6 +889,9 @@
             "description": "An array of the created prebuilt extractor infos.",
             "examples": {
               "application/json": "[  {    \"id\": \"a18eaa87-ecd9-4a67-a951-e70cf5b87c7e\",    \"name\": \"datetime\",    \"typeId\": 2,    \"readableType\": \"Prebuilt Entity Extractor\"  }]"
+            },
+            "schema": {
+              "$ref": "#/definitions/PrebuiltEntityExtractorsList"
             }
           }
         },
@@ -1169,37 +901,13 @@
       },
       "get": {
         "description": "Gets information about the prebuilt entity models.",
-        "operationId": "Models_GetApplicationVersionPrebuiltInfos",
+        "operationId": "Model_ListApplicationVersionPrebuiltInfo",
         "parameters": [
           {
-            "name": "skip",
-            "in": "query",
-            "description": "The number of entries to skip. Default value is 0.",
-            "type": "integer",
-            "default": 0,
-            "x-nullable": "false",
-            "x-ms-enum": {
-              "name": "SkipParameter",
-              "modelAsString": false
-            },
-            "enum": [
-              0
-            ]
+            "$ref": "#/parameters/SkipInPath"
           },
           {
-            "name": "take",
-            "in": "query",
-            "description": "The number of entries to return. Maximum page size is 500. Default is 100.",
-            "type": "integer",
-            "default": 100,
-            "x-nullable": "false",
-            "x-ms-enum": {
-              "name": "TakeParameter",
-              "modelAsString": false
-            },
-            "enum": [
-              100
-            ]
+            "$ref": "#/parameters/TakeInPath"
           }
         ],
         "responses": {
@@ -1207,6 +915,9 @@
             "description": "A list of prebuilt entity models infos.",
             "examples": {
               "application/json": "[  {    \"id\": \"a18eaa87-ecd9-4a67-a951-e70cf5b87c7e\",    \"name\": \"datetime\",    \"typeId\": 2,    \"readableType\": \"Prebuilt Entity Extractor\"  }]"
+            },
+            "schema": {
+              "$ref": "#/definitions/PrebuiltEntityExtractorsList"
             }
           }
         },
@@ -1218,21 +929,13 @@
     "/apps/{appId}/versions/{versionId}/listprebuilts": {
       "get": {
         "description": "Gets all the available prebuilt entity extractors for the application.",
-        "operationId": "Models_GetAvailablePrebuiltEntityExtractors",
+        "operationId": "Model_ListAvailablePrebuiltEntityExtractors",
         "parameters": [
           {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/AppIdInPath"
           },
           {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/VersionIdInPath"
           }
         ],
         "responses": {
@@ -1251,51 +954,19 @@
     "/apps/{appId}/versions/{versionId}/models": {
       "get": {
         "description": "Gets information about the application version models.",
-        "operationId": "Models_GetApplicationVersionModelInfos",
+        "operationId": "Model_ListApplicationVersionModelInfo",
         "parameters": [
           {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/AppIdInPath"
           },
           {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/VersionIdInPath"
           },
           {
-            "name": "skip",
-            "in": "query",
-            "description": "The number of entries to skip. Default value is 0.",
-            "type": "integer",
-            "default": 0,
-            "x-nullable": "false",
-            "x-ms-enum": {
-              "name": "SkipParameter",
-              "modelAsString": false
-            },
-            "enum": [
-              0
-            ]
+            "$ref": "#/parameters/SkipInPath"
           },
           {
-            "name": "take",
-            "in": "query",
-            "description": "The number of entries to return. Maximum page size is 500. Default is 100.",
-            "type": "integer",
-            "default": 100,
-            "x-nullable": "false",
-            "x-ms-enum": {
-              "name": "TakeParameter",
-              "modelAsString": false
-            },
-            "enum": [
-              100
-            ]
+            "$ref": "#/parameters/TakeInPath"
           }
         ],
         "responses": {
@@ -1303,6 +974,9 @@
             "description": "A list of application models infos.",
             "examples": {
               "application/json": "[  {    \"id\": \"227a71ed-7d4b-4dce-8f3a-16c4e5cc06e8\",    \"name\": \"BookFlight\",    \"typeId\": 0,    \"readableType\": \"Intent Classifier\"  },  {    \"id\": \"a18eaa87-ecd9-4a67-a951-e70cf5b87c7e\",    \"name\": \"datetime\",    \"typeId\": 2,    \"readableType\": \"Prebuilt Entity Extractor\"  },  {    \"id\": \"3d73462d-98f0-4dcd-8d30-fab9e65f2e73\",    \"name\": \"DayOfWeek\",    \"typeId\": 1,    \"readableType\": \"Entity Extractor\"  },  {    \"id\": \"fe559c31-9778-42ea-ba45-94e0bd7cf767\",    \"name\": \"Location\",    \"typeId\": 3,    \"readableType\": \"Hierarchical Entity Extractor\",    \"children\": [      {        \"id\": \"ec076676-d8d9-42fa-a44e-87989c0a2f82\",        \"name\": \"From\"      },      {        \"id\": \"63ebd752-4e81-4ce7-a698-b59b82bf5519\",        \"name\": \"To\"      }    ]  },  {    \"id\": \"8285a9ee-6bc0-4409-87f4-82d539f70529\",    \"name\": \"None\",    \"typeId\": 0,    \"readableType\": \"Intent Classifier\"  },  {    \"id\": \"bc1bae43-7904-48ad-a165-88b1910174f9\",    \"name\": \"Reservation\",    \"typeId\": 4,    \"readableType\": \"Composite Entity Extractor\",    \"children\": [      {        \"id\": \"63ebd752-4e81-4ce7-a698-b59b82bf5519\",        \"name\": \"Location::To\"      },      {        \"id\": \"a18eaa87-ecd9-4a67-a951-e70cf5b87c7e\",        \"name\": \"datetime\"      }    ]  },  {    \"id\": \"8713b104-78ec-4c4f-9f96-f2e53562cc16\",    \"name\": \"States\",    \"typeId\": 5,    \"readableType\": \"Closed List Entity Extractor\",    \"subLists\": [      {        \"id\": 1,        \"canonicalForm\": \"new york\",        \"list\": [          \"ny\",          \"new york\"        ]      },      {        \"id\": 2,        \"canonicalForm\": \"washington\",        \"list\": [          \"washington\",          \"wa\"        ]      },      {        \"id\": 3,        \"canonicalForm\": \"california\",        \"list\": [          \"california\",          \"ca\",          \"calif.\",          \"cal.\"        ]      }    ]  },  {    \"id\": \"b8e31be4-300f-455e-894b-6f079abca0a2\",    \"name\": \"$Camera.AppName\",    \"typeId\": 1,    \"readableType\": \"Entity Extractor\",    \"customPrebuiltDomainName\": \"Camera\",    \"customPrebuiltModelName\": \"AppName\"  },  {    \"id\": \"9500536f-ffec-4fab-93ad-6268abb0f73c\",    \"name\": \"$Camera.CapturePhoto\",    \"typeId\": 0,    \"readableType\": \"Intent Classifier\",    \"customPrebuiltDomainName\": \"Camera\",    \"customPrebuiltModelName\": \"CapturePhoto\"  }]"
+            },
+            "schema": {
+              "$ref": "#/definitions/ModelsResponseObject"
             }
           }
         },
@@ -1314,30 +988,18 @@
     "/apps/{appId}/versions/{versionId}/intents/{intentId}": {
       "parameters": [
         {
-          "name": "appId",
-          "in": "path",
-          "description": "Format - guid. ID of the application.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/AppIdInPath"
         },
         {
-          "name": "versionId",
-          "in": "path",
-          "description": "The task version ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/VersionIdInPath"
         },
         {
-          "name": "intentId",
-          "in": "path",
-          "description": "Format - guid. The intent classifier ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/IntentIdInPath"
         }
       ],
       "get": {
         "description": "Gets information about the intent model.",
-        "operationId": "Models_GetIntentInfo",
+        "operationId": "Model_GetIntentInfo",
         "responses": {
           "200": {
             "description": "An intent model info.",
@@ -1348,6 +1010,9 @@
                 "typeId": 0,
                 "readableType": "Intent Classifier"
               }
+            },
+            "schema": {
+              "$ref": "#/definitions/IntentClassifier"
             }
           }
         },
@@ -1357,7 +1022,7 @@
       },
       "put": {
         "description": "Updates the name of an intent classifier.",
-        "operationId": "Models_RenameIntentModel",
+        "operationId": "Model_RenameIntentModel",
         "parameters": [
           {
             "name": "modelUpdateObject",
@@ -1379,7 +1044,7 @@
       },
       "delete": {
         "description": "Deletes an intent classifier from the application.",
-        "operationId": "Models_DeleteIntentModel",
+        "operationId": "Model_DeleteIntentModel",
         "responses": {
           "200": {
             "description": ""
@@ -1390,18 +1055,10 @@
     "/apps/{appId}/versions/{versionId}/entities/{entityId}": {
       "parameters": [
         {
-          "name": "appId",
-          "in": "path",
-          "description": "Format - guid. The application ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/AppIdInPath"
         },
         {
-          "name": "versionId",
-          "in": "path",
-          "description": "The task version ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/VersionIdInPath"
         },
         {
           "name": "entityId",
@@ -1413,7 +1070,7 @@
       ],
       "get": {
         "description": "Gets information about the entity model.",
-        "operationId": "Models_GetEntityInfo",
+        "operationId": "Model_GetEntityInfo",
         "responses": {
           "200": {
             "description": "An entity model info.",
@@ -1424,6 +1081,9 @@
                 "typeId": 1,
                 "readableType": "Entity Extractor"
               }
+            },
+            "schema": {
+              "$ref": "#/definitions/EntityExtractor"
             }
           }
         },
@@ -1433,7 +1093,7 @@
       },
       "put": {
         "description": "Updates the name of an entity extractor.",
-        "operationId": "Models_RenameEntityModel",
+        "operationId": "Model_RenameEntityModel",
         "parameters": [
           {
             "name": "modelUpdateObject",
@@ -1455,7 +1115,7 @@
       },
       "delete": {
         "description": "Deletes an entity extractor from the application.",
-        "operationId": "Models_DeleteEntityModel",
+        "operationId": "Model_DeleteEntityModel",
         "responses": {
           "200": {
             "description": ""
@@ -1466,30 +1126,18 @@
     "/apps/{appId}/versions/{versionId}/hierarchicalentities/{hEntityId}": {
       "parameters": [
         {
-          "name": "appId",
-          "in": "path",
-          "description": "Format - guid. The application ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/AppIdInPath"
         },
         {
-          "name": "versionId",
-          "in": "path",
-          "description": "The task version ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/VersionIdInPath"
         },
         {
-          "name": "hEntityId",
-          "in": "path",
-          "description": "Format - guid. The hierarchical entity extractor ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/HEntityIdInPath"
         }
       ],
       "get": {
         "description": "Gets information about the hierarchical entity model.",
-        "operationId": "Models_GetHierarchicalEntityInfo",
+        "operationId": "Model_GetHierarchicalEntityInfo",
         "responses": {
           "200": {
             "description": "A hierarchical entity model info.",
@@ -1510,6 +1158,9 @@
                   }
                 ]
               }
+            },
+            "schema": {
+              "$ref": "#/definitions/HierarchicalEntityExtractor"
             }
           }
         },
@@ -1519,7 +1170,7 @@
       },
       "put": {
         "description": "Updates the name and children of a hierarchical entity model.",
-        "operationId": "Models_UpdateHierarchicalEntityModel",
+        "operationId": "Model_UpdateHierarchicalEntityModel",
         "parameters": [
           {
             "name": "hierarchicalModelUpdateObject",
@@ -1541,7 +1192,7 @@
       },
       "delete": {
         "description": "Deletes a hierarchical entity extractor from the application version.",
-        "operationId": "Models_DeleteHierarchicalEntityModel",
+        "operationId": "Model_DeleteHierarchicalEntityModel",
         "responses": {
           "200": {
             "description": ""
@@ -1552,30 +1203,18 @@
     "/apps/{appId}/versions/{versionId}/compositeentities/{cEntityId}": {
       "parameters": [
         {
-          "name": "appId",
-          "in": "path",
-          "description": "Format - guid. The application ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/AppIdInPath"
         },
         {
-          "name": "versionId",
-          "in": "path",
-          "description": "The task version ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/VersionIdInPath"
         },
         {
-          "name": "cEntityId",
-          "in": "path",
-          "description": "Format - guid. The composite entity extractor ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/CEntityIdInPath"
         }
       ],
       "get": {
         "description": "Gets information about the composite entity model.",
-        "operationId": "Models_GetCompositeEntityInfo",
+        "operationId": "Model_GetCompositeEntityInfo",
         "responses": {
           "200": {
             "description": "The composite entity model info.",
@@ -1596,6 +1235,9 @@
                   }
                 ]
               }
+            },
+            "schema": {
+              "$ref": "#/definitions/CompositeEntityExtractor"
             }
           }
         },
@@ -1605,7 +1247,7 @@
       },
       "put": {
         "description": "Updates the composite entity extractor.",
-        "operationId": "Models_UpdateCompositeEntityModel",
+        "operationId": "Model_UpdateCompositeEntityModel",
         "parameters": [
           {
             "name": "hierarchicalModelUpdateObject",
@@ -1627,7 +1269,7 @@
       },
       "delete": {
         "description": "Deletes a composite entity extractor from the application.",
-        "operationId": "Models_DeleteCompositeEntityModel",
+        "operationId": "Model_DeleteCompositeEntityModel",
         "responses": {
           "200": {
             "description": ""
@@ -1638,30 +1280,22 @@
     "/apps/{appId}/versions/{versionId}/closedlists/{clEntityId}": {
       "parameters": [
         {
-          "name": "appId",
-          "in": "path",
-          "description": "Format - guid. The application ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/AppIdInPath"
         },
         {
-          "name": "versionId",
-          "in": "path",
-          "description": "The task version ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/VersionIdInPath"
         },
         {
           "name": "clEntityId",
           "in": "path",
-          "description": "Format - guid. The closed list model ID.",
+          "description": "A GUID containing the ID of the list entity.",
           "required": true,
           "type": "string"
         }
       ],
       "get": {
         "description": "Gets information of a closed list model.",
-        "operationId": "Models_GetClosedListEntityInfo",
+        "operationId": "Model_GetListEntityInfo",
         "responses": {
           "200": {
             "description": "The closed list model info.",
@@ -1700,6 +1334,9 @@
                   }
                 ]
               }
+            },
+            "schema": {
+              "$ref": "#/definitions/ClosedListEntityExtractor"
             }
           }
         },
@@ -1708,8 +1345,8 @@
         ]
       },
       "put": {
-        "description": "Updates the closed list model.",
-        "operationId": "Models_UpdateClosedListEntityModel",
+        "description": "Updates the specified list entity.",
+        "operationId": "Model_UpdateListEntityModel",
         "parameters": [
           {
             "name": "closedListModelUpdateObject",
@@ -1730,14 +1367,14 @@
         }
       },
       "patch": {
-        "description": "Adds a batch of sublists to an existing closedlist.",
-        "operationId": "Models_PatchClosedListEntityModel",
+        "description": "Adds a batch of sublists to an existing list entity.",
+        "operationId": "Model_AddBatchListEntityModel",
         "parameters": [
           {
-            "name": "closedListModelPatchObject",
+            "name": "closedListModelBatchObject",
             "in": "body",
             "schema": {
-              "$ref": "#/definitions/ClosedListModelPatchObject"
+              "$ref": "#/definitions/ClosedListModelBatchObject"
             },
             "description": "A json object containing words list batch."
           }
@@ -1752,8 +1389,8 @@
         }
       },
       "delete": {
-        "description": "Deletes a closed list model from the application.",
-        "operationId": "Models_DeleteClosedListEntityModel",
+        "description": "Deletes a list entity from the application.",
+        "operationId": "Model_DeleteListEntityModel",
         "responses": {
           "200": {
             "description": ""
@@ -1764,18 +1401,10 @@
     "/apps/{appId}/versions/{versionId}/prebuilts/{prebuiltId}": {
       "parameters": [
         {
-          "name": "appId",
-          "in": "path",
-          "description": "Format - guid. The application ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/AppIdInPath"
         },
         {
-          "name": "versionId",
-          "in": "path",
-          "description": "The task version ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/VersionIdInPath"
         },
         {
           "name": "prebuiltId",
@@ -1787,7 +1416,7 @@
       ],
       "get": {
         "description": "Gets information about the prebuilt entity model.",
-        "operationId": "Models_GetPrebuiltInfo",
+        "operationId": "Model_GetPrebuiltInfo",
         "responses": {
           "200": {
             "description": "A prebuilt entity models info.",
@@ -1798,6 +1427,9 @@
                 "typeId": 2,
                 "readableType": "Prebuilt Entity Extractor"
               }
+            },
+            "schema": {
+              "$ref": "#/definitions/PrebuiltEntityExtractor"
             }
           }
         },
@@ -1807,8 +1439,7 @@
       },
       "delete": {
         "description": "Deletes a prebuilt entity extractor from the application.",
-        "operationId": "Models_DeletePrebuiltModel",
-
+        "operationId": "Model_DeletePrebuiltModel",
         "responses": {
           "200": {
             "description": ""
@@ -1819,23 +1450,15 @@
     "/apps/{appId}/versions/{versionId}/closedlists/{clEntityId}/sublists/{subListId}": {
       "parameters": [
         {
-          "name": "appId",
-          "in": "path",
-          "description": "Format - guid. The application ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/AppIdInPath"
         },
         {
-          "name": "versionId",
-          "in": "path",
-          "description": "The task version ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/VersionIdInPath"
         },
         {
           "name": "clEntityId",
           "in": "path",
-          "description": "Format - guid. The closed list entity extractor ID.",
+          "description": "A GUID that specifies the ID of the list entity.",
           "required": true,
           "type": "string"
         },
@@ -1849,7 +1472,7 @@
       ],
       "delete": {
         "description": "Deletes a sublist of a specific closed list model.",
-        "operationId": "Models_DeleteSubList",
+        "operationId": "Model_DeleteSubList",
         "responses": {
           "200": {
             "description": ""
@@ -1858,7 +1481,7 @@
       },
       "put": {
         "description": "Updates one of the closed list's sublists",
-        "operationId": "Models_UpdateSubList",
+        "operationId": "Model_UpdateSubList",
         "parameters": [
           {
             "name": "wordListBaseUpdateObject",
@@ -1882,43 +1505,19 @@
     "/apps/{appId}/versions/{versionId}/intents/{intentId}/suggest": {
       "get": {
         "description": "Suggests examples that would improve the accuracy of the intent model.",
-        "operationId": "Models_SuggestEndpointQueriesForIntents",
+        "operationId": "Model_SuggestEndpointQueriesForIntents",
         "parameters": [
           {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/AppIdInPath"
           },
           {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/VersionIdInPath"
           },
           {
-            "name": "intentId",
-            "in": "path",
-            "description": "Format - guid. The target intent classifier model to enhance.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/IntentIdInPath"
           },
           {
-            "name": "take",
-            "in": "query",
-            "description": "Maximum number of queries to be returned. Default is set to 10. Maximum is 500.",
-            "type": "integer",
-            "default": 10,
-            "x-nullable": "false",
-            "x-ms-enum": {
-              "name": "QueryReturnNumberParameter",
-              "modelAsString": false
-            },
-            "enum": [
-              10
-            ]
+            "$ref": "#/parameters/TakeInPath"
           }
         ],
         "responses": {
@@ -1937,21 +1536,13 @@
     "/apps/{appId}/versions/{versionId}/entities/{entityId}/suggest": {
       "get": {
         "description": "Suggests examples that would improve the accuracy of the entity model.",
-        "operationId": "Models_SuggestEndpointQueriesForEntities",
+        "operationId": "Model_SuggestEndpointQueriesForEntities",
         "parameters": [
           {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/AppIdInPath"
           },
           {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/VersionIdInPath"
           },
           {
             "name": "entityId",
@@ -1961,19 +1552,7 @@
             "type": "string"
           },
           {
-            "name": "take",
-            "in": "query",
-            "description": "Maximum number of queries to be returned. Default is set to 10. Maximum is 500.",
-            "type": "integer",
-            "default": 10,
-            "x-nullable": "false",
-            "x-ms-enum": {
-              "name": "QueryReturnNumberParameter",
-              "modelAsString": false
-            },
-            "enum": [
-              10
-            ]
+            "$ref": "#/parameters/TakeInPath"
           }
         ],
         "responses": {
@@ -2011,6 +1590,9 @@
             "description": "The ID of the created application.",
             "examples": {
               "application/json": "\"363187f1-c573-46b3-bc4c-ae01d686e68e\""
+            },
+            "schema": {
+              "$ref": "#/definitions/GuidResponse"
             }
           }
         },
@@ -2023,34 +1605,10 @@
         "operationId": "Apps_GetUserApplications",
         "parameters": [
           {
-            "name": "skip",
-            "in": "query",
-            "description": "The number of entries to skip. Default value is 0.",
-            "type": "integer",
-            "default": 0,
-            "x-nullable": "false",
-            "x-ms-enum": {
-              "name": "SkipParameter",
-              "modelAsString": false
-            },
-            "enum": [
-              0
-            ]
+            "$ref": "#/parameters/SkipInPath"
           },
           {
-            "name": "take",
-            "in": "query",
-            "description": "The number of entries to return. Maximum page size is 500. Default is 100.",
-            "type": "integer",
-            "default": 100,
-            "x-nullable": "false",
-            "x-ms-enum": {
-              "name": "TakeParameter",
-              "modelAsString": false
-            },
-            "enum": [
-              100
-            ]
+            "$ref": "#/parameters/TakeInPath"
           }
         ],
         "responses": {
@@ -2120,6 +1678,9 @@
                   "Italian": "ItalianDummyURL"
                 }
               }
+            },
+            "schema": {
+              "$ref": "#/definitions/PersonalAssistantsResponse"
             }
           }
         },
@@ -2131,7 +1692,7 @@
     "/apps/domains": {
       "get": {
         "description": "Gets the available application domains.",
-        "operationId": "Apps_GetApplicationDomains",
+        "operationId": "Apps_ListApplicationDomains",
         "responses": {
           "200": {
             "description": "A list object containing the available application domains.",
@@ -2148,7 +1709,7 @@
     "/apps/usagescenarios": {
       "get": {
         "description": "Gets the application available usage scenarios.",
-        "operationId": "Apps_GetApplicationUsageScenarios",
+        "operationId": "Apps_ListApplicationUsageScenarios",
         "responses": {
           "200": {
             "description": "A list object containing the available application usage scenarios.",
@@ -2165,7 +1726,7 @@
     "/apps/cultures": {
       "get": {
         "description": "Gets the supported application cultures.",
-        "operationId": "Apps_GetApplicationCultures",
+        "operationId": "Apps_ListAvailableCultures",
         "responses": {
           "200": {
             "description": "A list object containing the supported application cultures.",
@@ -2185,11 +1746,7 @@
         "operationId": "Apps_DownloadApplicationQueryLogs",
         "parameters": [
           {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/AppIdInPath"
           }
         ],
         "responses": {
@@ -2208,11 +1765,7 @@
     "/apps/{appId}": {
       "parameters": [
         {
-          "name": "appId",
-          "in": "path",
-          "description": "Format - guid. The application ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/AppIdInPath"
         }
       ],
       "get": {
@@ -2288,18 +1841,10 @@
         "operationId": "Versions_CloneVersion",
         "parameters": [
           {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/AppIdInPath"
           },
           {
-            "name": "versionId",
-            "in": "path",
-            "description": "The application version ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/VersionIdInPath"
           },
           {
             "name": "taskUpdateObject",
@@ -2332,11 +1877,7 @@
         "operationId": "Apps_PublishApplication",
         "parameters": [
           {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application version ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/AppIdInPath"
           },
           {
             "name": "applicationPublishObject",
@@ -2371,44 +1912,16 @@
     "/apps/{appId}/versions": {
       "get": {
         "description": "Gets the application versions info.",
-        "operationId": "Versions_GetApplicationVersions",
+        "operationId": "Versions_ListApplicationVersions",
         "parameters": [
           {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/AppIdInPath"
           },
           {
-            "name": "skip",
-            "in": "query",
-            "description": "The number of entries to skip. Default value is 0.",
-            "type": "integer",
-            "default": 0,
-            "x-nullable": "false",
-            "x-ms-enum": {
-              "name": "SkipParameter",
-              "modelAsString": false
-            },
-            "enum": [
-              0
-            ]
+            "$ref": "#/parameters/SkipInPath"
           },
           {
-            "name": "take",
-            "in": "query",
-            "description": "The number of entries to return. Maximum page size is 500. Default is 100.",
-            "type": "integer",
-            "default": 100,
-            "x-nullable": "false",
-            "x-ms-enum": {
-              "name": "TakeParameter",
-              "modelAsString": false
-            },
-            "enum": [
-              100
-            ]
+            "$ref": "#/parameters/TakeInPath"
           }
         ],
         "responses": {
@@ -2427,18 +1940,10 @@
     "/apps/{appId}/versions/{versionId}/": {
       "parameters": [
         {
-          "name": "appId",
-          "in": "path",
-          "description": "Format - guid. The application ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/AppIdInPath"
         },
         {
-          "name": "versionId",
-          "in": "path",
-          "description": "The task version ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/VersionIdInPath"
         }
       ],
       "get": {
@@ -2509,18 +2014,10 @@
         "operationId": "Versions_ExportApplicationVersion",
         "parameters": [
           {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application version ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/AppIdInPath"
           },
           {
-            "name": "versionId",
-            "in": "path",
-            "description": "The application ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/VersionIdInPath"
           }
         ],
         "responses": {
@@ -2619,18 +2116,10 @@
     "/apps/{appId}/versions/{versionId}/assignedkey": {
       "parameters": [
         {
-          "name": "appId",
-          "in": "path",
-          "description": "Format - guid. The application version ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/AppIdInPath"
         },
         {
-          "name": "versionId",
-          "in": "path",
-          "description": "The id of the app to get the key for.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/VersionIdInPath"
         }
       ],
       "get": {
@@ -2677,18 +2166,10 @@
     "/apps/{appId}/versions/{versionId}/externalKeys": {
       "parameters": [
         {
-          "name": "appId",
-          "in": "path",
-          "description": "Format - guid. The application ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/AppIdInPath"
         },
         {
-          "name": "versionId",
-          "in": "path",
-          "description": "The application version ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/VersionIdInPath"
         }
       ],
       "put": {
@@ -2715,7 +2196,7 @@
       },
       "get": {
         "description": "Gets the given application versions's external keys.",
-        "operationId": "Versions_GetApplicationVersionExternalApiKeys",
+        "operationId": "Versions_ListApplicationVersionExternalApiKeys",
         "responses": {
           "200": {
             "description": "An array containing the external keys.",
@@ -2737,18 +2218,10 @@
         "operationId": "Versions_DeleteApplicationVersionExternalKey",
         "parameters": [
           {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application version ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/AppIdInPath"
           },
           {
-            "name": "versionId",
-            "in": "path",
-            "description": "The application ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/VersionIdInPath"
           },
           {
             "name": "keyType",
@@ -2768,18 +2241,10 @@
     "/apps/{appId}/versions/{versionId}/train": {
       "parameters": [
         {
-          "name": "appId",
-          "in": "path",
-          "description": "Format - guid. The application ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/AppIdInPath"
         },
         {
-          "name": "versionId",
-          "in": "path",
-          "description": "The task version ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/VersionIdInPath"
         }
       ],
       "post": {
@@ -2787,7 +2252,10 @@
         "operationId": "Train_TrainApplicationVersion",
         "responses": {
           "202": {
-            "description": ""
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/EnqueueTrainingResponse"
+            }
           },
           "400": {
             "description": "This response can occur if either of the <b>appId</b> or <b>versionId</b> parameters are incorrect.",
@@ -2874,6 +2342,9 @@
             "description": "A list containing subscription keys info.",
             "examples": {
               "application/json": "[  {    \"subscriptionKey\": \"dummykey\",    \"subscriptionName\": \"DummyName\",    \"subscriptionRegion\":\"westus\"  }]"
+            },
+            "schema": {
+              "$ref": "#/definitions/SubscriptionKeyList"
             }
           }
         },
@@ -3006,11 +2477,7 @@
         "operationId": "Versions_ImportVersionToApplication",
         "parameters": [
           {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/AppIdInPath"
           },
           {
             "name": "versionId",
@@ -3046,11 +2513,7 @@
     "/apps/{appId}/settings": {
       "parameters": [
         {
-          "name": "appId",
-          "in": "path",
-          "description": "Format - guid. The application ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/AppIdInPath"
         }
       ],
       "get": {
@@ -3100,18 +2563,10 @@
         "operationId": "Versions_DeleteUnlabelledUtterance",
         "parameters": [
           {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/AppIdInPath"
           },
           {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/VersionIdInPath"
           },
           {
             "name": "body",
@@ -3135,11 +2590,7 @@
     "/apps/{appId}/permissions": {
       "parameters": [
         {
-          "name": "appId",
-          "in": "path",
-          "description": "Format - guid. The application ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/AppIdInPath"
         }
       ],
       "get": {
@@ -3224,11 +2675,7 @@
         "operationId": "Apps_GetEndpoints",
         "parameters": [
           {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/AppIdInPath"
           }
         ],
         "responses": {
@@ -3251,22 +2698,14 @@
     },
     "/apps/{appId}/versions/{versionId}/closedlists/{clEntityId}/sublists": {
       "post": {
-        "description": "Adds a list to an existing closed list",
-        "operationId": "Models_AddSubList",
+        "description": "Adds a list to an existing list entity.",
+        "operationId": "Model_AddSubList",
         "parameters": [
           {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/AppIdInPath"
           },
           {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/VersionIdInPath"
           },
           {
             "name": "clEntityId",
@@ -3292,6 +2731,9 @@
             "description": "The id of the newly created list",
             "examples": {
               "application/json": "90440"
+            },
+            "schema": {
+              "$ref": "#/definitions/ApplicationsInfoList"
             }
           }
         },
@@ -3303,19 +2745,13 @@
     "/apps/{appId}/versions/{versionId}/customprebuiltdomains": {
       "post": {
         "description": "Adds a customizable prebuilt domain along with all of its models to this application.",
-        "operationId": "Models_AddCustomPrebuiltDomainToApplication",
+        "operationId": "Model_AddCustomPrebuiltDomainToApplication",
         "parameters": [
           {
-            "name": "appId",
-            "type": "string",
-            "in": "path",
-            "required": true
+            "$ref": "#/parameters/AppIdInPath"
           },
           {
-            "name": "versionId",
-            "type": "string",
-            "in": "path",
-            "required": true
+            "$ref": "#/parameters/VersionIdInPath"
           },
           {
             "name": "prebuiltDomainCreateBaseObject",
@@ -3334,6 +2770,9 @@
             "description": "An array of the created custom prebuilt domain model Ids.",
             "examples": {
               "application/json": "[  \"9500536f-ffec-4fab-93ad-6268abb0f73c\",  \"72a15bcc-538a-4e59-be8c-9fdd43b5338f\",  \"3397fc83-5b1d-4f5f-b4cd-0f2169f076c6\",  \"d116d287-3e53-4bd8-8b7b-4728c58c34d1\",  \"facd34fa-86a3-4805-8bf3-b99e40043b10\",  \"ad2cac73-2abf-41cb-99e2-f79d0dd6ca46\",  \"b8e31be4-300f-455e-894b-6f079abca0a2\",  \"70de3f00-3943-4a93-a88c-09392016b776\"]"
+            },
+            "schema": {
+              "$ref": "#/definitions/GuidList"
             }
           }
         },
@@ -3345,23 +2784,15 @@
     "/apps/{appId}/versions/{versionId}/customprebuiltintents": {
       "parameters": [
         {
-          "name": "appId",
-          "in": "path",
-          "description": "Format - guid. The application ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/AppIdInPath"
         },
         {
-          "name": "versionId",
-          "in": "path",
-          "description": "The task version ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/VersionIdInPath"
         }
       ],
       "post": {
         "description": "Adds a custom prebuilt intent model to the application",
-        "operationId": "Models_AddCustomPrebuiltIntentModel",
+        "operationId": "Model_AddCustomPrebuiltIntentModel",
         "parameters": [
           {
             "name": "prebuiltDomainModelCreateObject",
@@ -3380,6 +2811,9 @@
             "description": "The ID of the created model.",
             "examples": {
               "application/json": "\"c0d59374-cf44-4302-98d1-e853886a4674\""
+            },
+            "schema": {
+              "$ref": "#/definitions/GuidResponse"
             }
           }
         },
@@ -3389,12 +2823,15 @@
       },
       "get": {
         "description": "Gets custom prebuilt intents information of this application",
-        "operationId": "Models_GetCustomPrebuiltDomainIntentsInfo",
+        "operationId": "Model_GetCustomPrebuiltDomainIntentsInfo",
         "responses": {
           "200": {
             "description": "Returns a list of all custom prebuilt intents and their representations.",
             "examples": {
               "application/json": "[  {    \"id\": \"9500536f-ffec-4fab-93ad-6268abb0f73c\",    \"name\": \"$Camera.CapturePhoto\",    \"typeId\": 0,    \"readableType\": \"Intent Classifier\",    \"customPrebuiltDomainName\": \"Camera\",    \"customPrebuiltModelName\": \"CapturePhoto\"  },  {    \"id\": \"facd34fa-86a3-4805-8bf3-b99e40043b10\",    \"name\": \"$Camera.CaptureScreenshot\",    \"typeId\": 0,    \"readableType\": \"Intent Classifier\",    \"customPrebuiltDomainName\": \"Camera\",    \"customPrebuiltModelName\": \"CaptureScreenshot\"  },  {    \"id\": \"d116d287-3e53-4bd8-8b7b-4728c58c34d1\",    \"name\": \"$Camera.CaptureSelfie\",    \"typeId\": 0,    \"readableType\": \"Intent Classifier\",    \"customPrebuiltDomainName\": \"Camera\",    \"customPrebuiltModelName\": \"CaptureSelfie\"  },  {    \"id\": \"ad2cac73-2abf-41cb-99e2-f79d0dd6ca46\",    \"name\": \"$Camera.CaptureVideo\",    \"typeId\": 0,    \"readableType\": \"Intent Classifier\",    \"customPrebuiltDomainName\": \"Camera\",    \"customPrebuiltModelName\": \"CaptureVideo\"  },  {    \"id\": \"70de3f00-3943-4a93-a88c-09392016b776\",    \"name\": \"$Camera.StartBroadcasting\",    \"typeId\": 0,    \"readableType\": \"Intent Classifier\",    \"customPrebuiltDomainName\": \"Camera\",    \"customPrebuiltModelName\": \"StartBroadcasting\"  },  {    \"id\": \"3397fc83-5b1d-4f5f-b4cd-0f2169f076c6\",    \"name\": \"$Camera.StopBroadcasting\",    \"typeId\": 0,    \"readableType\": \"Intent Classifier\",    \"customPrebuiltDomainName\": \"Camera\",    \"customPrebuiltModelName\": \"StopBroadcasting\"  },  {    \"id\": \"72a15bcc-538a-4e59-be8c-9fdd43b5338f\",    \"name\": \"$Camera.StopVideoRecording\",    \"typeId\": 0,    \"readableType\": \"Intent Classifier\",    \"customPrebuiltDomainName\": \"Camera\",    \"customPrebuiltModelName\": \"StopVideoRecording\"  }]"
+            },
+            "schema": {
+              "$ref": "#/definitions/ModelsResponseObject"
             }
           }
         },
@@ -3406,23 +2843,15 @@
     "/apps/{appId}/versions/{versionId}/customprebuiltentities": {
       "parameters": [
         {
-          "name": "appId",
-          "in": "path",
-          "description": "Format - guid. The application ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/AppIdInPath"
         },
         {
-          "name": "versionId",
-          "in": "path",
-          "description": "The task version ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/VersionIdInPath"
         }
       ],
       "post": {
         "description": "Adds a custom prebuilt entity model to the application",
-        "operationId": "Models_AddCustomPrebuiltEntityModel",
+        "operationId": "Model_AddCustomPrebuiltEntityModel",
         "parameters": [
           {
             "name": "prebuiltDomainModelCreateObject",
@@ -3441,6 +2870,9 @@
             "description": "The ID of the created model.",
             "examples": {
               "application/json": "\"1c2e70c1-3cbf-4e89-9703-9583b81102b9\""
+            },
+            "schema": {
+              "$ref": "#/definitions/GuidResponse"
             }
           }
         },
@@ -3450,12 +2882,15 @@
       },
       "get": {
         "description": "Gets all custom prebuilt entities information of this application",
-        "operationId": "Models_GetCustomPrebuiltDomainEntitiesInfo",
+        "operationId": "Model_GetCustomPrebuiltDomainEntitiesInfo",
         "responses": {
           "200": {
             "description": "Returns a list of all custom prebuilt entities and their representations.",
             "examples": {
               "application/json": "[  {    \"id\": \"b8e31be4-300f-455e-894b-6f079abca0a2\",    \"name\": \"$Camera.AppName\",    \"typeId\": 1,    \"readableType\": \"Entity Extractor\",    \"customPrebuiltDomainName\": \"Camera\",    \"customPrebuiltModelName\": \"AppName\"  }]"
+            },
+            "schema": {
+              "$ref": "#/definitions/ModelsResponseObject"
             }
           }
         },
@@ -3467,21 +2902,13 @@
     "/apps/{appId}/versions/{versionId}/customprebuiltmodels": {
       "get": {
         "description": "Gets all custom prebuilt models information of this application",
-        "operationId": "Models_GetCustomPrebuiltDomainModelsInfo",
+        "operationId": "Model_GetCustomPrebuiltDomainModelsInfo",
         "parameters": [
           {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/AppIdInPath"
           },
           {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/VersionIdInPath"
           }
         ],
         "responses": {
@@ -3489,6 +2916,9 @@
             "description": "Returns a list of all custom prebuilt models and their representations.",
             "examples": {
               "application/json": "[  {    \"id\": \"b8e31be4-300f-455e-894b-6f079abca0a2\",    \"name\": \"$Camera.AppName\",    \"typeId\": 1,    \"readableType\": \"Entity Extractor\",    \"customPrebuiltDomainName\": \"Camera\",    \"customPrebuiltModelName\": \"AppName\"  },  {    \"id\": \"9500536f-ffec-4fab-93ad-6268abb0f73c\",    \"name\": \"$Camera.CapturePhoto\",    \"typeId\": 0,    \"readableType\": \"Intent Classifier\",    \"customPrebuiltDomainName\": \"Camera\",    \"customPrebuiltModelName\": \"CapturePhoto\"  },  {    \"id\": \"facd34fa-86a3-4805-8bf3-b99e40043b10\",    \"name\": \"$Camera.CaptureScreenshot\",    \"typeId\": 0,    \"readableType\": \"Intent Classifier\",    \"customPrebuiltDomainName\": \"Camera\",    \"customPrebuiltModelName\": \"CaptureScreenshot\"  },  {    \"id\": \"d116d287-3e53-4bd8-8b7b-4728c58c34d1\",    \"name\": \"$Camera.CaptureSelfie\",    \"typeId\": 0,    \"readableType\": \"Intent Classifier\",    \"customPrebuiltDomainName\": \"Camera\",    \"customPrebuiltModelName\": \"CaptureSelfie\"  },  {    \"id\": \"ad2cac73-2abf-41cb-99e2-f79d0dd6ca46\",    \"name\": \"$Camera.CaptureVideo\",    \"typeId\": 0,    \"readableType\": \"Intent Classifier\",    \"customPrebuiltDomainName\": \"Camera\",    \"customPrebuiltModelName\": \"CaptureVideo\"  },  {    \"id\": \"70de3f00-3943-4a93-a88c-09392016b776\",    \"name\": \"$Camera.StartBroadcasting\",    \"typeId\": 0,    \"readableType\": \"Intent Classifier\",    \"customPrebuiltDomainName\": \"Camera\",    \"customPrebuiltModelName\": \"StartBroadcasting\"  },  {    \"id\": \"3397fc83-5b1d-4f5f-b4cd-0f2169f076c6\",    \"name\": \"$Camera.StopBroadcasting\",    \"typeId\": 0,    \"readableType\": \"Intent Classifier\",    \"customPrebuiltDomainName\": \"Camera\",    \"customPrebuiltModelName\": \"StopBroadcasting\"  },  {    \"id\": \"72a15bcc-538a-4e59-be8c-9fdd43b5338f\",    \"name\": \"$Camera.StopVideoRecording\",    \"typeId\": 0,    \"readableType\": \"Intent Classifier\",    \"customPrebuiltDomainName\": \"Camera\",    \"customPrebuiltModelName\": \"StopVideoRecording\"  }]"
+            },
+            "schema": {
+              "$ref": "#/definitions/ModelsResponseObject"
             }
           }
         },
@@ -3500,21 +2930,13 @@
     "/apps/{appId}/versions/{versionId}/customprebuiltdomains/{domainName}": {
       "delete": {
         "description": "Deletes a prebuilt domain's models from the application.",
-        "operationId": "Models_DeleteCustomPrebuiltDomainModels",
+        "operationId": "Model_DeleteCustomPrebuiltDomainModels",
         "parameters": [
           {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/AppIdInPath"
           },
           {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/VersionIdInPath"
           },
           {
             "name": "domainName",
@@ -3534,12 +2956,15 @@
     "/apps/customprebuiltdomains": {
       "get": {
         "description": "Gets all the available custom prebuilt domains for all cultures",
-        "operationId": "Apps_GetAvailableCustomPrebuiltDomains",
+        "operationId": "Apps_ListAvailableCustomPrebuiltDomains",
         "responses": {
           "200": {
             "description": "Returns a list of all custom prebuilt domains and their intents/entities representation",
             "examples": {
               "application/json": "[ {    \"name\": \"taxi\",    \"culture\": \"en-us\",    \"description\": \"A custom prebuilt domain for taxi booking\",    \"examples\": \"book taxi x on friday at 6 pm, take me to Tinga's from Westin hotel with taxi lux\",    \"intents\": [      {        \"name\": \"book_taxi\",        \"description\": \"Requests/Books taxi\",        \"examples\": \"book taxi x on friday at 6 pm\"      },      {        \"name\": \"cancel_taxi\",        \"description\": \"Cancels taxi request\",        \"examples\": \"I just called an taxi SUV , please cancel, Cancel my taxi\"      }    ],    \"entities\": [      {        \"name\": \"from_place_name\",        \"description\": \"Route starting point\",        \"examples\": \"find taxi x to take me to 9th street from space needle\"      }    ]  },  {    \"name\": \"weather\",    \"culture\": \"en-us\",    \"description\": \"A custom prebuilt domain that gets weather forecast and condition\",    \"examples\": \"Show me the weather for this weekend, What's the weather?\",    \"intents\": [      {        \"name\": \"get_forecast\",        \"description\": \"Gets weather forecast\",        \"examples\": \"What's the weather like tomorrow?\"      },      {        \"name\": \"get_condition\",        \"description\": \"Gets weather condition\",        \"examples\": \"what's the average temperature in India in September?\"      }    ],    \"entities\": [      {        \"name\": \"location\",        \"description\": \"Location of the queried weather\",        \"examples\": \"What's the weather like in Minneapolis\"      },      {        \"name\": \"unit\",        \"description\": \"Temperature measurement unit\",        \"examples\": \"Please change the weather from Fahrenheit to Celsius\"      }    ]  }]"
+            },
+            "schema": {
+              "$ref": "#/definitions/PrebuiltDomainsList"
             }
           }
         },
@@ -3568,6 +2993,9 @@
             "description": "The ID of the created application.",
             "examples": {
               "application/json": "\"739f1513-11f0-4aae-8a19-f660804e6da5\""
+            },
+            "schema": {
+              "$ref": "#/definitions/GuidResponse"
             }
           }
         },
@@ -3579,7 +3007,7 @@
     "/apps/customprebuiltdomains/{culture}": {
       "get": {
         "description": "Gets all the available custom prebuilt domains for a specific culture",
-        "operationId": "Apps_GetAvailableCustomPrebuiltDomainsForCulture",
+        "operationId": "Apps_ListAvailableCustomPrebuiltDomainsForCulture",
         "parameters": [
           {
             "name": "culture",
@@ -3594,6 +3022,9 @@
             "description": "Returns a list of all domains and their intents/entities representation for a specific culture",
             "examples": {
               "application/json": "[ {    \"name\": \"taxi\",    \"culture\": \"en-us\",    \"description\": \"A custom prebuilt domain for taxi booking\",    \"examples\": \"book taxi x on friday at 6 pm, take me to Tinga's from Westin hotel with taxi lux\",    \"intents\": [      {        \"name\": \"book_taxi\",        \"description\": \"Requests/Books taxi\",        \"examples\": \"book taxi x on friday at 6 pm\"      },      {        \"name\": \"cancel_taxi\",        \"description\": \"Cancels taxi request\",        \"examples\": \"I just called an taxi SUV , please cancel, Cancel my taxi\"      }    ],    \"entities\": [      {        \"name\": \"from_place_name\",        \"description\": \"Route starting point\",        \"examples\": \"find taxi x to take me to 9th street from space needle\"      }    ]  },  {    \"name\": \"weather\",    \"culture\": \"en-us\",    \"description\": \"A custom prebuilt domain that gets weather forecast and condition\",    \"examples\": \"Show me the weather for this weekend, What's the weather?\",    \"intents\": [      {        \"name\": \"get_forecast\",        \"description\": \"Gets weather forecast\",        \"examples\": \"What's the weather like tomorrow?\"      },      {        \"name\": \"get_condition\",        \"description\": \"Gets weather condition\",        \"examples\": \"what's the average temperature in India in September?\"      }    ],    \"entities\": [      {        \"name\": \"location\",        \"description\": \"Location of the queried weather\",        \"examples\": \"What's the weather like in Minneapolis\"      },      {        \"name\": \"unit\",        \"description\": \"Temperature measurement unit\",        \"examples\": \"Please change the weather from Fahrenheit to Celsius\"      }    ]  }]"
+            },
+            "schema": {
+              "$ref": "#/definitions/PrebuiltDomainsList"
             }
           }
         },
@@ -3605,25 +3036,13 @@
     "/apps/{appId}/versions/{versionId}/hierarchicalentities/{hEntityId}/children/{hChildId}": {
       "parameters": [
         {
-          "name": "appId",
-          "in": "path",
-          "description": "Format - guid. The application ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/AppIdInPath"
         },
         {
-          "name": "versionId",
-          "in": "path",
-          "description": "The task version ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/VersionIdInPath"
         },
         {
-          "name": "hEntityId",
-          "in": "path",
-          "description": "Format - guid. The hierarchical entity extractor parent ID.",
-          "required": true,
-          "type": "string"
+          "$ref": "#/parameters/HEntityIdInPath"
         },
         {
           "name": "hChildId",
@@ -3635,7 +3054,7 @@
       ],
       "get": {
         "description": "Gets information about the hierarchical entity child model.",
-        "operationId": "Models_GetHierarchicalEntityChildInfo",
+        "operationId": "Model_GetHierarchicalEntityChildInfo",
         "responses": {
           "200": {
             "description": "The hierarchical entity child model info.",
@@ -3655,7 +3074,7 @@
       },
       "put": {
         "description": "Renames a single child in an existing hierarchical entity model.",
-        "operationId": "Models_UpdateHierarchicalEntityChildModel",
+        "operationId": "Model_UpdateHierarchicalEntityChildModel",
         "parameters": [
           {
             "name": "body",
@@ -3677,7 +3096,7 @@
       },
       "delete": {
         "description": "Deletes a hierarchical entity extractor child from the application.",
-        "operationId": "Models_DeleteHierarchicalEntityChildModel",
+        "operationId": "Model_DeleteHierarchicalEntityChildModel",
         "responses": {
           "200": {
             "description": ""
@@ -3688,28 +3107,16 @@
     "/apps/{appId}/versions/{versionId}/hierarchicalentities/{hEntityId}/children": {
       "post": {
         "description": "Creates a single child in an existing hierarchical entity model.",
-        "operationId": "Models_CreateHierarchicalEntityChildModel",
+        "operationId": "Model_CreateHierarchicalEntityChildModel",
         "parameters": [
           {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/AppIdInPath"
           },
           {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/VersionIdInPath"
           },
           {
-            "name": "hEntityId",
-            "in": "path",
-            "description": "Format - guid. The hierarchical entity extractor ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/HEntityIdInPath"
           },
           {
             "name": "body",
@@ -3728,6 +3135,9 @@
             "description": "The ID of the created model.",
             "examples": {
               "application/json": "\"891c235f-4f42-4320-bc36-b6256b6c3f2b\""
+            },
+            "schema": {
+              "$ref": "#/definitions/GuidResponse"
             }
           }
         },
@@ -3739,28 +3149,16 @@
     "/apps/{appId}/versions/{versionId}/compositeentities/{cEntityId}/children": {
       "post": {
         "description": "Creates a single child in an existing composite entity model.",
-        "operationId": "Models_CreateCompositeEntityChildModel",
+        "operationId": "Model_CreateCompositeEntityChildModel",
         "parameters": [
           {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/AppIdInPath"
           },
           {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/VersionIdInPath"
           },
           {
-            "name": "cEntityId",
-            "in": "path",
-            "description": "Format - guid. The composite entity extractor ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/CEntityIdInPath"
           },
           {
             "name": "body",
@@ -3779,6 +3177,9 @@
             "description": "The ID of the created model.",
             "examples": {
               "application/json": "\"891c235f-4f42-4320-bc36-b6256b6c3f2b\""
+            },
+            "schema": {
+              "$ref": "#/definitions/GuidResponse"
             }
           }
         },
@@ -3790,28 +3191,16 @@
     "/apps/{appId}/versions/{versionId}/compositeentities/{cEntityId}/children/{cChildId}": {
       "delete": {
         "description": "Deletes a composite entity extractor child from the application.",
-        "operationId": "Models_DeleteCompositeEntityChildModel",
+        "operationId": "Model_DeleteCompositeEntityChildModel",
         "parameters": [
           {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/AppIdInPath"
           },
           {
-            "name": "versionId",
-            "in": "path",
-            "description": "The task version ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/VersionIdInPath"
           },
           {
-            "name": "cEntityId",
-            "in": "path",
-            "description": "Format - guid. The hierarchical entity extractor ID.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/CEntityIdInPath"
           },
           {
             "name": "cChildId",
@@ -4020,6 +3409,20 @@
         }
       }
     },
+    "JSONSubClosedListResponse": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/JSONSubClosedList"
+        }
+      ],
+      "properties": {
+        "id": {
+          "type": "number",
+          "example": "123456"
+        }
+      }
+    },
     "JSONAction": {
       "additionalProperties": false,
       "type": "object",
@@ -4151,7 +3554,7 @@
         }
       }
     },
-    "ClosedListModelPatchObject": {
+    "ClosedListModelBatchObject": {
       "additionalProperties": false,
       "type": "object",
       "properties": {
@@ -4520,6 +3923,701 @@
         }
       },
       "example": "{  \"luis_schema_version\": \"1.3.1\",  \"name\": \"DummyImportedApp\",  \"versionId\": \"0.2\",  \"desc\": \"This is my dummy imported application\",  \"culture\": \"en-us\",  \"intents\": [    {      \"name\": \"BookFlight\"    },    {      \"name\": \"GetWeather\"    },    {      \"name\": \"None\"    }  ],  \"entities\": [    {      \"name\": \"Location\",      \"children\": [        \"To\",        \"From\"      ]    }  ],  \"composites\": [],  \"closedLists\": [],  \"bing_entities\": [    \"datetime\"  ],  \"actions\": [],  \"model_features\": [    {      \"name\": \"Cities\",      \"mode\": true,      \"words\": \"Seattle,New York,Paris,Moscow,Beijin\",      \"activated\": true    }  ],  \"regex_features\": [],  \"utterances\": [    {      \"text\": \"book me a flight from redmond to new york next saturday\",      \"intent\": \"BookFlight\",      \"entities\": [        {          \"entity\": \"Location::From\",          \"startPos\": 5,          \"endPos\": 5        },        {          \"entity\": \"Location::To\",          \"startPos\": 7,          \"endPos\": 8        }      ]    },    {      \"text\": \"what's the weather like in paris?\",      \"intent\": \"GetWeather\",      \"entities\": [        {          \"entity\": \"Location\",          \"startPos\": 7,          \"endPos\": 7        }      ]    }  ]}"
+    },
+    "GuidResponse": {
+      "type": "string",
+      "example": "\"363187f1-c573-46b3-bc4c-ae01d686e68e\""
+    },
+    "FeatureIDResponse": {
+      "type": "number",
+      "example": "398102"
+    },
+    "LabeledUtterances": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/LabeledUtterance"
+      }
+    },
+    "LabeledUtterance": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number",
+          "description": "ID of Labeled Utterance."
+        },
+        "text": {
+          "type": "string",
+          "description": "what's the weather like in seattle?"
+        },
+        "tokenizedText": {
+          "type": "array",
+          "description": "the utterance tokenized",
+          "items": {
+            "type": "string"
+          }
+        },
+        "intentLabel": {
+          "type": "string"
+        },
+        "entityLabels": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/EntityLabel"
+          },
+          "x-nullable": true
+        },
+        "intentPredictions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/IntentPrediction"
+          }
+        },
+        "entityPredictions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/EntityPrediction"
+          },
+          "x-nullable": true
+        }
+      },
+      "required": [
+        "id", "text", "tokenizedText",
+        "intentLabel", "intentPredictions"
+      ]
+    },
+    "EntityLabel": {
+      "type": "object",
+      "properties": {
+        "entityName": {
+          "type": "string"
+        },
+        "startTokenIndex": {
+          "type": "number"
+        },
+        "endTokenIndex": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "entityName", "startTokenIndex", "endTokenIndex"
+      ]
+    },
+    "IntentPrediction": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "score": {
+          "type": "number"
+        }
+      }
+    },
+    "EntityPrediction": {
+      "type": "object",
+      "properties": {
+        "entityName": {
+          "type": "string"
+        },
+        "startIndex": {
+          "type": "number"
+        },
+        "endIndex": {
+          "type": "number"
+        },
+        "phrase": {
+          "type": "string",
+          "description": "The actual token(s) that comprise the entity."
+        }
+      }
+    },
+    "PersonalAssistantsResponse": {
+      "type": "object",
+      "description": "Response containing user's endpoint keys and the endpoint URLs of the prebuilt Cortana applications.",
+      "properties": {
+        "endpointKeys": {
+          "$ref": "#/definitions/EndpointKeys"   
+        },
+        "endpointUrls": {
+          "$ref": "#/definitions/PersonalAssistantUrls"
+        }
+      }
+    },
+    "EndpointKeys": {
+      "type": "array",
+      "description": "An a array of GUIDs, comprised of Azure Endpoint Keys and the Programmatic API key.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "PersonalAssistantUrls": {
+      "type": "object",
+      "description": "Endpoint URLs for prebuilt Cortana applications.",
+      "properties": {
+        "English": {
+          "type":"string"
+        },
+        "Chinese": {
+          "type":"string"
+        },
+        "French": {
+          "type":"string"
+        },
+        "Spanish": {
+          "type":"string"
+        },
+        "Italian": {
+          "type":"string"
+        }
+      }
+    },
+    "ModelsResponseObject" : {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ModelInfo"
+      }
+    },
+    "ModelInfo": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The GUID of the Entity Model."
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the Entity Model."
+        },
+        "typeId": {
+          "type": "number",
+          "description": "The type ID of the Entity Model."
+        },
+        "readableType": {
+          "$ref": "#/definitions/ReadableType"
+        }
+      },
+      "required": [
+        "readableType"
+      ],
+      "discriminator": "readableType"
+    },
+    "ModelInfoResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The GUID of the Entity Model."
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the Entity Model."
+        },
+        "typeId": {
+          "type": "number",
+          "description": "The type ID of the Entity Model."
+        },
+        "readableType": {
+          "$ref": "#/definitions/ReadableType"
+        }
+      },
+      "required": [
+        "readableType"
+      ],
+      "discriminator": "readableType",
+      "allOf": [
+        { "$ref": "#/definitions/HierarchicalEntityExtractor" },
+        { "$ref": "#/definitions/CompositeEntityExtractor"},
+        { "$ref": "#/definitions/ClosedListEntityExtractor" },
+        { "$ref": "#/definitions/IntentClassifier" },
+        { "$ref": "#/definitions/EntityExtractor" }
+      ]
+    },
+    "ReadableType": {
+      "type": "string",
+      "enum": [
+        "Entity Extractor",
+        "Hierarchical Entity Extractor",
+        "Composite Entity Extractor",
+        "Closed List Entity Extractor",
+        "Prebuilt Entity Extractor",
+        "Intent Classifier"
+      ]
+    },
+    "HierarchicalEntityExtractor": {
+      "type": "object",
+      "x-ms-discriminator-value": "Hierarchical Entity Extractor",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ModelInfo"
+        }
+      ],
+      "properties": {
+        "children": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ChildEntity"
+          }
+        }
+      }
+    },
+    "HierarchicalEntityExtractorsList": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/HierarchicalEntityExtractor"
+      }
+    },
+    "CompositeEntityExtractor": {
+      "type": "object",
+      "x-ms-discriminator-value": "Composite Entity Extractor",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ModelInfo"
+        }
+      ],
+      "properties": {
+        "children": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ChildEntity"
+          }
+        }
+      }
+    },
+    "CompositeEntityExtractorsList": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/CompositeEntityExtractor"
+      }
+    },
+    "ClosedListEntityExtractor": {
+      "type": "object",
+      "x-ms-discriminator-value": "Closed List Entity Extractor",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ModelInfo"
+        }
+      ],
+      "properties": {
+        "subLists": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/JSONSubClosedListResponse"
+          }
+        }
+      }
+    },
+    "ClosedListEntityExtractorsList": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ClosedListEntityExtractor"
+      }
+    },
+    "PrebuiltEntityExtractor": {
+      "type": "object",
+      "x-ms-discriminator-value": "Prebuilt Entity Extractor",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ModelInfo"
+        }
+      ]
+    },
+    "PrebuiltEntityExtractorsList": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/PrebuiltEntityExtractor"
+      }
+    },
+    "ChildEntity": {
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The GUID belonging to a child entity."
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of a child entity."
+        }
+      }
+    },
+    "IntentClassifier": {
+      "type": "object",
+      "x-ms-discriminator-value": "Intent Classifier",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ModelInfo"
+        }
+      ],
+      "properties": {
+        "customPrebuiltDomainName": {
+          "type": "string",
+          "x-nullable": true
+        },
+        "customPrebuiltModelName": {
+          "type": "string",
+          "x-nullable": true
+        }
+      }
+    },
+    "EntityExtractor": {
+      "type": "object",
+      "x-ms-discriminator-value": "Entity Extractor",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ModelInfo"
+        }
+      ],
+      "properties": {
+        "customPrebuiltDomainName": {
+          "type": "string",
+          "x-nullable": true
+        },
+        "customPrebuiltModelName": {
+          "type": "string",
+          "x-nullable": true
+        }
+      }
+    },
+    "IntentClassifiersList": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/IntentClassifier"
+      }
+    },
+    "EntityExtractorsList": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/EntityExtractor"
+      }
+    },
+    "FeaturesResponseObject": {
+      "type": "object",
+      "properties": {
+        "phraselistFeatures": {
+          "$ref": "#/definitions/PhraseListFeatureInfoList"
+        },
+        "patternFeatures": {
+            "$ref": "#/definitions/PatternFeatureInfoList"
+        }
+      }
+    },
+    "FeatureInfoObject": {
+      "description": "The base class Features-related response objects inherit from.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number",
+          "description": "A six-digit ID used for Features."
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the Feature."
+        },
+        "isActive": {
+          "type": "boolean"
+        }
+      }
+    },
+    "PatternFeatureInfo": {
+      "type": "object",
+      "properties": {
+        "pattern": {
+          "type": "string"
+        }
+      },
+      "allOf": [
+        { "$ref": "#/definitions/FeatureInfoObject" }
+      ]
+    },
+    "PatternFeatureInfoList": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/PatternFeatureInfo"
+      }
+    },
+    "PhraseListFeatureInfo": {
+      "type": "object",
+      "properties": {
+        "phrases": {
+          "type": "string",
+          "description": "A list of comma-separated values."
+        },
+        "isExchangeable": {
+          "type": "boolean"
+        }
+      },
+      "allOf": [
+        { "$ref": "#/definitions/FeatureInfoObject" }
+      ]
+    },
+    "PhraseListFeatureInfoList": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/PhraseListFeatureInfo"
+      }
+    },
+    "LabelExampleResponse": {
+      "type": "object",
+      "properties": {
+        "UtteranceText": {
+          "type": "string",
+          "example": "book me a flight from cairo to redmond next thursday"
+        },
+        "ExampleId": {
+          "type": "number",
+          "example": "-6830368"
+        }
+      }
+    },
+    "BatchLabelExample": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/LabelExampleResponse" 
+        },
+        "hasError": {
+          "type": "boolean"
+        }
+      }
+    },
+    "BatchLabelExampleResponse": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/BatchLabelExample"
+      }
+    },
+    "ApplicationInfoResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The GUID of the application."
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "culture": {
+          "type": "string"
+        },
+        "usageScenario": {
+          "type": "string"
+        },
+        "domain": {
+          "type": "string"
+        },
+        "versionsCount": {
+          "type": "number"
+        },
+        "createdDateTime": {
+          "type": "string"
+        },
+        "endpoints": {
+          "type": "object"
+        },
+        "endpointHitsCount": {
+          "type": "number"
+        },
+        "activeVersion": {
+          "type": "string"
+        }
+      }
+    },
+    "ApplicationsInfoList": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ApplicationInfoResponse"
+      }
+    },
+    "ProductionOrStagingEndpointInfo": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/EndpointInfo"
+        }
+      ]
+    },
+    "EndpointInfo": {
+      "type": "object",
+      "description": "The base class \"ProductionOrStagingEndpointInfo\" inherits from.",
+      "properties": {
+        "versionId": {
+
+        },
+        "isStaging": {
+          "type": "boolean"
+        },
+        "endpointUrl": {
+          "type": "string"
+        },
+        "region": {
+          "type": "string",
+          "x-nullable": true
+        },
+        "assignedEndpointKey": {
+          "type": "string"
+        },
+        "endpointRegion": {
+          "type": "string",
+          "description": "The endpoint's region."
+        },
+        "publishedDateTime": {
+          "type": "string"
+        }
+      }
+    },
+    "EnqueueTrainingResponse": {
+      "type": "object",
+      "properties": {
+        "statusId": {
+          "type": "number"
+        },
+        "status": {
+          "$ref": "#/definitions/TrainingStatus"
+        }
+      }
+    },
+    "TrainingStatus": {
+      "type": "string",
+      "enum": [
+        "Queued"
+      ]
+    },
+    "PrebuiltDomain": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "culture": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "examples": {
+          "type": "string"
+        },
+        "intents": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PrebuiltDomainModel"
+          }
+        },
+        "entities": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PrebuiltDomainModel"
+          }
+        }
+      }
+    },
+    "PrebuiltDomainsList": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/PrebuiltDomain"
+      }
+    },
+    "PrebuiltDomainModel": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "examples": {
+          "type": "string"
+        }
+      }
+    },
+    "GuidList": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/GuidResponse"
+      }
+    },
+    "SubscriptionKeyList": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/SubscriptionKeyInfo"
+      }
+    },
+    "SubscriptionKeyInfo": {
+      "type": "object",
+      "properties": {
+        "subscriptionKey": {
+          "type": "string"
+        },
+        "subscriptionName": {
+          "type": "string"
+        },
+        "subscriptionRegion": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "parameters": {
+    "AppIdInPath": {
+      "name": "appId",
+      "in": "path",
+      "required": true,
+      "type": "string",
+      "description": "Format - guid. The application ID.",
+      "x-ms-parameter-location": "method"
+    },
+    "VersionIdInPath": {
+      "name": "versionId",
+      "in": "path",
+      "description": "The version ID of the task.",
+      "required": true,
+      "type": "string",
+      "x-ms-parameter-location": "method"
+    },
+    "CEntityIdInPath": {
+      "name": "cEntityId",
+      "in": "path",
+      "description": "Format - guid. The hierarchical entity extractor ID.",
+      "required": true,
+      "type": "string",
+      "x-ms-parameter-location": "method"
+    },
+    "HEntityIdInPath": {
+      "name": "hEntityId",
+      "in": "path",
+      "description": "Format - guid. The hierarchical entity extractor ID.",
+      "required": true,
+      "type": "string",
+      "x-ms-parameter-location": "method"
+    },
+    "IntentIdInPath": {
+      "name": "intentId",
+      "in": "path",
+      "description": "Format - guid. The intent classifier ID.",
+      "required": true,
+      "type": "string",
+      "x-ms-parameter-location": "method"
+    },
+    "SkipInPath": {
+      "name": "skip",
+      "in": "query",
+      "description": "The number of entries to skip. Default value is 0.",
+      "type": "integer",
+      "default": 0,
+      "x-nullable": "false",
+      "x-ms-parameter-location": "method"
+    },
+    "TakeInPath": {
+      "name": "take",
+      "in": "query",
+      "description": "The number of entries to return. Maximum page size is 500. Default is 100.",
+      "type": "integer",
+      "default": 100,
+      "x-nullable": "false",
+      "x-ms-parameter-location": "method"
     }
   }
 }
