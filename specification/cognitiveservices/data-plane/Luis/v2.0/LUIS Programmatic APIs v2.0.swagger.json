@@ -901,7 +901,7 @@
       },
       "get": {
         "description": "Gets information about the prebuilt entity models.",
-        "operationId": "Model_ListApplicationVersionPrebuiltInfo",
+        "operationId": "Model_ListApplicationVersionPrebuiltEntityInfo",
         "parameters": [
           {
             "$ref": "#/parameters/SkipInPath"
@@ -1416,7 +1416,7 @@
       ],
       "get": {
         "description": "Gets information about the prebuilt entity model.",
-        "operationId": "Model_GetPrebuiltInfo",
+        "operationId": "Model_GetPrebuiltEntityInfo",
         "responses": {
           "200": {
             "description": "A prebuilt entity models info.",
@@ -2823,7 +2823,7 @@
       },
       "get": {
         "description": "Gets custom prebuilt intents information of this application",
-        "operationId": "Model_GetPrebuiltDomainIntentsInfo",
+        "operationId": "Model_ListPrebuiltDomainIntentsInfo",
         "responses": {
           "200": {
             "description": "Returns a list of all custom prebuilt intents and their representations.",
@@ -2882,7 +2882,7 @@
       },
       "get": {
         "description": "Gets information on all prebuilt domain entities in the LUIS app.",
-        "operationId": "Model_GetPrebuiltDomainEntitiesInfo",
+        "operationId": "Model_ListPrebuiltDomainEntitiesInfo",
         "responses": {
           "200": {
             "description": "Returns a list of all custom prebuilt entities and their representations.",
@@ -2902,7 +2902,7 @@
     "/apps/{appId}/versions/{versionId}/customprebuiltmodels": {
       "get": {
         "description": "Gets all custom prebuilt models information of this application",
-        "operationId": "Model_GetPrebuiltDomainModelsInfo",
+        "operationId": "Model_ListPrebuiltDomainModelsInfo",
         "parameters": [
           {
             "$ref": "#/parameters/AppIdInPath"
