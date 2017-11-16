@@ -97,7 +97,7 @@
       },
       "get": {
         "description": "Gets all application version pattern features.",
-        "operationId": "Features_GetApplicationVersionPatternFeatures",
+        "operationId": "Features_ListApplicationVersionPatternFeatures",
         "parameters": [
           {
             "$ref": "#/parameters/SkipInPath"
@@ -164,7 +164,7 @@
       },
       "get": {
         "description": "Gets all application phraselist features.",
-        "operationId": "Features_GetApplicationVersionPhraselistFeatures",
+        "operationId": "Features_ListApplicationVersionPhraselistFeatures",
         "parameters": [
           {
             "$ref": "#/parameters/SkipInPath"
@@ -192,7 +192,7 @@
     "/apps/{appId}/versions/{versionId}/features": {
       "get": {
         "description": "Gets all application version features.",
-        "operationId": "Features_GetApplicationVersionFeatures",
+        "operationId": "Features_ListApplicationVersionFeatures",
         "parameters": [
           {
             "$ref": "#/parameters/AppIdInPath"
@@ -566,7 +566,7 @@
       },
       "get": {
         "description": "Gets information about the intent models.",
-        "operationId": "Model_GetApplicationVersionIntentInfos",
+        "operationId": "Model_ListApplicationVersionIntentInfo",
         "parameters": [
           {
             "$ref": "#/parameters/SkipInPath"
@@ -633,7 +633,7 @@
       },
       "get": {
         "description": "Gets information about the entity models.",
-        "operationId": "Model_GetApplicationVersionEntityInfos",
+        "operationId": "Model_ListApplicationVersionEntityInfo",
         "parameters": [
           {
             "$ref": "#/parameters/SkipInPath"
@@ -700,7 +700,7 @@
       },
       "get": {
         "description": "Gets information about the hierarchical entity models.",
-        "operationId": "Model_GetApplicationVersionHierarchicalEntityInfos",
+        "operationId": "Model_ListApplicationVersionHierarchicalEntityInfo",
         "parameters": [
           {
             "$ref": "#/parameters/SkipInPath"
@@ -767,7 +767,7 @@
       },
       "get": {
         "description": "Gets information about the composite entity models.",
-        "operationId": "Model_GetApplicationVersionCompositeEntityInfos",
+        "operationId": "Model_ListApplicationVersionCompositeEntityInfo",
         "parameters": [
           {
             "$ref": "#/parameters/SkipInPath"
@@ -834,7 +834,7 @@
       },
       "get": {
         "description": "Gets information about the closedlist models.",
-        "operationId": "Model_GetApplicationVersionClosedListInfos",
+        "operationId": "Model_ListApplicationVersionClosedListInfo",
         "parameters": [
           {
             "$ref": "#/parameters/SkipInPath"
@@ -901,7 +901,7 @@
       },
       "get": {
         "description": "Gets information about the prebuilt entity models.",
-        "operationId": "Model_GetApplicationVersionPrebuiltInfos",
+        "operationId": "Model_ListApplicationVersionPrebuiltInfo",
         "parameters": [
           {
             "$ref": "#/parameters/SkipInPath"
@@ -929,7 +929,7 @@
     "/apps/{appId}/versions/{versionId}/listprebuilts": {
       "get": {
         "description": "Gets all the available prebuilt entity extractors for the application.",
-        "operationId": "Model_GetAvailablePrebuiltEntityExtractors",
+        "operationId": "Model_ListAvailablePrebuiltEntityExtractors",
         "parameters": [
           {
             "$ref": "#/parameters/AppIdInPath"
@@ -954,7 +954,7 @@
     "/apps/{appId}/versions/{versionId}/models": {
       "get": {
         "description": "Gets information about the application version models.",
-        "operationId": "Model_GetApplicationVersionModelInfos",
+        "operationId": "Model_ListApplicationVersionModelInfo",
         "parameters": [
           {
             "$ref": "#/parameters/AppIdInPath"
@@ -1692,7 +1692,7 @@
     "/apps/domains": {
       "get": {
         "description": "Gets the available application domains.",
-        "operationId": "Apps_GetApplicationDomains",
+        "operationId": "Apps_ListApplicationDomains",
         "responses": {
           "200": {
             "description": "A list object containing the available application domains.",
@@ -1726,7 +1726,7 @@
     "/apps/cultures": {
       "get": {
         "description": "Gets the supported application cultures.",
-        "operationId": "Apps_GetApplicationCultures",
+        "operationId": "Apps_ListApplicationCultures",
         "responses": {
           "200": {
             "description": "A list object containing the supported application cultures.",
@@ -1912,7 +1912,7 @@
     "/apps/{appId}/versions": {
       "get": {
         "description": "Gets the application versions info.",
-        "operationId": "Versions_GetApplicationVersions",
+        "operationId": "Versions_ListApplicationVersions",
         "parameters": [
           {
             "$ref": "#/parameters/AppIdInPath"
@@ -2196,7 +2196,7 @@
       },
       "get": {
         "description": "Gets the given application versions's external keys.",
-        "operationId": "Versions_GetApplicationVersionExternalApiKeys",
+        "operationId": "Versions_ListApplicationVersionExternalApiKeys",
         "responses": {
           "200": {
             "description": "An array containing the external keys.",
@@ -2956,7 +2956,7 @@
     "/apps/customprebuiltdomains": {
       "get": {
         "description": "Gets all the available custom prebuilt domains for all cultures",
-        "operationId": "Apps_GetAvailableCustomPrebuiltDomains",
+        "operationId": "Apps_ListAvailableCustomPrebuiltDomains",
         "responses": {
           "200": {
             "description": "Returns a list of all custom prebuilt domains and their intents/entities representation",
@@ -3007,7 +3007,7 @@
     "/apps/customprebuiltdomains/{culture}": {
       "get": {
         "description": "Gets all the available custom prebuilt domains for a specific culture",
-        "operationId": "Apps_GetAvailableCustomPrebuiltDomainsForCulture",
+        "operationId": "Apps_ListAvailableCustomPrebuiltDomainsForCulture",
         "parameters": [
           {
             "name": "culture",
