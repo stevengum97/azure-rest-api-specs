@@ -1439,7 +1439,7 @@
       },
       "delete": {
         "description": "Deletes a prebuilt entity extractor from the application.",
-        "operationId": "Model_DeletePrebuiltModel",
+        "operationId": "Model_DeletePrebuiltEntity",
         "responses": {
           "200": {
             "description": ""
@@ -2745,7 +2745,7 @@
     "/apps/{appId}/versions/{versionId}/customprebuiltdomains": {
       "post": {
         "description": "Adds a customizable prebuilt domain along with all of its models to this application.",
-        "operationId": "Model_AddCustomPrebuiltDomainToApplication",
+        "operationId": "Model_AddPrebuiltDomainToApplication",
         "parameters": [
           {
             "$ref": "#/parameters/AppIdInPath"
@@ -2792,7 +2792,7 @@
       ],
       "post": {
         "description": "Adds a custom prebuilt intent model to the application",
-        "operationId": "Model_AddCustomPrebuiltIntentModel",
+        "operationId": "Model_AddPrebuiltDomainIntentModel",
         "parameters": [
           {
             "name": "prebuiltDomainModelCreateObject",
@@ -2823,7 +2823,7 @@
       },
       "get": {
         "description": "Gets custom prebuilt intents information of this application",
-        "operationId": "Model_GetCustomPrebuiltDomainIntentsInfo",
+        "operationId": "Model_GetPrebuiltDomainIntentsInfo",
         "responses": {
           "200": {
             "description": "Returns a list of all custom prebuilt intents and their representations.",
@@ -2850,8 +2850,8 @@
         }
       ],
       "post": {
-        "description": "Adds a custom prebuilt entity model to the application",
-        "operationId": "Model_AddCustomPrebuiltEntityModel",
+        "description": "Adds a prebuilt domain entity to the application",
+        "operationId": "Model_AddPrebuiltDomainEntity",
         "parameters": [
           {
             "name": "prebuiltDomainModelCreateObject",
@@ -2881,8 +2881,8 @@
         ]
       },
       "get": {
-        "description": "Gets all custom prebuilt entities information of this application",
-        "operationId": "Model_GetCustomPrebuiltDomainEntitiesInfo",
+        "description": "Gets information on all prebuilt domain entities in the LUIS app.",
+        "operationId": "Model_GetPrebuiltDomainEntitiesInfo",
         "responses": {
           "200": {
             "description": "Returns a list of all custom prebuilt entities and their representations.",
@@ -2902,7 +2902,7 @@
     "/apps/{appId}/versions/{versionId}/customprebuiltmodels": {
       "get": {
         "description": "Gets all custom prebuilt models information of this application",
-        "operationId": "Model_GetCustomPrebuiltDomainModelsInfo",
+        "operationId": "Model_GetPrebuiltDomainModelsInfo",
         "parameters": [
           {
             "$ref": "#/parameters/AppIdInPath"
@@ -2930,7 +2930,7 @@
     "/apps/{appId}/versions/{versionId}/customprebuiltdomains/{domainName}": {
       "delete": {
         "description": "Deletes a prebuilt domain's models from the application.",
-        "operationId": "Model_DeleteCustomPrebuiltDomainModels",
+        "operationId": "Model_DeletePrebuiltDomainModels",
         "parameters": [
           {
             "$ref": "#/parameters/AppIdInPath"
@@ -2956,7 +2956,7 @@
     "/apps/customprebuiltdomains": {
       "get": {
         "description": "Gets all the available custom prebuilt domains for all cultures",
-        "operationId": "Apps_ListAvailableCustomPrebuiltDomains",
+        "operationId": "Apps_ListAvailablePrebuiltDomains",
         "responses": {
           "200": {
             "description": "Returns a list of all custom prebuilt domains and their intents/entities representation",
@@ -2974,7 +2974,7 @@
       },
       "post": {
         "description": "Adds a prebuilt domain along with its models as a new application.",
-        "operationId": "Apps_AddCustomPrebuiltApplication",
+        "operationId": "Apps_AddPrebuiltApplication",
         "parameters": [
           {
             "name": "prebuiltDomainCreateObject",
@@ -3007,7 +3007,7 @@
     "/apps/customprebuiltdomains/{culture}": {
       "get": {
         "description": "Gets all the available custom prebuilt domains for a specific culture",
-        "operationId": "Apps_ListAvailableCustomPrebuiltDomainsForCulture",
+        "operationId": "Apps_ListAvailablePrebuiltDomainDomainsForCulture",
         "parameters": [
           {
             "name": "culture",
