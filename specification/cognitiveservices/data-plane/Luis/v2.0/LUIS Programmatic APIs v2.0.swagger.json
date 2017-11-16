@@ -79,15 +79,10 @@
               "$ref": "#/definitions/FeatureIDResponse"
             }
           },
-          "400": {
-            "description": "If the REGEX pattern is too complex.",
-            "examples": {
-              "application/json": {
-                "error": {
-                  "code": "BadArgument",
-                  "message": "Regex is too complex"
-                }
-              }
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         },
@@ -114,6 +109,12 @@
             },
             "schema": {
               "$ref": "#/definitions/PatternFeatureInfoList"
+            }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         },
@@ -156,6 +157,12 @@
             "schema": {
               "$ref": "#/definitions/FeatureIDResponse"
             }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         },
         "produces": [
@@ -181,6 +188,12 @@
             },
             "schema": {
               "$ref": "#/definitions/PhraseListFeatureInfoList"
+            }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         },
@@ -241,6 +254,12 @@
             "schema": {
               "$ref": "#/definitions/FeaturesResponseObject"
             }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         },
         "produces": [
@@ -281,6 +300,12 @@
             "schema": {
               "$ref": "#/definitions/PatternFeatureInfo"
             }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         },
         "produces": [
@@ -306,6 +331,12 @@
         "responses": {
           "200": {
             "description": ""
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         }
       },
@@ -315,6 +346,12 @@
         "responses": {
           "200": {
             "description": ""
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         }
       }
@@ -353,6 +390,12 @@
             "schema": {
               "$ref": "#/definitions/PhraseListFeatureInfo"
             }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         },
         "produces": [
@@ -378,6 +421,12 @@
         "responses": {
           "200": {
             "description": ""
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         }
       },
@@ -387,6 +436,12 @@
         "responses": {
           "200": {
             "description": ""
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         }
       }
@@ -425,6 +480,12 @@
             },
             "schema": {
               "$ref": "#/definitions/LabelExampleResponse"
+            }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         },
@@ -468,6 +529,12 @@
             "schema": {
               "$ref": "#/definitions/BatchLabelExampleResponse"
             }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         },
         "produces": [
@@ -493,6 +560,12 @@
             },
             "schema": {
               "$ref": "#/definitions/LabeledUtterances"
+            }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         },
@@ -523,6 +596,12 @@
         "responses": {
           "200": {
             "description": ""
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         }
       }
@@ -587,6 +666,12 @@
             "schema": {
               "$ref": "#/definitions/IntentClassifiersList"
             }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         },
         "produces": [
@@ -628,6 +713,12 @@
             "schema": {
               "$ref": "#/definitions/GuidResponse"
             }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         },
         "produces": [
@@ -653,6 +744,12 @@
             },
             "schema": {
               "$ref": "#/definitions/EntityExtractorsList"
+            }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         },
@@ -695,6 +792,12 @@
             "schema": {
               "$ref": "#/definitions/GuidResponse"
             }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         },
         "produces": [
@@ -720,6 +823,12 @@
             },
             "schema": {
               "$ref": "#/definitions/HierarchicalEntityExtractorsList"
+            }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         },
@@ -762,6 +871,12 @@
             "schema": {
               "$ref": "#/definitions/GuidResponse"
             }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         },
         "produces": [
@@ -787,6 +902,12 @@
             },
             "schema": {
               "$ref": "#/definitions/CompositeEntityExtractorsList"
+            }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         },
@@ -829,6 +950,12 @@
             "schema": {
               "$ref": "#/definitions/GuidResponse"
             }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         },
         "produces": [
@@ -854,6 +981,12 @@
             },
             "schema": {
               "$ref": "#/definitions/ClosedListEntityExtractorsList"
+            }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         },
@@ -896,6 +1029,12 @@
             "schema": {
               "$ref": "#/definitions/PrebuiltEntityExtractorsList"
             }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         },
         "produces": [
@@ -922,6 +1061,12 @@
             "schema": {
               "$ref": "#/definitions/PrebuiltEntityExtractorsList"
             }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         },
         "produces": [
@@ -946,6 +1091,15 @@
             "description": "A list of the possible prebuilt entity extractors.",
             "examples": {
               "application/json": "[  {    \"name\": \"geography\",    \"description\": \"Continents, Countries, Cities, Post codes, and other points of interest\",    \"examples\": \"Antarctica, Portugal, Dubai, Sanjiang County, Lake Pontchartrain, CB3 0DS\"  },  {    \"name\": \"datetime\",    \"description\": \"Dates and times, resolved to a canonical form\",    \"examples\": \"June 23, 1976, Jul 11 2012, 7 AM, 6:49 PM, tomorrow at 7 AM\"  },  {    \"name\": \"email\",    \"description\": \"Email Addresses\",    \"examples\": \"user@site.net, user_name@mysite.com.eg\"  },  {    \"name\": \"url\",    \"description\": \"Websites URLs\",    \"examples\": \"www.website.com, http://website.net?name=my_name&age=10, https://www.mywebsite.net.eg/page\"  },  {    \"name\": \"phoneNumber\",    \"description\": \"US phone numbers\",    \"examples\": \"123-456-7890, +1 123 456 789, (123)456-789\"  }]"
+            },
+            "schema": {
+              "$ref": "#/definitions/AvailablePrebuiltEntityModels"
+            }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         },
@@ -980,6 +1134,12 @@
             },
             "schema": {
               "$ref": "#/definitions/ModelsResponseObject"
+            }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         },
@@ -1017,6 +1177,12 @@
             "schema": {
               "$ref": "#/definitions/IntentClassifier"
             }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         },
         "produces": [
@@ -1042,6 +1208,12 @@
         "responses": {
           "200": {
             "description": ""
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         }
       },
@@ -1051,6 +1223,12 @@
         "responses": {
           "200": {
             "description": ""
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         }
       }
@@ -1088,6 +1266,12 @@
             "schema": {
               "$ref": "#/definitions/EntityExtractor"
             }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         },
         "produces": [
@@ -1113,6 +1297,12 @@
         "responses": {
           "200": {
             "description": ""
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         }
       },
@@ -1122,6 +1312,12 @@
         "responses": {
           "200": {
             "description": ""
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         }
       }
@@ -1165,6 +1361,12 @@
             "schema": {
               "$ref": "#/definitions/HierarchicalEntityExtractor"
             }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         },
         "produces": [
@@ -1190,6 +1392,12 @@
         "responses": {
           "200": {
             "description": ""
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         }
       },
@@ -1199,6 +1407,12 @@
         "responses": {
           "200": {
             "description": ""
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         }
       }
@@ -1242,6 +1456,12 @@
             "schema": {
               "$ref": "#/definitions/CompositeEntityExtractor"
             }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         },
         "produces": [
@@ -1267,6 +1487,12 @@
         "responses": {
           "200": {
             "description": ""
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         }
       },
@@ -1276,6 +1502,12 @@
         "responses": {
           "200": {
             "description": ""
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         }
       }
@@ -1341,6 +1573,12 @@
             "schema": {
               "$ref": "#/definitions/ClosedListEntityExtractor"
             }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         },
         "produces": [
@@ -1366,6 +1604,12 @@
         "responses": {
           "200": {
             "description": ""
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         }
       },
@@ -1388,6 +1632,12 @@
         "responses": {
           "200": {
             "description": ""
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         }
       },
@@ -1397,6 +1647,12 @@
         "responses": {
           "200": {
             "description": ""
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         }
       }
@@ -1434,6 +1690,12 @@
             "schema": {
               "$ref": "#/definitions/PrebuiltEntityExtractor"
             }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         },
         "produces": [
@@ -1446,6 +1708,12 @@
         "responses": {
           "200": {
             "description": ""
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         }
       }
@@ -1479,6 +1747,12 @@
         "responses": {
           "200": {
             "description": ""
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         }
       },
@@ -1501,6 +1775,12 @@
         "responses": {
           "200": {
             "description": ""
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         }
       }
@@ -1528,6 +1808,12 @@
             "description": "If there's no trained model, nothing is returned in the response.</br>If there's a trained model and the active learning algorithm finds any relevant queries, they are returned with the model predictions.</br>If there's a trained model but the active learning algorithm didn't find any relevant queries, an empty list is returned in the response.",
             "examples": {
               "application/json": "[  {    \"text\": \"hello, world!\",    \"tokenizedText\": [      \"hello\",      \",\",      \"world\",      \"!\"    ],    \"intentPredictions\": [      {        \"name\": \"None\",        \"score\": 0.63      },      {        \"name\": \"GetWeather\",        \"score\": 0      },      {        \"name\": \"BookFlight\",        \"score\": 0      }    ],    \"entityPredictions\": []  }]"
+            }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         },
@@ -1564,6 +1850,12 @@
             "examples": {
               "application/json": "[  {    \"text\": \"hello, world!\",    \"tokenizedText\": [      \"hello\",      \",\",      \"world\",      \"!\"    ],    \"intentPredictions\": [      {        \"name\": \"None\",        \"score\": 0.63      },      {        \"name\": \"BookFlight\",        \"score\": 0      },      {        \"name\": \"GetWeather\",        \"score\": 0      }    ],    \"entityPredictions\": []  }]"
             }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         },
         "produces": [
@@ -1597,6 +1889,12 @@
             "schema": {
               "$ref": "#/definitions/GuidResponse"
             }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         },
         "produces": [
@@ -1622,6 +1920,12 @@
             },
             "schema": {
               "$ref": "#/definitions/ApplicationsInfoList"
+            }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         },
@@ -1662,6 +1966,12 @@
             "schema": {
               "$ref": "#/definitions/GuidResponse"
             }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         },
         "produces": [
@@ -1691,6 +2001,12 @@
             "schema": {
               "$ref": "#/definitions/PersonalAssistantsResponse"
             }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         },
         "produces": [
@@ -1710,6 +2026,12 @@
             },
             "schema": {
               "$ref": "#/definitions/AvailableDomains"
+            }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         },
@@ -1731,6 +2053,12 @@
             "schema": {
               "$ref": "#/definitions/ApplicationUsageScenarios"
             }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         },
         "produces": [
@@ -1750,6 +2078,12 @@
             },
             "schema": {
               "$ref": "#/definitions/AvailableCultures"
+            }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         },
@@ -1772,6 +2106,12 @@
             "description": "A CSV file containing the query logs for the past month.",
             "examples": {
               "application/octet-stream": "\"Query\",\"UTC DateTime\",\"Response\"\"hello, world!\",01/31/2017 17:17:41,\"{  \"\"query\"\": \"\"Hello, World!\"\",  \"\"topScoringIntent\"\": {    \"\"intent\"\": \"\"None\"\",    \"\"score\"\": 0.6277761  },  \"\"intents\"\": [    {      \"\"intent\"\": \"\"None\"\",      \"\"score\"\": 0.6277761    },    {      \"\"intent\"\": \"\"BookFlight\"\",      \"\"score\"\": 0.002136109    },    {      \"\"intent\"\": \"\"GetWeather\"\",      \"\"score\"\": 0.00142168161    }  ],  \"\"entities\"\": []}\""
+            }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         },
@@ -1818,6 +2158,12 @@
             "schema": {
               "$ref": "#/definitions/ApplicationInfoResponse"
             }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         },
         "produces": [
@@ -1843,6 +2189,12 @@
         "responses": {
           "200": {
             "description": ""
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         }
       },
@@ -1852,6 +2204,12 @@
         "responses": {
           "200": {
             "description": ""
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         }
       }
@@ -1884,6 +2242,12 @@
             "description": "The version ID of the created task.",
             "examples": {
               "application/json": "\"0.2\""
+            }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         },
@@ -1922,6 +2286,15 @@
                 "endpointRegion": "westus",
                 "isStaging": false
               }
+            },
+            "schema": {
+              "$ref": "#/definitions/ApplicationPublishResponse"
+            }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         },
@@ -1950,6 +2323,12 @@
             "description": "A JSON object containing the tasks info.",
             "examples": {
               "application/json": "[  {    \"version\": \"0.1\",    \"createdDateTime\": \"2017-01-31T16:38:06Z\",    \"lastModifiedDateTime\": \"2017-01-31T18:04:35Z\",    \"lastTrainedDateTime\": \"2017-01-31T17:05:25Z\",    \"lastPublishedDateTime\": \"2017-01-31T17:05:37Z\",    \"endpointUrl\": \"DummyUrl\",    \"assignedEndpointKey\": {      \"SubscriptionKey\": \"\",      \"SubscriptionName\": \"\"    },    \"externalApiKeys\": {},    \"intentsCount\": 3,    \"entitiesCount\": 2,    \"endpointHitsCount\": 0  },  {    \"version\": \"0.2\",    \"createdDateTime\": \"2017-01-31T19:10:29Z\",    \"lastModifiedDateTime\": \"2017-01-31T19:12:47Z\",    \"lastTrainedDateTime\": \"2017-01-31T19:13:00Z\",    \"lastPublishedDateTime\": \"2017-01-31T19:13:20Z\",    \"endpointUrl\": \"DummyUrl\",    \"assignedEndpointKey\": {      \"SubscriptionKey\": \"\",      \"SubscriptionName\": \"\"    },    \"externalApiKeys\": {},    \"intentsCount\": 3,    \"entitiesCount\": 2,    \"endpointHitsCount\": 0  }]"
+            }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         },
@@ -1991,6 +2370,12 @@
                 "endpointHitsCount": 0
               }
             }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         },
         "produces": [
@@ -2016,6 +2401,12 @@
         "responses": {
           "200": {
             "description": ""
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         }
       },
@@ -2025,6 +2416,12 @@
         "responses": {
           "200": {
             "description": ""
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         }
       }
@@ -2127,6 +2524,12 @@
                 ]
               }
             }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         },
         "produces": [
@@ -2155,6 +2558,12 @@
                 "subscriptionKey": "DummyKey"
               }
             }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         },
         "produces": [
@@ -2180,6 +2589,12 @@
         "responses": {
           "200": {
             "description": ""
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         }
       }
@@ -2212,6 +2627,12 @@
         "responses": {
           "200": {
             "description": ""
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         }
       },
@@ -2225,6 +2646,12 @@
               "application/json": {
                 "BingSpellCheck": "40fd1383c949492cb16d7b082dcaac82"
               }
+            }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         },
@@ -2255,6 +2682,12 @@
         "responses": {
           "200": {
             "description": ""
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         }
       }
@@ -2278,10 +2711,10 @@
               "$ref": "#/definitions/EnqueueTrainingResponse"
             }
           },
-          "400": {
-            "description": "This response can occur if either of the <b>appId</b> or <b>versionId</b> parameters are incorrect.",
-            "examples": {
-              "JSON": "{  \"error\": {    \"code\": \"BadArgument\",    \"message\": \"Cannot find an application with the specified ID\"  }}OR{  \"error\": {    \"code\": \"BadArgument\",    \"message\": \"Cannot find a task with the specified version ID\"  }}"
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         },
@@ -2303,19 +2736,10 @@
               "$ref": "#/definitions/ModelTrainingInfoList"
             }
           },
-          "400": {
-            "description": "This response can occur for any of the following reasons: <br>You need to submit a training request before you request training status. <br>The format of <b>appId</b> is incorrect. <br>The value of <b>appId</b> is incorrect. <br>The value of <b>versionId</b> is incorrect. <br>",
-            "examples": {
-              "JSON": "If you need to submit a training request before you request training status:{  \"error\": {    \"code\": \"BadArgument\",    \"message\": \"Training request is required before getting training status\"  }}If the format of appId is incorrect:{  \"error\": {    \"code\": \"BadArgument\",    \"message\": \"Value cannot be null. Parameter name: source\"  }}If the value of appId is incorrect:{  \"error\": {    \"code\": \"BadArgument\",    \"message\": \"Cannot find an application with the specified ID\"  }}If versionId is incorrect:{  \"error\": {    \"code\": \"BadArgument\",    \"message\": \"Cannot find a task with the specified version ID\"  }}"
-            }
-          },
-          "401": {
-            "description": "The request failed, either because the key is invalid or is not associated with the LUIS app ID.",
-            "examples": {
-              "JSON": {
-                "statusCode": 401,
-                "message": "Access denied due to invalid subscription key. Make sure to provide a valid key for an active subscription."
-              }
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         },
@@ -2352,6 +2776,12 @@
                 "subscriptionRegion": "westus"
               }
             }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         },
         "produces": [
@@ -2369,6 +2799,12 @@
             },
             "schema": {
               "$ref": "#/definitions/SubscriptionKeyList"
+            }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         },
@@ -2395,6 +2831,12 @@
         "responses": {
           "200": {
             "description": ""
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         }
       }
@@ -2419,6 +2861,12 @@
         "responses": {
           "201": {
             "description": ""
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         }
       },
@@ -2430,6 +2878,12 @@
             "description": "A list containing user's external keys info.",
             "examples": {
               "application/json": "[  {    \"type\": \"bingspellcheck\",    \"values\": [      \"ee29eff4fe914fe282ad75d16328d717\"    ]  }]"
+            }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         },
@@ -2447,6 +2901,12 @@
             "description": "The new programmatic key.",
             "examples": {
               "application/json": "\"NewDummyProgrammaticKey\""
+            }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         },
@@ -2471,6 +2931,12 @@
         "responses": {
           "200": {
             "description": ""
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         }
       }
@@ -2491,6 +2957,12 @@
         "responses": {
           "200": {
             "description": ""
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         }
       }
@@ -2527,6 +2999,12 @@
             "examples": {
               "application/json": "\"0.2\""
             }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         },
         "produces": [
@@ -2555,6 +3033,12 @@
             "schema": {
               "$ref": "#/definitions/ApplicationSettings"
             }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         },
         "produces": [
@@ -2580,6 +3064,12 @@
         "responses": {
           "200": {
             "description": ""
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         }
       }
@@ -2610,6 +3100,12 @@
         "responses": {
           "200": {
             "description": ""
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         }
       }
@@ -2628,6 +3124,12 @@
             "description": "The list includes a single owner. All collaborators are listed in the emails array.",
             "schema": {
               "$ref": "#/definitions/UserAccessList"
+            }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         },
@@ -2654,6 +3156,12 @@
         "responses": {
           "200": {
             "description": ""
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         }
       },
@@ -2676,6 +3184,12 @@
         "responses": {
           "200": {
             "description": ""
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         }
       },
@@ -2698,6 +3212,12 @@
         "responses": {
           "200": {
             "description": ""
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         },
         "produces": [
@@ -2727,6 +3247,12 @@
             },
             "schema": {
               "$ref": "#/definitions/AvailableEndpoints"
+            }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         },
@@ -2774,6 +3300,12 @@
             "schema": {
               "$ref": "#/definitions/ApplicationsInfoList"
             }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         },
         "produces": [
@@ -2812,6 +3344,12 @@
             },
             "schema": {
               "$ref": "#/definitions/GuidList"
+            }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         },
@@ -2854,6 +3392,12 @@
             "schema": {
               "$ref": "#/definitions/GuidResponse"
             }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         },
         "produces": [
@@ -2871,6 +3415,12 @@
             },
             "schema": {
               "$ref": "#/definitions/ModelsResponseObject"
+            }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         },
@@ -2913,6 +3463,12 @@
             "schema": {
               "$ref": "#/definitions/GuidResponse"
             }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         },
         "produces": [
@@ -2930,6 +3486,12 @@
             },
             "schema": {
               "$ref": "#/definitions/ModelsResponseObject"
+            }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         },
@@ -2958,6 +3520,12 @@
             },
             "schema": {
               "$ref": "#/definitions/ModelsResponseObject"
+            }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         },
@@ -2988,6 +3556,12 @@
         "responses": {
           "200": {
             "description": ""
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         }
       }
@@ -3004,6 +3578,12 @@
             },
             "schema": {
               "$ref": "#/definitions/PrebuiltDomainsList"
+            }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         },
@@ -3036,6 +3616,12 @@
             "schema": {
               "$ref": "#/definitions/GuidResponse"
             }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         },
         "produces": [
@@ -3064,6 +3650,12 @@
             },
             "schema": {
               "$ref": "#/definitions/PrebuiltDomainsList"
+            }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         },
@@ -3105,6 +3697,12 @@
                 "readableType": "Hierarchical Child Entity Extractor"
               }
             }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         },
         "produces": [
@@ -3130,6 +3728,12 @@
         "responses": {
           "200": {
             "description": ""
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         }
       },
@@ -3139,6 +3743,12 @@
         "responses": {
           "200": {
             "description": ""
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         }
       }
@@ -3177,6 +3787,12 @@
             },
             "schema": {
               "$ref": "#/definitions/GuidResponse"
+            }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
             }
           }
         },
@@ -3220,6 +3836,12 @@
             "schema": {
               "$ref": "#/definitions/GuidResponse"
             }
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         },
         "produces": [
@@ -3252,6 +3874,12 @@
         "responses": {
           "200": {
             "description": ""
+          },
+          "default": {
+            "description": "Error Response.",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponse"
+            }
           }
         }
       }
@@ -4503,6 +5131,23 @@
         }
       }
     },
+    "ApplicationPublishResponse": {
+      "type": "object",
+      "properties": {
+        "endpointUrl": {
+          "type": "string"
+        },
+        "subscription-key": {
+          "type": "string"
+        },
+        "endpointRegion": {
+          "type": "string"
+        },
+        "isStaging": {
+          "type": "boolean"
+        }
+      }
+    },
     "AvailableEndpoints": {
       "type": "object",
       "description": "Collection of endpoint URLs the selected application is deployed to.",
@@ -4573,6 +5218,26 @@
         "public": {
           "type": "boolean"
         }
+      }
+    },
+    "AvailablePrebuiltEntityModel": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "examples": {
+          "type": "string"
+        }
+      }
+    },
+    "AvailablePrebuiltEntityModels": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/AvailablePrebuiltEntityModel"
       }
     },
     "EnqueueTrainingResponse": {
@@ -4691,10 +5356,18 @@
       "type": "object",
       "properties": {
         "code": {
-          "type": "string"
+          "type": "string",
+          "example": "BadArgument",
+          "x-nullable": true
+        },
+        "statusCode": {
+          "type": "number",
+          "example": "401",
+          "x-nullable": true
         },
         "message": {
-          "type": "string"
+          "type": "string",
+          "example": "Access denied due to invalid subscription key. Make sure to provide a valid key for an active subscription."
         }
       }
     },
