@@ -394,7 +394,7 @@
     "/apps/{appId}/versions/{versionId}/example": {
       "post": {
         "description": "Adds a labeled example to the application.",
-        "operationId": "Examples_AddLabel",
+        "operationId": "Examples_AddLabeledUtterance",
         "parameters": [
           {
             "$ref": "#/parameters/AppIdInPath"
@@ -444,7 +444,7 @@
       ],
       "post": {
         "description": "Adds a batch of labeled examples to the specified application.",
-        "operationId": "Examples_BatchAddLabels",
+        "operationId": "Examples_AddBatchLabeledUtterances",
         "parameters": [
 
           {
@@ -476,7 +476,7 @@
       },
       "get": {
         "description": "Returns examples to be reviewed.",
-        "operationId": "Examples_ReviewLabeledExamples",
+        "operationId": "Examples_ReviewLabeledUtterances",
         "parameters": [
           {
             "$ref": "#/parameters/SkipInPath"
@@ -501,7 +501,7 @@
     "/apps/{appId}/versions/{versionId}/examples/{exampleId}": {
       "delete": {
         "description": "Deletes the label with the specified ID.",
-        "operationId": "Examples_DeleteExampleLabels",
+        "operationId": "Examples_DeleteLabeledUtterances",
         "parameters": [
           {
             "$ref": "#/parameters/AppIdInPath"
@@ -534,8 +534,8 @@
         }
       ],
       "post": {
-        "description": "Adds an intent classifier to the application.",
-        "operationId": "Model_CreateIntentClassifier",
+        "description": "Adds an intent to the LUIS app.",
+        "operationId": "Model_CreateIntent",
         "parameters": [
           {
             "name": "modelCreateObject",
@@ -601,8 +601,8 @@
         }
       ],
       "post": {
-        "description": "Adds an entity extractor to the application.",
-        "operationId": "Model_CreateEntityExtractor",
+        "description": "Adds an entity to the application.",
+        "operationId": "Model_CreateEntity",
         "parameters": [
           {
             "name": "modelCreateObject",
@@ -669,7 +669,7 @@
       ],
       "post": {
         "description": "Adds a hierarchical entity extractor to the application version.",
-        "operationId": "Model_CreateHierarchicalEntityExtractor",
+        "operationId": "Model_CreateHierarchicalEntity",
         "parameters": [
           {
             "name": "hierarchicalModelCreateObject",
@@ -735,8 +735,8 @@
         }
       ],
       "post": {
-        "description": "Adds a composite entity extractor to the application.",
-        "operationId": "Model_CreateCompositeEntityExtractor",
+        "description": "Adds a composite entity to the LUIS app.",
+        "operationId": "Model_CreateCompositeEntity",
         "parameters": [
           {
             "name": "hierarchicalModelCreateObject",
@@ -802,8 +802,8 @@
         }
       ],
       "post": {
-        "description": "Adds a closed list model to the application.",
-        "operationId": "Model_CreateListEntityModel",
+        "description": "Adds a list entity to the LUIS app.",
+        "operationId": "Model_CreateListEntity",
         "parameters": [
           {
             "name": "closedListModelCreateObject",
@@ -870,7 +870,7 @@
       ],
       "post": {
         "description": "Adds a list of prebuilt entity extractors to the application.",
-        "operationId": "Model_AddPrebuiltEntityExtractors",
+        "operationId": "Model_AddPrebuiltEntities",
         "parameters": [
           {
             "name": "prebuiltExtractorNames",
@@ -900,7 +900,7 @@
         ]
       },
       "get": {
-        "description": "Gets information about the prebuilt entity models.",
+        "description": "Gets information about the prebuilt entities in the LUIS app.",
         "operationId": "Model_ListApplicationVersionPrebuiltEntityInfo",
         "parameters": [
           {
@@ -929,7 +929,7 @@
     "/apps/{appId}/versions/{versionId}/listprebuilts": {
       "get": {
         "description": "Gets all the available prebuilt entity extractors for the application.",
-        "operationId": "Model_ListAvailablePrebuiltEntityExtractors",
+        "operationId": "Model_ListAvailablePrebuiltEntities",
         "parameters": [
           {
             "$ref": "#/parameters/AppIdInPath"
@@ -953,7 +953,7 @@
     },
     "/apps/{appId}/versions/{versionId}/models": {
       "get": {
-        "description": "Gets information about the application version models.",
+        "description": "Gets information about the intents and entities in the specified version of the LUIS app.",
         "operationId": "Model_ListApplicationVersionModelInfo",
         "parameters": [
           {
@@ -998,7 +998,7 @@
         }
       ],
       "get": {
-        "description": "Gets information about the intent model.",
+        "description": "Gets information about the specified intent.",
         "operationId": "Model_GetIntentInfo",
         "responses": {
           "200": {
@@ -1021,8 +1021,8 @@
         ]
       },
       "put": {
-        "description": "Updates the name of an intent classifier.",
-        "operationId": "Model_RenameIntentModel",
+        "description": "Updates the name of the specified intent.",
+        "operationId": "Model_RenameIntent",
         "parameters": [
           {
             "name": "modelUpdateObject",
@@ -1043,8 +1043,8 @@
         }
       },
       "delete": {
-        "description": "Deletes an intent classifier from the application.",
-        "operationId": "Model_DeleteIntentModel",
+        "description": "Deletes the specified intent from the application.",
+        "operationId": "Model_DeleteIntent",
         "responses": {
           "200": {
             "description": ""
@@ -1069,7 +1069,7 @@
         }
       ],
       "get": {
-        "description": "Gets information about the entity model.",
+        "description": "Gets information about the entity.",
         "operationId": "Model_GetEntityInfo",
         "responses": {
           "200": {
@@ -1092,8 +1092,8 @@
         ]
       },
       "put": {
-        "description": "Updates the name of an entity extractor.",
-        "operationId": "Model_RenameEntityModel",
+        "description": "Updates the name of the specified entity.",
+        "operationId": "Model_RenameEntity",
         "parameters": [
           {
             "name": "modelUpdateObject",
@@ -1114,8 +1114,8 @@
         }
       },
       "delete": {
-        "description": "Deletes an entity extractor from the application.",
-        "operationId": "Model_DeleteEntityModel",
+        "description": "Deletes an entity from the application.",
+        "operationId": "Model_DeleteEntity",
         "responses": {
           "200": {
             "description": ""
@@ -1136,7 +1136,7 @@
         }
       ],
       "get": {
-        "description": "Gets information about the hierarchical entity model.",
+        "description": "Gets information about the hierarchical entity.",
         "operationId": "Model_GetHierarchicalEntityInfo",
         "responses": {
           "200": {
@@ -1169,8 +1169,8 @@
         ]
       },
       "put": {
-        "description": "Updates the name and children of a hierarchical entity model.",
-        "operationId": "Model_UpdateHierarchicalEntityModel",
+        "description": "Updates the name and children of a hierarchical entity.",
+        "operationId": "Model_UpdateHierarchicalEntity",
         "parameters": [
           {
             "name": "hierarchicalModelUpdateObject",
@@ -1192,7 +1192,7 @@
       },
       "delete": {
         "description": "Deletes a hierarchical entity extractor from the application version.",
-        "operationId": "Model_DeleteHierarchicalEntityModel",
+        "operationId": "Model_DeleteHierarchicalEntity",
         "responses": {
           "200": {
             "description": ""
@@ -1246,8 +1246,8 @@
         ]
       },
       "put": {
-        "description": "Updates the composite entity extractor.",
-        "operationId": "Model_UpdateCompositeEntityModel",
+        "description": "Updates the specified composite entity.",
+        "operationId": "Model_UpdateCompositeEntity",
         "parameters": [
           {
             "name": "hierarchicalModelUpdateObject",
@@ -1269,7 +1269,7 @@
       },
       "delete": {
         "description": "Deletes a composite entity extractor from the application.",
-        "operationId": "Model_DeleteCompositeEntityModel",
+        "operationId": "Model_DeleteCompositeEntity",
         "responses": {
           "200": {
             "description": ""
@@ -1294,11 +1294,11 @@
         }
       ],
       "get": {
-        "description": "Gets information of a closed list model.",
+        "description": "Gets information for the specified list entity.",
         "operationId": "Model_GetListEntityInfo",
         "responses": {
           "200": {
-            "description": "The closed list model info.",
+            "description": "The list entity info.",
             "examples": {
               "application/json": {
                 "id": "8713b104-78ec-4c4f-9f96-f2e53562cc16",
@@ -1346,7 +1346,7 @@
       },
       "put": {
         "description": "Updates the specified list entity.",
-        "operationId": "Model_UpdateListEntityModel",
+        "operationId": "Model_UpdateListEntity",
         "parameters": [
           {
             "name": "closedListModelUpdateObject",
@@ -1368,7 +1368,7 @@
       },
       "patch": {
         "description": "Adds a batch of sublists to an existing list entity.",
-        "operationId": "Model_AddBatchListEntityModel",
+        "operationId": "Model_AddBatchSublistsToListEntity",
         "parameters": [
           {
             "name": "closedListModelBatchObject",
@@ -1389,8 +1389,8 @@
         }
       },
       "delete": {
-        "description": "Deletes a list entity from the application.",
-        "operationId": "Model_DeleteListEntityModel",
+        "description": "Deletes a list entity from the LUIS app.",
+        "operationId": "Model_DeleteListEntity",
         "responses": {
           "200": {
             "description": ""
@@ -1415,7 +1415,7 @@
         }
       ],
       "get": {
-        "description": "Gets information about the prebuilt entity model.",
+        "description": "Gets information about the specified prebuilt entity.",
         "operationId": "Model_GetPrebuiltEntityInfo",
         "responses": {
           "200": {
@@ -1471,8 +1471,8 @@
         }
       ],
       "delete": {
-        "description": "Deletes a sublist of a specific closed list model.",
-        "operationId": "Model_DeleteSubList",
+        "description": "Deletes a sublist from a specified list entity.",
+        "operationId": "Model_DeleteSubListFromListEntity",
         "responses": {
           "200": {
             "description": ""
@@ -1480,8 +1480,8 @@
         }
       },
       "put": {
-        "description": "Updates one of the closed list's sublists",
-        "operationId": "Model_UpdateSubList",
+        "description": "Updates a sublist in a list entity.",
+        "operationId": "Model_UpdateSubListInListEntity",
         "parameters": [
           {
             "name": "wordListBaseUpdateObject",
@@ -1505,7 +1505,7 @@
     "/apps/{appId}/versions/{versionId}/intents/{intentId}/suggest": {
       "get": {
         "description": "Suggests examples that would improve the accuracy of the intent model.",
-        "operationId": "Model_SuggestEndpointQueriesForIntents",
+        "operationId": "Model_SuggestUtterancesForIntent",
         "parameters": [
           {
             "$ref": "#/parameters/AppIdInPath"
@@ -1536,7 +1536,7 @@
     "/apps/{appId}/versions/{versionId}/entities/{entityId}/suggest": {
       "get": {
         "description": "Suggests examples that would improve the accuracy of the entity model.",
-        "operationId": "Model_SuggestEndpointQueriesForEntities",
+        "operationId": "Model_SuggestUtterancesForForEntity",
         "parameters": [
           {
             "$ref": "#/parameters/AppIdInPath"
@@ -1602,7 +1602,7 @@
       },
       "get": {
         "description": "Lists all of the user applications.",
-        "operationId": "Apps_GetUserApplications",
+        "operationId": "Apps_ListUserApplications",
         "parameters": [
           {
             "$ref": "#/parameters/SkipInPath"
@@ -1663,7 +1663,7 @@
     "/apps/assistants": {
       "get": {
         "description": "Gets the endpoint URLs for the prebuilt Cortana applications.",
-        "operationId": "Apps_GetPersonalAssistantApplications",
+        "operationId": "Apps_ListPersonalAssistantApplications",
         "responses": {
           "200": {
             "description": "A personal assistant apps JSON object containing the endpoint URLs for Cortana applications            and the user's endpoint keys.",
@@ -1726,7 +1726,7 @@
     "/apps/cultures": {
       "get": {
         "description": "Gets the supported application cultures.",
-        "operationId": "Apps_ListAvailableCultures",
+        "operationId": "Apps_ListAvailableApplicationCultures",
         "responses": {
           "200": {
             "description": "A list object containing the supported application cultures.",
@@ -2559,8 +2559,8 @@
     },
     "/apps/{appId}/versions/{versionId}/suggest": {
       "delete": {
-        "description": "Deleted an unlabelled utterance.",
-        "operationId": "Versions_DeleteUnlabelledUtterance",
+        "description": "Deletes an unlabelled utterance.",
+        "operationId": "Versions_DeleteUnlabeledSuggestedUtterance",
         "parameters": [
           {
             "$ref": "#/parameters/AppIdInPath"
@@ -2672,7 +2672,7 @@
     "/apps/{appId}/endpoints": {
       "get": {
         "description": "Returns the available endpoint deployment regions and urls",
-        "operationId": "Apps_GetEndpoints",
+        "operationId": "Apps_ListEndpoints",
         "parameters": [
           {
             "$ref": "#/parameters/AppIdInPath"
@@ -2699,7 +2699,7 @@
     "/apps/{appId}/versions/{versionId}/closedlists/{clEntityId}/sublists": {
       "post": {
         "description": "Adds a list to an existing list entity.",
-        "operationId": "Model_AddSubList",
+        "operationId": "Model_AddSubListToListEntity",
         "parameters": [
           {
             "$ref": "#/parameters/AppIdInPath"
@@ -2791,8 +2791,8 @@
         }
       ],
       "post": {
-        "description": "Adds a custom prebuilt intent model to the application",
-        "operationId": "Model_AddPrebuiltDomainIntentModel",
+        "description": "Adds a customizable prebuilt domain intent to the LUIS app.",
+        "operationId": "Model_AddPrebuiltDomainIntent",
         "parameters": [
           {
             "name": "prebuiltDomainModelCreateObject",
@@ -2822,7 +2822,7 @@
         ]
       },
       "get": {
-        "description": "Gets custom prebuilt intents information of this application",
+        "description": "Gets prebuilt domain intents used in the specified LUIS app.",
         "operationId": "Model_ListPrebuiltDomainIntentsInfo",
         "responses": {
           "200": {
@@ -2850,7 +2850,7 @@
         }
       ],
       "post": {
-        "description": "Adds a prebuilt domain entity to the application",
+        "description": "Adds a customizable prebuilt domain entity to the LUIS app.",
         "operationId": "Model_AddPrebuiltDomainEntity",
         "parameters": [
           {
@@ -2901,7 +2901,7 @@
     },
     "/apps/{appId}/versions/{versionId}/customprebuiltmodels": {
       "get": {
-        "description": "Gets all custom prebuilt models information of this application",
+        "description": "Gets information on all prebuilt domain intents and entities used in this application.",
         "operationId": "Model_ListPrebuiltDomainModelsInfo",
         "parameters": [
           {
@@ -2930,7 +2930,7 @@
     "/apps/{appId}/versions/{versionId}/customprebuiltdomains/{domainName}": {
       "delete": {
         "description": "Deletes a prebuilt domain's models from the application.",
-        "operationId": "Model_DeletePrebuiltDomainModels",
+        "operationId": "Model_DeletePrebuiltDomain",
         "parameters": [
           {
             "$ref": "#/parameters/AppIdInPath"
@@ -2974,7 +2974,7 @@
       },
       "post": {
         "description": "Adds a prebuilt domain along with its models as a new application.",
-        "operationId": "Apps_AddPrebuiltApplication",
+        "operationId": "Apps_AddPrebuiltDomainApplication",
         "parameters": [
           {
             "name": "prebuiltDomainCreateObject",
@@ -3007,7 +3007,7 @@
     "/apps/customprebuiltdomains/{culture}": {
       "get": {
         "description": "Gets all the available custom prebuilt domains for a specific culture",
-        "operationId": "Apps_ListAvailablePrebuiltDomainDomainsForCulture",
+        "operationId": "Apps_ListAvailablePrebuiltDomainsForCulture",
         "parameters": [
           {
             "name": "culture",
@@ -3053,7 +3053,7 @@
         }
       ],
       "get": {
-        "description": "Gets information about the hierarchical entity child model.",
+        "description": "Gets information about the hierarchical entity child.",
         "operationId": "Model_GetHierarchicalEntityChildInfo",
         "responses": {
           "200": {
@@ -3096,7 +3096,7 @@
       },
       "delete": {
         "description": "Deletes a hierarchical entity extractor child from the application.",
-        "operationId": "Model_DeleteHierarchicalEntityChildModel",
+        "operationId": "Model_DeleteHierarchicalEntityChild",
         "responses": {
           "200": {
             "description": ""
@@ -3107,7 +3107,7 @@
     "/apps/{appId}/versions/{versionId}/hierarchicalentities/{hEntityId}/children": {
       "post": {
         "description": "Creates a single child in an existing hierarchical entity model.",
-        "operationId": "Model_CreateHierarchicalEntityChildModel",
+        "operationId": "Model_CreateHierarchicalEntityChild",
         "parameters": [
           {
             "$ref": "#/parameters/AppIdInPath"
@@ -3148,8 +3148,8 @@
     },
     "/apps/{appId}/versions/{versionId}/compositeentities/{cEntityId}/children": {
       "post": {
-        "description": "Creates a single child in an existing composite entity model.",
-        "operationId": "Model_CreateCompositeEntityChildModel",
+        "description": "Creates a single child in an existing composite entity.",
+        "operationId": "Model_CreateCompositeEntityChild",
         "parameters": [
           {
             "$ref": "#/parameters/AppIdInPath"
@@ -3191,7 +3191,7 @@
     "/apps/{appId}/versions/{versionId}/compositeentities/{cEntityId}/children/{cChildId}": {
       "delete": {
         "description": "Deletes a composite entity extractor child from the application.",
-        "operationId": "Model_DeleteCompositeEntityChildModel",
+        "operationId": "Model_DeleteCompositeEntityChild",
         "parameters": [
           {
             "$ref": "#/parameters/AppIdInPath"
