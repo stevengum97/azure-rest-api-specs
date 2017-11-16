@@ -1505,7 +1505,7 @@
     "/apps/{appId}/versions/{versionId}/intents/{intentId}/suggest": {
       "get": {
         "description": "Suggests examples that would improve the accuracy of the intent model.",
-        "operationId": "Model_SuggestUtterancesForIntent",
+        "operationId": "Examples_SuggestUtterancesForIntent",
         "parameters": [
           {
             "$ref": "#/parameters/AppIdInPath"
@@ -1536,7 +1536,7 @@
     "/apps/{appId}/versions/{versionId}/entities/{entityId}/suggest": {
       "get": {
         "description": "Suggests examples that would improve the accuracy of the entity model.",
-        "operationId": "Model_SuggestUtterancesForForEntity",
+        "operationId": "Examples_SuggestUtterancesForForEntity",
         "parameters": [
           {
             "$ref": "#/parameters/AppIdInPath"
@@ -1663,7 +1663,7 @@
     "/apps/assistants": {
       "get": {
         "description": "Gets the endpoint URLs for the prebuilt Cortana applications.",
-        "operationId": "Apps_ListPersonalAssistantApplications",
+        "operationId": "Info_ListPersonalAssistantApplications",
         "responses": {
           "200": {
             "description": "A personal assistant apps JSON object containing the endpoint URLs for Cortana applications            and the user's endpoint keys.",
@@ -1692,7 +1692,7 @@
     "/apps/domains": {
       "get": {
         "description": "Gets the available application domains.",
-        "operationId": "Apps_ListApplicationDomains",
+        "operationId": "Info_ListApplicationDomains",
         "responses": {
           "200": {
             "description": "A list object containing the available application domains.",
@@ -1726,7 +1726,7 @@
     "/apps/cultures": {
       "get": {
         "description": "Gets the supported application cultures.",
-        "operationId": "Apps_ListAvailableApplicationCultures",
+        "operationId": "Info_ListAvailableApplicationCultures",
         "responses": {
           "200": {
             "description": "A list object containing the supported application cultures.",
@@ -2560,7 +2560,7 @@
     "/apps/{appId}/versions/{versionId}/suggest": {
       "delete": {
         "description": "Deletes an unlabelled utterance.",
-        "operationId": "Versions_DeleteUnlabeledSuggestedUtterance",
+        "operationId": "Examples_DeleteUnlabeledSuggestedUtterance",
         "parameters": [
           {
             "$ref": "#/parameters/AppIdInPath"
@@ -2956,7 +2956,7 @@
     "/apps/customprebuiltdomains": {
       "get": {
         "description": "Gets all the available custom prebuilt domains for all cultures",
-        "operationId": "Apps_ListAvailablePrebuiltDomains",
+        "operationId": "Info_ListAvailablePrebuiltDomains",
         "responses": {
           "200": {
             "description": "Returns a list of all custom prebuilt domains and their intents/entities representation",
@@ -3007,7 +3007,7 @@
     "/apps/customprebuiltdomains/{culture}": {
       "get": {
         "description": "Gets all the available custom prebuilt domains for a specific culture",
-        "operationId": "Apps_ListAvailablePrebuiltDomainsForCulture",
+        "operationId": "Info_ListAvailablePrebuiltDomainsForCulture",
         "parameters": [
           {
             "name": "culture",
