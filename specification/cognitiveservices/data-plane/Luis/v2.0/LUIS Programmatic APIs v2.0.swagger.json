@@ -803,7 +803,7 @@
       ],
       "post": {
         "description": "Adds a closed list model to the application.",
-        "operationId": "Model_CreateClosedListEntityModel",
+        "operationId": "Model_CreateListEntityModel",
         "parameters": [
           {
             "name": "closedListModelCreateObject",
@@ -811,7 +811,7 @@
             "schema": {
               "$ref": "#/definitions/ClosedListModelCreateObject"
             },
-            "description": "A model object containing the name and words for the new closed list entity extractor."
+            "description": "A model object containing the name and words for the new list entity extractor."
           }
         ],
         "consumes": [
@@ -833,8 +833,8 @@
         ]
       },
       "get": {
-        "description": "Gets information about the closedlist models.",
-        "operationId": "Model_ListApplicationVersionClosedListInfo",
+        "description": "Gets information about list entities in the specified LUIS app.",
+        "operationId": "Model_ListApplicationVersionListEntityInfo",
         "parameters": [
           {
             "$ref": "#/parameters/SkipInPath"
@@ -845,7 +845,7 @@
         ],
         "responses": {
           "200": {
-            "description": "A list of closedlist entity model infos.",
+            "description": "A list that contains information about each list entity in the LUIS app.",
             "examples": {
               "application/json": "[  {    \"id\": \"8713b104-78ec-4c4f-9f96-f2e53562cc16\",    \"name\": \"States\",    \"typeId\": 5,    \"readableType\": \"Closed List Entity Extractor\",    \"subLists\": [      {        \"id\": 1,        \"canonicalForm\": \"new york\",        \"list\": [          \"ny\",          \"new york\"        ]      },      {        \"id\": 2,        \"canonicalForm\": \"washington\",        \"list\": [          \"washington\",          \"wa\"        ]      },      {        \"id\": 3,        \"canonicalForm\": \"california\",        \"list\": [          \"california\",          \"ca\",          \"calif.\",          \"cal.\"        ]      }    ]  }]"
             },
@@ -1288,14 +1288,14 @@
         {
           "name": "clEntityId",
           "in": "path",
-          "description": "Format - guid. The closed list model ID.",
+          "description": "A GUID containing the ID of the list entity.",
           "required": true,
           "type": "string"
         }
       ],
       "get": {
         "description": "Gets information of a closed list model.",
-        "operationId": "Model_GetClosedListEntityInfo",
+        "operationId": "Model_GetListEntityInfo",
         "responses": {
           "200": {
             "description": "The closed list model info.",
@@ -1345,8 +1345,8 @@
         ]
       },
       "put": {
-        "description": "Updates the closed list model.",
-        "operationId": "Model_UpdateClosedListEntityModel",
+        "description": "Updates the specified list entity.",
+        "operationId": "Model_UpdateListEntityModel",
         "parameters": [
           {
             "name": "closedListModelUpdateObject",
@@ -1367,14 +1367,14 @@
         }
       },
       "patch": {
-        "description": "Adds a batch of sublists to an existing closedlist.",
-        "operationId": "Model_BatchClosedListEntityModel",
+        "description": "Adds a batch of sublists to an existing list entity.",
+        "operationId": "Model_AddBatchListEntityModel",
         "parameters": [
           {
-            "name": "closedListModelPatchObject",
+            "name": "closedListModelBatchObject",
             "in": "body",
             "schema": {
-              "$ref": "#/definitions/ClosedListModelPatchObject"
+              "$ref": "#/definitions/ClosedListModelBatchObject"
             },
             "description": "A json object containing words list batch."
           }
@@ -1389,8 +1389,8 @@
         }
       },
       "delete": {
-        "description": "Deletes a closed list model from the application.",
-        "operationId": "Model_DeleteClosedListEntityModel",
+        "description": "Deletes a list entity from the application.",
+        "operationId": "Model_DeleteListEntityModel",
         "responses": {
           "200": {
             "description": ""
@@ -1458,7 +1458,7 @@
         {
           "name": "clEntityId",
           "in": "path",
-          "description": "Format - guid. The closed list entity extractor ID.",
+          "description": "A GUID that specifies the ID of the list entity.",
           "required": true,
           "type": "string"
         },
@@ -1709,7 +1709,7 @@
     "/apps/usagescenarios": {
       "get": {
         "description": "Gets the application available usage scenarios.",
-        "operationId": "Apps_GetApplicationUsageScenarios",
+        "operationId": "Apps_ListApplicationUsageScenarios",
         "responses": {
           "200": {
             "description": "A list object containing the available application usage scenarios.",
@@ -1726,7 +1726,7 @@
     "/apps/cultures": {
       "get": {
         "description": "Gets the supported application cultures.",
-        "operationId": "Apps_ListApplicationCultures",
+        "operationId": "Apps_ListAvailableCultures",
         "responses": {
           "200": {
             "description": "A list object containing the supported application cultures.",
@@ -2698,7 +2698,7 @@
     },
     "/apps/{appId}/versions/{versionId}/closedlists/{clEntityId}/sublists": {
       "post": {
-        "description": "Adds a list to an existing closed list",
+        "description": "Adds a list to an existing list entity.",
         "operationId": "Model_AddSubList",
         "parameters": [
           {
@@ -3554,7 +3554,7 @@
         }
       }
     },
-    "ClosedListModelPatchObject": {
+    "ClosedListModelBatchObject": {
       "additionalProperties": false,
       "type": "object",
       "properties": {
