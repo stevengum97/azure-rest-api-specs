@@ -555,9 +555,6 @@
         "responses": {
           "200": {
             "description": "A list of predictions and label pairs for every example in the application.",
-            "examples": {
-              "application/json": "[  {    \"id\": -12,    \"text\": \"what's the weather like in seattle?\",    \"tokenizedText\": [      \"what\",      \"'\",      \"s\",      \"the\",      \"weather\",      \"like\",      \"in\",      \"seattle\",      \"?\"    ],    \"intentLabel\": \"GetWeather\",    \"entityLabels\": [      {        \"entityName\": \"Location\",        \"startTokenIndex\": 7,        \"endTokenIndex\": 7      }    ],    \"intentPredictions\": [      {        \"name\": \"GetWeather\",        \"score\": 1      },      {        \"name\": \"None\",        \"score\": 0.21      },      {        \"name\": \"BookFlight\",        \"score\": 0      }    ],    \"entityPredictions\": [      {        \"entityName\": \"Location\",        \"startIndex\": 7,        \"endIndex\": 7,        \"phrase\": \"seattle\"      }    ]  },  {    \"id\": -11,    \"text\": \"book me a flight from cairo to redmond next thursday\",    \"tokenizedText\": [      \"book\",      \"me\",      \"a\",      \"flight\",      \"from\",      \"cairo\",      \"to\",      \"redmond\",      \"next\",      \"thursday\"    ],    \"intentLabel\": \"BookFlight\",    \"entityLabels\": [      {        \"entityName\": \"Location::To\",        \"startTokenIndex\": 7,        \"endTokenIndex\": 7      },      {        \"entityName\": \"Location::From\",        \"startTokenIndex\": 5,        \"endTokenIndex\": 5      }    ],    \"intentPredictions\": [      {        \"name\": \"BookFlight\",        \"score\": 0.93      },      {        \"name\": \"None\",        \"score\": 0.41      },      {        \"name\": \"GetWeather\",        \"score\": 0      }    ],    \"entityPredictions\": [      {        \"entityName\": \"datetime\",        \"startIndex\": 8,        \"endIndex\": 9,        \"phrase\": \"next thursday\"      }    ]  },  {    \"id\": -10,    \"text\": \"what's the weather like in paris?\",    \"tokenizedText\": [      \"what\",      \"'\",      \"s\",      \"the\",      \"weather\",      \"like\",      \"in\",      \"paris\",      \"?\"    ],    \"intentLabel\": \"GetWeather\",    \"entityLabels\": [      {        \"entityName\": \"Location\",        \"startTokenIndex\": 7,        \"endTokenIndex\": 7      }    ],    \"intentPredictions\": [      {        \"name\": \"GetWeather\",        \"score\": 1      },      {        \"name\": \"None\",        \"score\": 0.18      },      {        \"name\": \"BookFlight\",        \"score\": 0      }    ],    \"entityPredictions\": [      {        \"entityName\": \"Location\",        \"startIndex\": 7,        \"endIndex\": 7,        \"phrase\": \"paris\"      }    ]  },  {    \"id\": -9,    \"text\": \"book me a flight from redmond to new york next saturday\",    \"tokenizedText\": [      \"book\",      \"me\",      \"a\",      \"flight\",      \"from\",      \"redmond\",      \"to\",      \"new\",      \"york\",      \"next\",      \"saturday\"    ],    \"intentLabel\": \"BookFlight\",    \"entityLabels\": [      {        \"entityName\": \"Location::To\",        \"startTokenIndex\": 7,        \"endTokenIndex\": 8      },      {        \"entityName\": \"Location::From\",        \"startTokenIndex\": 5,        \"endTokenIndex\": 5      }    ],    \"intentPredictions\": [      {        \"name\": \"BookFlight\",        \"score\": 1      },      {        \"name\": \"None\",        \"score\": 0.16      },      {        \"name\": \"GetWeather\",        \"score\": 0      }    ],    \"entityPredictions\": [      {        \"entityName\": \"Location::From\",        \"startIndex\": 5,        \"endIndex\": 5,        \"phrase\": \"redmond\"      },      {        \"entityName\": \"Location::To\",        \"startIndex\": 7,        \"endIndex\": 8,        \"phrase\": \"new york\"      },      {        \"entityName\": \"datetime\",        \"startIndex\": 9,        \"endIndex\": 10,        \"phrase\": \"next saturday\"      }    ]  }]"
-            },
             "schema": {
               "$ref": "#/definitions/LabeledUtterances"
             }
@@ -571,7 +568,12 @@
         },
         "produces": [
           "application/json"
-        ]
+        ],
+        "x-ms-examples": {
+          "Successful Review Labeled Examples request": {
+            "$ref": "./examples/SuccessfulReviewLabeledExamplesRequest.json"
+          }
+        }
       }
     },
     "/apps/{appId}/versions/{versionId}/examples/{exampleId}": {
@@ -660,9 +662,6 @@
         "responses": {
           "200": {
             "description": "A list of intent model infos.",
-            "examples": {
-              "application/json": "[  {    \"id\": \"227a71ed-7d4b-4dce-8f3a-16c4e5cc06e8\",    \"name\": \"BookFlight\",    \"typeId\": 0,    \"readableType\": \"Intent Classifier\"  },  {    \"id\": \"8285a9ee-6bc0-4409-87f4-82d539f70529\",    \"name\": \"None\",    \"typeId\": 0,    \"readableType\": \"Intent Classifier\"  },  {    \"id\": \"9500536f-ffec-4fab-93ad-6268abb0f73c\",    \"name\": \"$Camera.CapturePhoto\",    \"typeId\": 0,    \"readableType\": \"Intent Classifier\",    \"customPrebuiltDomainName\": \"Camera\",    \"customPrebuiltModelName\": \"CapturePhoto\"  },]"
-            },
             "schema": {
               "$ref": "#/definitions/IntentClassifiersList"
             }
@@ -676,7 +675,12 @@
         },
         "produces": [
           "application/json"
-        ]
+        ],
+        "x-ms-examples": {
+          "Successful Get Application Version Intent Infos request": {
+            "$ref": "./examples/SuccessfulGetApplicationVersionIntentInfosRequest.json"
+          }
+        }
       }
     },
     "/apps/{appId}/versions/{versionId}/entities": {
@@ -739,9 +743,6 @@
         "responses": {
           "200": {
             "description": "A list of entity model infos.",
-            "examples": {
-              "application/json": "[  {    \"id\": \"3d73462d-98f0-4dcd-8d30-fab9e65f2e73\",    \"name\": \"DayOfWeek\",    \"typeId\": 1,    \"readableType\": \"Entity Extractor\"  },  {    \"id\": \"b8e31be4-300f-455e-894b-6f079abca0a2\",    \"name\": \"$Camera.AppName\",    \"typeId\": 1,    \"readableType\": \"Entity Extractor\",    \"customPrebuiltDomainName\": \"Camera\",    \"customPrebuiltModelName\": \"AppName\"  }]"
-            },
             "schema": {
               "$ref": "#/definitions/EntityExtractorsList"
             }
@@ -755,7 +756,12 @@
         },
         "produces": [
           "application/json"
-        ]
+        ],
+        "x-ms-examples": {
+          "Successful Get Application Version Entity Infos request": {
+            "$ref": "./examples/SuccessfulGetApplicationVersionEntityInfosRequest.json"
+          }
+        }
       }
     },
     "/apps/{appId}/versions/{versionId}/hierarchicalentities": {
@@ -818,9 +824,6 @@
         "responses": {
           "200": {
             "description": "A list of hierarchical entity model infos.",
-            "examples": {
-              "application/json": "[  {    \"id\": \"fe559c31-9778-42ea-ba45-94e0bd7cf767\",    \"name\": \"Location\",    \"typeId\": 3,    \"readableType\": \"Hierarchical Entity Extractor\",    \"children\": [      {        \"id\": \"ec076676-d8d9-42fa-a44e-87989c0a2f82\",        \"name\": \"From\"      },      {        \"id\": \"63ebd752-4e81-4ce7-a698-b59b82bf5519\",        \"name\": \"To\"      }    ]  }]"
-            },
             "schema": {
               "$ref": "#/definitions/HierarchicalEntityExtractorsList"
             }
@@ -834,7 +837,12 @@
         },
         "produces": [
           "application/json"
-        ]
+        ],
+        "x-ms-examples": {
+          "Successful Get Application Version Hierarchical Entity Infos request": {
+            "$ref": "./examples/SuccessfulGetApplicationVersionHierarchicalEntityInfosRequest.json"
+          }
+        }
       }
     },
     "/apps/{appId}/versions/{versionId}/compositeentities": {
@@ -897,9 +905,6 @@
         "responses": {
           "200": {
             "description": "A list of composite entity model infos.",
-            "examples": {
-              "application/json": "[  {    \"id\": \"bc1bae43-7904-48ad-a165-88b1910174f9\",    \"name\": \"Reservation\",    \"typeId\": 4,    \"readableType\": \"Composite Entity Extractor\",    \"children\": [      {        \"id\": \"63ebd752-4e81-4ce7-a698-b59b82bf5519\",        \"name\": \"Location::To\"      },      {        \"id\": \"a18eaa87-ecd9-4a67-a951-e70cf5b87c7e\",        \"name\": \"datetime\"      }    ]  }]"
-            },
             "schema": {
               "$ref": "#/definitions/CompositeEntityExtractorsList"
             }
@@ -913,7 +918,12 @@
         },
         "produces": [
           "application/json"
-        ]
+        ],
+        "x-ms-examples": {
+          "Successful Get Application Version Composite Entity Infos request": {
+            "$ref": "./examples/SuccessfulGetApplicationVersionCompositeEntityInfosRequest.json"
+          }
+        }
       }
     },
     "/apps/{appId}/versions/{versionId}/closedlists": {
@@ -976,9 +986,6 @@
         "responses": {
           "200": {
             "description": "A list of closedlist entity model infos.",
-            "examples": {
-              "application/json": "[  {    \"id\": \"8713b104-78ec-4c4f-9f96-f2e53562cc16\",    \"name\": \"States\",    \"typeId\": 5,    \"readableType\": \"Closed List Entity Extractor\",    \"subLists\": [      {        \"id\": 1,        \"canonicalForm\": \"new york\",        \"list\": [          \"ny\",          \"new york\"        ]      },      {        \"id\": 2,        \"canonicalForm\": \"washington\",        \"list\": [          \"washington\",          \"wa\"        ]      },      {        \"id\": 3,        \"canonicalForm\": \"california\",        \"list\": [          \"california\",          \"ca\",          \"calif.\",          \"cal.\"        ]      }    ]  }]"
-            },
             "schema": {
               "$ref": "#/definitions/ClosedListEntityExtractorsList"
             }
@@ -992,7 +999,12 @@
         },
         "produces": [
           "application/json"
-        ]
+        ],
+        "x-ms-examples": {
+          "Successful Get Application Version Closed List Infos request": {
+            "$ref": "./examples/SuccessfulGetApplicationVersionClosedListInfosRequest.json"
+          }
+        }
       }
     },
     "/apps/{appId}/versions/{versionId}/prebuilts": {
@@ -1055,9 +1067,6 @@
         "responses": {
           "200": {
             "description": "A list of prebuilt entity models infos.",
-            "examples": {
-              "application/json": "[  {    \"id\": \"a18eaa87-ecd9-4a67-a951-e70cf5b87c7e\",    \"name\": \"datetime\",    \"typeId\": 2,    \"readableType\": \"Prebuilt Entity Extractor\"  }]"
-            },
             "schema": {
               "$ref": "#/definitions/PrebuiltEntityExtractorsList"
             }
@@ -1071,7 +1080,12 @@
         },
         "produces": [
           "application/json"
-        ]
+        ],
+        "x-ms-examples": {
+          "Successful Get Application Version Prebuilt Infos request": {
+            "$ref": "./examples/SuccessfulGetApplicationVersionPrebuiltInfosRequest.json"
+          }
+        }
       }
     },
     "/apps/{appId}/versions/{versionId}/listprebuilts": {
@@ -1089,9 +1103,6 @@
         "responses": {
           "200": {
             "description": "A list of the possible prebuilt entity extractors.",
-            "examples": {
-              "application/json": "[  {    \"name\": \"geography\",    \"description\": \"Continents, Countries, Cities, Post codes, and other points of interest\",    \"examples\": \"Antarctica, Portugal, Dubai, Sanjiang County, Lake Pontchartrain, CB3 0DS\"  },  {    \"name\": \"datetime\",    \"description\": \"Dates and times, resolved to a canonical form\",    \"examples\": \"June 23, 1976, Jul 11 2012, 7 AM, 6:49 PM, tomorrow at 7 AM\"  },  {    \"name\": \"email\",    \"description\": \"Email Addresses\",    \"examples\": \"user@site.net, user_name@mysite.com.eg\"  },  {    \"name\": \"url\",    \"description\": \"Websites URLs\",    \"examples\": \"www.website.com, http://website.net?name=my_name&age=10, https://www.mywebsite.net.eg/page\"  },  {    \"name\": \"phoneNumber\",    \"description\": \"US phone numbers\",    \"examples\": \"123-456-7890, +1 123 456 789, (123)456-789\"  }]"
-            },
             "schema": {
               "$ref": "#/definitions/AvailablePrebuiltEntityModels"
             }
@@ -1105,7 +1116,12 @@
         },
         "produces": [
           "application/json"
-        ]
+        ],
+        "x-ms-examples": {
+          "Successful Get Available Prebuilt Entity Extractors request": {
+            "$ref": "./examples/SuccessfulGetAvailablePrebuiltEntityExtractorsRequest.json"
+          }
+        }
       }
     },
     "/apps/{appId}/versions/{versionId}/models": {
@@ -1129,9 +1145,6 @@
         "responses": {
           "200": {
             "description": "A list of application models infos.",
-            "examples": {
-              "application/json": "[  {    \"id\": \"227a71ed-7d4b-4dce-8f3a-16c4e5cc06e8\",    \"name\": \"BookFlight\",    \"typeId\": 0,    \"readableType\": \"Intent Classifier\"  },  {    \"id\": \"a18eaa87-ecd9-4a67-a951-e70cf5b87c7e\",    \"name\": \"datetime\",    \"typeId\": 2,    \"readableType\": \"Prebuilt Entity Extractor\"  },  {    \"id\": \"3d73462d-98f0-4dcd-8d30-fab9e65f2e73\",    \"name\": \"DayOfWeek\",    \"typeId\": 1,    \"readableType\": \"Entity Extractor\"  },  {    \"id\": \"fe559c31-9778-42ea-ba45-94e0bd7cf767\",    \"name\": \"Location\",    \"typeId\": 3,    \"readableType\": \"Hierarchical Entity Extractor\",    \"children\": [      {        \"id\": \"ec076676-d8d9-42fa-a44e-87989c0a2f82\",        \"name\": \"From\"      },      {        \"id\": \"63ebd752-4e81-4ce7-a698-b59b82bf5519\",        \"name\": \"To\"      }    ]  },  {    \"id\": \"8285a9ee-6bc0-4409-87f4-82d539f70529\",    \"name\": \"None\",    \"typeId\": 0,    \"readableType\": \"Intent Classifier\"  },  {    \"id\": \"bc1bae43-7904-48ad-a165-88b1910174f9\",    \"name\": \"Reservation\",    \"typeId\": 4,    \"readableType\": \"Composite Entity Extractor\",    \"children\": [      {        \"id\": \"63ebd752-4e81-4ce7-a698-b59b82bf5519\",        \"name\": \"Location::To\"      },      {        \"id\": \"a18eaa87-ecd9-4a67-a951-e70cf5b87c7e\",        \"name\": \"datetime\"      }    ]  },  {    \"id\": \"8713b104-78ec-4c4f-9f96-f2e53562cc16\",    \"name\": \"States\",    \"typeId\": 5,    \"readableType\": \"Closed List Entity Extractor\",    \"subLists\": [      {        \"id\": 1,        \"canonicalForm\": \"new york\",        \"list\": [          \"ny\",          \"new york\"        ]      },      {        \"id\": 2,        \"canonicalForm\": \"washington\",        \"list\": [          \"washington\",          \"wa\"        ]      },      {        \"id\": 3,        \"canonicalForm\": \"california\",        \"list\": [          \"california\",          \"ca\",          \"calif.\",          \"cal.\"        ]      }    ]  },  {    \"id\": \"b8e31be4-300f-455e-894b-6f079abca0a2\",    \"name\": \"$Camera.AppName\",    \"typeId\": 1,    \"readableType\": \"Entity Extractor\",    \"customPrebuiltDomainName\": \"Camera\",    \"customPrebuiltModelName\": \"AppName\"  },  {    \"id\": \"9500536f-ffec-4fab-93ad-6268abb0f73c\",    \"name\": \"$Camera.CapturePhoto\",    \"typeId\": 0,    \"readableType\": \"Intent Classifier\",    \"customPrebuiltDomainName\": \"Camera\",    \"customPrebuiltModelName\": \"CapturePhoto\"  }]"
-            },
             "schema": {
               "$ref": "#/definitions/ModelsResponseObject"
             }
@@ -1145,7 +1158,12 @@
         },
         "produces": [
           "application/json"
-        ]
+        ],
+        "x-ms-examples": {
+          "Successful Get Application Version Model Infos request": {
+            "$ref": "./examples/SuccessfulGetApplicationVersionModelInfosRequest.json"
+          }
+        }
       }
     },
     "/apps/{appId}/versions/{versionId}/intents/{intentId}": {
