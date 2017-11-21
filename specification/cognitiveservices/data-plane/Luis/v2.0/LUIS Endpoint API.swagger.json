@@ -40,17 +40,19 @@
   },
   "paths": {
     "/{appId}": {
+      "parameters": [
+        {
+          "name": "appId",
+          "in": "path",
+          "description": "Format - guid. The application ID.",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "get": {
         "description": "Gets the published endpoint predictions for the given query.",
         "operationId": "Prediction_GetPredictionsFromEndpointViaGet",
         "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
           {
             "name": "subscription-key",
             "in": "query",
@@ -93,54 +95,6 @@
         "responses": {
           "200": {
             "description": "A JSON object containing the predictions.",
-            "examples": {
-              "application/json": {
-                "query": "forward to frank 30 dollars through HSBC",
-                "topScoringIntent": {
-                  "intent": "give",
-                  "score": 0.3964121
-                },
-                "entities": [
-                  {
-                    "entity": "30",
-                    "type": "builtin.number",
-                    "startIndex": 17,
-                    "endIndex": 18,
-                    "resolution": {
-                      "value": "30"
-                    }
-                  },
-                  {
-                    "entity": "frank",
-                    "type": "frank",
-                    "startIndex": 11,
-                    "endIndex": 15,
-                    "score": 0.935219169
-                  },
-                  {
-                    "entity": "30 dollars",
-                    "type": "builtin.currency",
-                    "startIndex": 17,
-                    "endIndex": 26,
-                    "resolution": {
-                      "unit": "Dollar",
-                      "value": "30"
-                    }
-                  },
-                  {
-                    "entity": "hsbc",
-                    "type": "Bank",
-                    "startIndex": 36,
-                    "endIndex": 39,
-                    "resolution": {
-                      "values": [
-                        "BankeName"
-                      ]
-                    }
-                  }
-                ]
-              }
-            },
             "schema": {
               "$ref": "#/definitions/LuisResult"
             }
@@ -148,7 +102,12 @@
         },
         "produces": [
           "application/json"
-        ]
+        ],
+        "x-ms-examples": {
+          "Successful Get Predictions From Endpoint Via Get request": {
+            "$ref": "./examples/prediction/SuccessfulGetPredictionsFromEndpointViaGetRequest.json"
+          }
+        }
       },
       "post": {
         "description": "Gets the published endpoint prediction for the given long query.",
@@ -159,13 +118,6 @@
           }
         ],
         "parameters": [
-          {
-            "name": "appId",
-            "in": "path",
-            "description": "Format - guid. The application ID.",
-            "required": true,
-            "type": "string"
-          },
           {
             "name": "timezoneOffset",
             "in": "query",
@@ -205,54 +157,6 @@
         "responses": {
           "200": {
             "description": "A JSON object containing the prediction.",
-            "examples": {
-              "application/json": {
-                "query": "forward to frank 30 dollars through HSBC",
-                "topScoringIntent": {
-                  "intent": "give",
-                  "score": 0.3964121
-                },
-                "entities": [
-                  {
-                    "entity": "30",
-                    "type": "builtin.number",
-                    "startIndex": 17,
-                    "endIndex": 18,
-                    "resolution": {
-                      "value": "30"
-                    }
-                  },
-                  {
-                    "entity": "frank",
-                    "type": "frank",
-                    "startIndex": 11,
-                    "endIndex": 15,
-                    "score": 0.935219169
-                  },
-                  {
-                    "entity": "30 dollars",
-                    "type": "builtin.currency",
-                    "startIndex": 17,
-                    "endIndex": 26,
-                    "resolution": {
-                      "unit": "Dollar",
-                      "value": "30"
-                    }
-                  },
-                  {
-                    "entity": "hsbc",
-                    "type": "Bank",
-                    "startIndex": 36,
-                    "endIndex": 39,
-                    "resolution": {
-                      "values": [
-                        "BankeName"
-                      ]
-                    }
-                  }
-                ]
-              }
-            },
             "schema": {
               "$ref": "#/definitions/LuisResult"
             }
@@ -260,7 +164,12 @@
         },
         "produces": [
           "application/json"
-        ]
+        ],
+        "x-ms-examples":{
+          "Successful Get Predictions From Endpoint Via Post request": {
+            "$ref": "./examples/prediction/SuccessfulGetPredictionsFromEndpointViaPostRequest.json"
+          }
+        }
       }
     }
   },
@@ -268,8 +177,7 @@
     "Q": {
       "type": "string",
       "example": "\"forward to frank 30 dollars through HSBC\""
-    }
-    ,
+    },
     "LuisResult": {
       "type": "object",
       "properties": {
