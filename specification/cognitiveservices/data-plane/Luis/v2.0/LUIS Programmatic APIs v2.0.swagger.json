@@ -72,9 +72,6 @@
         "responses": {
           "201": {
             "description": "The ID of the created feature.",
-            "examples": {
-              "application/json": "83147"
-            },
             "schema": {
               "$ref": "#/definitions/FeatureIDResponse"
             }
@@ -88,7 +85,12 @@
         },
         "produces": [
           "application/json"
-        ]
+        ],
+        "x-ms-examples": {
+          "Successful Create Pattern Feature request": {
+            "$ref": "./examples/features/SuccessfulCreatePatternFeatureRequest.json"
+          }
+        }
       },
       "get": {
         "description": "Gets all application version pattern features.",
@@ -104,9 +106,6 @@
         "responses": {
           "200": {
             "description": "A JSON object containing a list of all pattern features.",
-            "examples": {
-              "application/json": "[  {    \"id\": 89178,    \"name\": \"EmailPattern\",    \"pattern\": \"\\\\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\\\\.[A-Z]{2,}\\\\b\",    \"isActive\": true  }]"
-            },
             "schema": {
               "$ref": "#/definitions/PatternFeatureInfoList"
             }
@@ -120,7 +119,12 @@
         },
         "produces": [
           "application/json"
-        ]
+        ],
+        "x-ms-examples": {
+          "Successful Get Application Version Pattern Features request": {
+            "$ref": "./examples/features/SuccessfulGetApplicationVersionPatternFeaturesRequest.json"
+          }
+        }
       }
     },
     "/apps/{appId}/versions/{versionId}/phraselists": {
@@ -151,9 +155,6 @@
         "responses": {
           "201": {
             "description": "The ID of the created feature.",
-            "examples": {
-              "application/json": "1823"
-            },
             "schema": {
               "$ref": "#/definitions/FeatureIDResponse"
             }
@@ -167,7 +168,12 @@
         },
         "produces": [
           "application/json"
-        ]
+        ], 
+        "x-ms-examples": {
+          "Successful Create Phraselist Feature request": {
+            "$ref": "./examples/features/SuccessfulCreatePhraselistFeatureRequest.json"
+          }
+        }
       },
       "get": {
         "description": "Gets all application phraselist features.",
@@ -183,9 +189,6 @@
         "responses": {
           "200": {
             "description": "A JSON object containing a list of all phraselist features.",
-            "examples": {
-              "application/json": "[  {    \"id\": 321421,    \"name\": \"Cities\",    \"phrases\": \"Seattle,New York,Paris,Moscow,Beijin\",    \"isExchangeable\": true,    \"isActive\": true  },  {    \"id\": 97832,    \"name\": \"DaysOfWeek\",    \"phrases\": \"monday,tuesday,wednesday,thursday,friday,saturday,sunday\",    \"isExchangeable\": true,    \"isActive\": true  }]"
-            },
             "schema": {
               "$ref": "#/definitions/PhraseListFeatureInfoList"
             }
@@ -199,7 +202,12 @@
         },
         "produces": [
           "application/json"
-        ]
+        ],
+        "x-ms-examples": {
+          "Successful Get Application Version Phraselist Features request": {
+            "$ref": "./examples/features/SuccessfulGetApplicationVersionPhraselistFeaturesRequest.json"
+          }
+        }
       }
     },
     "/apps/{appId}/versions/{versionId}/features": {
@@ -223,34 +231,6 @@
         "responses": {
           "200": {
             "description": "A JSON object containing a list of all phraselist features and a list of all pattern featuers in the application.",
-            "examples": {
-              "application/json": {
-                "phraselistFeatures": [
-                  {
-                    "id": 5341,
-                    "name": "Cities",
-                    "phrases": "Seattle,New York,Paris,Moscow,Beijin",
-                    "isExchangeable": true,
-                    "isActive": true
-                  },
-                  {
-                    "id": 74598,
-                    "name": "DaysOfWeek",
-                    "phrases": "monday,tuesday,wednesday,thursday,friday,saturday,sunday",
-                    "isExchangeable": true,
-                    "isActive": true
-                  }
-                ],
-                "patternFeatures": [
-                  {
-                    "id": 81231,
-                    "name": "EmailPattern",
-                    "pattern": "\\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,}\\b",
-                    "isActive": true
-                  }
-                ]
-              }
-            },
             "schema": {
               "$ref": "#/definitions/FeaturesResponseObject"
             }
@@ -264,7 +244,12 @@
         },
         "produces": [
           "application/json"
-        ]
+        ],
+        "x-ms-examples": {
+          "Successful Get Application Version Features request": {
+            "$ref": "./examples/features/SuccessfulGetApplicationVersionFeaturesRequest.json"
+          }
+        }
       }
     },
     "/apps/{appId}/versions/{versionId}/patterns/{patternId}": {
@@ -289,14 +274,6 @@
         "responses": {
           "200": {
             "description": "A JSON object containing the pattern feature info.",
-            "examples": {
-              "application/json": {
-                "id": 7892,
-                "name": "EmailPattern",
-                "pattern": "\\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,}\\b",
-                "isActive": true
-              }
-            },
             "schema": {
               "$ref": "#/definitions/PatternFeatureInfo"
             }
@@ -310,7 +287,12 @@
         },
         "produces": [
           "application/json"
-        ]
+        ],
+        "x-ms-examples": {
+          "Successful Get Pattern Feature Info request": {
+            "$ref": "./examples/features/SuccessfulGetPatternFeatureInfoRequest.json"
+          }
+        }
       },
       "put": {
         "description": "Updates the pattern, the name and the state of the pattern feature.",
@@ -378,15 +360,6 @@
         "responses": {
           "200": {
             "description": "A JSON object containing the phraselist feature info.",
-            "examples": {
-              "application/json": {
-                "id": 178384,
-                "name": "DaysOfWeek",
-                "phrases": "monday,tuesday,wednesday,thursday,friday,saturday,sunday",
-                "isExchangeable": true,
-                "isActive": true
-              }
-            },
             "schema": {
               "$ref": "#/definitions/PhraseListFeatureInfo"
             }
@@ -400,7 +373,12 @@
         },
         "produces": [
           "application/json"
-        ]
+        ],
+        "x-ms-examples": {
+          "Successful Get Phraselist Feature Info request": {
+            "$ref": "./examples/features/SuccessfulGetPhraselistFeatureInfoRequest.json"
+          }
+        }
       },
       "put": {
         "description": "Updates the phrases, the state and the name of the phraselist feature.",
@@ -472,12 +450,6 @@
         "responses": {
           "201": {
             "description": "The ID of the created example.",
-            "examples": {
-              "application/json": {
-                "UtteranceText": "book me a flight from cairo to redmond next thursday",
-                "ExampleId": -11
-              }
-            },
             "schema": {
               "$ref": "#/definitions/LabelExampleResponse"
             }
@@ -491,7 +463,12 @@
         },
         "produces": [
           "application/json"
-        ]
+        ],
+        "x-ms-examples": {
+          "Successful Add Label request": {
+            "$ref": "./examples/examples/SuccessfulAddLabelRequest.json"
+          }
+        }
       }
     },
     "/apps/{appId}/versions/{versionId}/examples": {
@@ -523,9 +500,6 @@
         "responses": {
           "201": {
             "description": "A string array determining which labels were added successfully.",
-            "examples": {
-              "application/json": "[  {    \"value\": {      \"UtteranceText\": \"book me a flight from cairo to redmond next thursday\",      \"ExampleId\": -11    },    \"hasError\": false  },  {    \"value\": {      \"UtteranceText\": \"what's the weather like in seattle?\",      \"ExampleId\": -12    },    \"hasError\": false  }]"
-            },
             "schema": {
               "$ref": "#/definitions/BatchLabelExampleResponse"
             }
@@ -539,7 +513,12 @@
         },
         "produces": [
           "application/json"
-        ]
+        ],
+        "x-ms-examples": {
+          "Successful Batch Add Labels request": {
+            "$ref": "./examples/examples/SuccessfulBatchAddLabelsRequest.json"
+          }
+        }
       },
       "get": {
         "description": "Returns examples to be reviewed.",
@@ -571,7 +550,7 @@
         ],
         "x-ms-examples": {
           "Successful Review Labeled Examples request": {
-            "$ref": "./examples/SuccessfulReviewLabeledExamplesRequest.json"
+            "$ref": "./examples/examples/SuccessfulReviewLabeledExamplesRequest.json"
           }
         }
       }
@@ -678,7 +657,7 @@
         ],
         "x-ms-examples": {
           "Successful Get Application Version Intent Infos request": {
-            "$ref": "./examples/SuccessfulGetApplicationVersionIntentInfosRequest.json"
+            "$ref": "./examples/model/SuccessfulGetApplicationVersionIntentInfosRequest.json"
           }
         }
       }
@@ -759,7 +738,7 @@
         ],
         "x-ms-examples": {
           "Successful Get Application Version Entity Infos request": {
-            "$ref": "./examples/SuccessfulGetApplicationVersionEntityInfosRequest.json"
+            "$ref": "./examples/model/SuccessfulGetApplicationVersionEntityInfosRequest.json"
           }
         }
       }
@@ -840,7 +819,7 @@
         ],
         "x-ms-examples": {
           "Successful Get Application Version Hierarchical Entity Infos request": {
-            "$ref": "./examples/SuccessfulGetApplicationVersionHierarchicalEntityInfosRequest.json"
+            "$ref": "./examples/model/SuccessfulGetApplicationVersionHierarchicalEntityInfosRequest.json"
           }
         }
       }
@@ -921,7 +900,7 @@
         ],
         "x-ms-examples": {
           "Successful Get Application Version Composite Entity Infos request": {
-            "$ref": "./examples/SuccessfulGetApplicationVersionCompositeEntityInfosRequest.json"
+            "$ref": "./examples/model/SuccessfulGetApplicationVersionCompositeEntityInfosRequest.json"
           }
         }
       }
@@ -1002,7 +981,7 @@
         ],
         "x-ms-examples": {
           "Successful Get Application Version Closed List Infos request": {
-            "$ref": "./examples/SuccessfulGetApplicationVersionClosedListInfosRequest.json"
+            "$ref": "./examples/model/SuccessfulGetApplicationVersionClosedListInfosRequest.json"
           }
         }
       }
@@ -1083,7 +1062,7 @@
         ],
         "x-ms-examples": {
           "Successful Get Application Version Prebuilt Infos request": {
-            "$ref": "./examples/SuccessfulGetApplicationVersionPrebuiltInfosRequest.json"
+            "$ref": "./examples/model/SuccessfulGetApplicationVersionPrebuiltInfosRequest.json"
           }
         }
       }
@@ -1119,7 +1098,7 @@
         ],
         "x-ms-examples": {
           "Successful Get Available Prebuilt Entity Extractors request": {
-            "$ref": "./examples/SuccessfulGetAvailablePrebuiltEntityExtractorsRequest.json"
+            "$ref": "./examples/model/SuccessfulGetAvailablePrebuiltEntityExtractorsRequest.json"
           }
         }
       }
@@ -1161,7 +1140,7 @@
         ],
         "x-ms-examples": {
           "Successful Get Application Version Model Infos request": {
-            "$ref": "./examples/SuccessfulGetApplicationVersionModelInfosRequest.json"
+            "$ref": "./examples/model/SuccessfulGetApplicationVersionModelInfosRequest.json"
           }
         }
       }
@@ -1184,14 +1163,6 @@
         "responses": {
           "200": {
             "description": "An intent model info.",
-            "examples": {
-              "application/json": {
-                "id": "8285a9ee-6bc0-4409-87f4-82d539f70529",
-                "name": "None",
-                "typeId": 0,
-                "readableType": "Intent Classifier"
-              }
-            },
             "schema": {
               "$ref": "#/definitions/IntentClassifier"
             }
@@ -1205,7 +1176,12 @@
         },
         "produces": [
           "application/json"
-        ]
+        ],
+        "x-ms-examples": {
+          "Successful Get Intent Info request": {
+            "$ref": "./examples/model/SuccessfulGetIntentInfoRequest.json"
+          }
+        }
       },
       "put": {
         "description": "Updates the name of an intent classifier.",
@@ -1358,24 +1334,6 @@
         "responses": {
           "200": {
             "description": "A hierarchical entity model info.",
-            "examples": {
-              "application/json": {
-                "id": "fe559c31-9778-42ea-ba45-94e0bd7cf767",
-                "name": "Location",
-                "typeId": 3,
-                "readableType": "Hierarchical Entity Extractor",
-                "children": [
-                  {
-                    "id": "ec076676-d8d9-42fa-a44e-87989c0a2f82",
-                    "name": "From"
-                  },
-                  {
-                    "id": "63ebd752-4e81-4ce7-a698-b59b82bf5519",
-                    "name": "To"
-                  }
-                ]
-              }
-            },
             "schema": {
               "$ref": "#/definitions/HierarchicalEntityExtractor"
             }
@@ -1389,7 +1347,12 @@
         },
         "produces": [
           "application/json"
-        ]
+        ],
+        "x-ms-examples": {
+          "Successful Get Hierarchical Entity Info request": {
+            "$ref": "./examples/model/SuccessfulGetHierarchicalEntityInfoRequest.json"
+          }
+        }
       },
       "put": {
         "description": "Updates the name and children of a hierarchical entity model.",
@@ -1921,7 +1884,7 @@
       },
       "get": {
         "description": "Lists all of the user applications.",
-        "operationId": "Apps_GetUserApplications",
+        "operationId": "Apps_GetApplicationsList",
         "parameters": [
           {
             "$ref": "#/parameters/SkipInPath"
@@ -1949,7 +1912,12 @@
         },
         "produces": [
           "application/json"
-        ]
+        ],
+        "x-ms-examples": {
+          "Successful Get Applications List request": {
+            "$ref": "./examples/apps/SuccessfulGetApplicationsListRequest.json"
+          }
+        }
       }
     },
     "/apps/import": {
@@ -2003,7 +1971,7 @@
         "operationId": "Apps_GetPersonalAssistantApplications",
         "responses": {
           "200": {
-            "description": "A personal assistant apps JSON object containing the endpoint URLs for Cortana applications            and the user's endpoint keys.",
+            "description": "A personal assistant apps JSON object containing the endpoint URLs for Cortana applications and the user's endpoint keys.",
             "examples": {
               "application/json": {
                 "endpointKeys": [],
@@ -2029,7 +1997,12 @@
         },
         "produces": [
           "application/json"
-        ]
+        ],
+        "x-ms-examples": {
+          "Successful Get Personal Assistant Applications": {
+            "$ref": "./examples/apps/SuccessfulGetPersonalAssistantApplications.json"
+          }
+        }
       }
     },
     "/apps/domains": {
@@ -2039,9 +2012,6 @@
         "responses": {
           "200": {
             "description": "A list object containing the available application domains.",
-            "examples": {
-              "application/json": "[  \"Booking & Reference\",  \"Business\",  \"Comics\",  \"Communication\",  \"Education\",  \"Entertainment\",  \"Finance\",  \"Food & Nutrition\",  \"Gaming\",  \"Health & Fitness\",  \"Home Automation\",  \"Media & Video\",  \"Medical\",  \"Music & Audio\",  \"Navigation & Maps\",  \"News & Magazines\",  \"Personalization\",  \"Productivity\",  \"Real Estate\",  \"Scheduler\",  \"Shopping\",  \"Social Network\",  \"Sports\",  \"Telecom\",  \"Tools\",  \"Transportation\",  \"Translation\",  \"Travel & Local\",  \"Weather\",  \"Others\"]"
-            },
             "schema": {
               "$ref": "#/definitions/AvailableDomains"
             }
@@ -2055,7 +2025,12 @@
         },
         "produces": [
           "application/json"
-        ]
+        ],
+        "x-ms-examples": {
+          "Successful Get Application Domains request": {
+            "$ref": "./examples/apps/SuccessfulGetApplicationDomainsRequest.json"
+          }
+        }
       }
     },
     "/apps/usagescenarios": {
@@ -2081,7 +2056,12 @@
         },
         "produces": [
           "application/json"
-        ]
+        ],
+        "x-ms-examples": {
+          "Successful Get Application Usage Scenarios request": {
+            "$ref": "./examples/apps/SuccessfulGetApplicationUsageScenariosListRequest.json"
+          }
+        }
       }
     },
     "/apps/cultures": {
@@ -2091,9 +2071,6 @@
         "responses": {
           "200": {
             "description": "A list object containing the supported application cultures.",
-            "examples": {
-              "application/json": "[  {    \"name\": \"English\",    \"code\": \"en-us\"  },  {    \"name\": \"Chinese\",    \"code\": \"zh-cn\"  },  {    \"name\": \"French\",    \"code\": \"fr-fr\"  },  {    \"name\": \"Spanish\",    \"code\": \"es-es\"  },  {    \"name\": \"Italian\",    \"code\": \"it-it\"  },  {    \"name\": \"German\",    \"code\": \"de-de\"  },  {    \"name\": \"Japanese\",    \"code\": \"ja-jp\"  },  {    \"name\": \"BRPortuguese\",    \"code\": \"pt-br\"  }]"
-            },
             "schema": {
               "$ref": "#/definitions/AvailableCultures"
             }
@@ -2107,7 +2084,12 @@
         },
         "produces": [
           "application/json"
-        ]
+        ],
+        "x-ms-examples": {
+          "Successful Get Application Cultures request": {
+            "$ref": "./examples/apps/SuccessfulGetApplicationCulturesRequest.json"
+          }
+        }
       }
     },
     "/apps/{appId}/querylogs": {
@@ -2135,7 +2117,12 @@
         },
         "produces": [
           "application/octet-stream"
-        ]
+        ],
+        "x-ms-examples": {
+          "Successful Download Application Query Logs request": {
+            "$ref": "./examples/apps/SuccessfulDownloadApplicationQueryLogsRequest.json"
+          }
+        }
       }
     },
     "/apps/{appId}": {
@@ -2186,7 +2173,12 @@
         },
         "produces": [
           "application/json"
-        ]
+        ],
+        "x-ms-examples": {
+          "Successful Get Application Info request": {
+            "$ref": "./examples/apps/SuccessfulGetApplicationInfoRequest.json"
+          }
+        }
       },
       "put": {
         "description": "Updates the name or description of the application.",
@@ -2297,14 +2289,6 @@
         "responses": {
           "201": {
             "description": "An object containing the application endpoint URL and its assigned endpoint key.",
-            "examples": {
-              "application/json": {
-                "endpointUrl": "DummyUrl",
-                "subscription-key": "DummyEndpointKey",
-                "endpointRegion": "westus",
-                "isStaging": false
-              }
-            },
             "schema": {
               "$ref": "#/definitions/ApplicationPublishResponse"
             }
@@ -2318,7 +2302,12 @@
         },
         "produces": [
           "application/json"
-        ]
+        ],
+        "x-ms-examples": {
+          "Successful Publish Application request": {
+            "$ref": "./examples/apps/SuccessfulPublishApplicationRequest.json"
+          }
+        }
       }
     },
     "/apps/{appId}/versions": {
@@ -2720,7 +2709,7 @@
         }
       ],
       "post": {
-        "description": "Sends a training request for a version of a specified LUIS app. <br>This POST request initiates a request asynchronously. To determine whether the training request is successful, submit a GET request to get training status.<br><b>Note:</b> The application version is not fully trained unless all the models (intents and entities) are trained successfully or are up to date.<br/><b>To verify training success, get the training status at least once after training is complete.</b>",
+        "description": "Sends a training request for a version of a specified LUIS app. This POST request initiates a request asynchronously. To determine whether the training request is successful, submit a GET request to get training status. Note: The application version is not fully trained unless all the models (intents and entities) are trained successfully or are up to date. To verify training success, get the training status at least once after training is complete.",
         "operationId": "Train_TrainApplicationVersion",
         "responses": {
           "202": {
@@ -2739,17 +2728,19 @@
         "produces": [
           "application/json",
           "JSON"
-        ]
+        ],
+        "x-ms-examples": {
+          "Successful Train Application Version request": {
+            "$ref": "./examples/train/SuccessfulTrainApplicationVersionRequest.json"
+          }
+        }
       },
       "get": {
-        "description": "Gets the training status of all models (intents and entities) for the specified LUIS app. You must <a href=\"https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c45\">call the train API</a> to train the LUIS app before you call this API to get training status.<br/><b>appID</b> specifies the LUIS app ID.<br/><b>versionId</b> specifies the version number of the LUIS app. For example, \"0.1\".",
+        "description": "Gets the training status of all models (intents and entities) for the specified LUIS app. You must call the train API to train the LUIS app before you call this API to get training status. \"appID\" specifies the LUIS app ID. \"versionId\" specifies the version number of the LUIS app. For example, \"0.1\".",
         "operationId": "Train_GetApplicationVersionTrainingStatus",
         "responses": {
           "200": {
             "description": "A successful response provides an array of training status details for a LUIS app that you submitted for training. Each element in the response array provides training status for a model (intent or entity) in the LUIS app.  <br/><br/><b>Note:</b> Training status is not provided for prebuilt entities because they are pretrained. <br/></br>The <b>modelId</b> property identifies which intent or entity the training status corresponds to. To get the name and type of each model, use the models API which has a request URL in this format: <br/></br>https://westus.api.cognitive.microsoft.com/luis/api/v2.0/apps/{appId}/versions/{versionId}/models<br/></br> The details property for each model can contain the following fields: <br/><br/><b>statusId</b>: An integer from 0 to 3 that corresponds to the value of the <b>status</b> field. <br/><br/><b>status</b>: A string with one of the following values: “Success”, “UpToDate”, “InProgress”, “Fail”. If the status is “Fail”, the <b>failureReason</b> property provides the reason for failure. <br/><br/><b>exampleCount</b>: The number of examples used for training. In the case of the None intent or prebuilt domain intents and entities, this number includes example provided internally by the system as well as examples you added to your LUIS app. <br/></br><b>failureReason</b>:  A string that indicates the reason training failed.  The value \"FewLabels\" means that no labeled examples were provided for training. <br/></br><b>trainingDateTime</b>: A string indicating the time the model was last trained. The value uses the ISO 8601 format for representing times in UTC (Coordinated Universal Time) with a UTC designator (“Z”), for example: \"2017-08-10T01:08:34Z\".",
-            "examples": {
-              "application/json": "[  {    \"modelId\": \"f9b00d5b-1f2d-421e-bc99-5ff192d0b998\",    \"details\": {      \"statusId\": 3,      \"status\": \"InProgress\",      \"exampleCount\": 0    }  },  {    \"modelId\": \"51403af3-5342-4926-abaa-91172a42e075\",    \"details\": {      \"statusId\": 2,      \"status\": \"UpToDate\",      \"exampleCount\": 12,      \"trainingDateTime\": \"2017-01-31T21:42:02Z\"    }  },  {    \"modelId\": \"b4cf6402-dc79-4ca3-8666-b0007337e92b\",    \"details\": {      \"statusId\": 1,      \"status\": \"Fail\",      \"exampleCount\": 12,      \"failureReason\": \"FewLabels\"    }  },  {    \"modelId\": \"e8e3135a-acd9-4164-a65c-e2fedbe78cfa\",    \"details\": {      \"statusId\": 3,      \"status\": \"InProgress\",      \"exampleCount\": 0    }  },  {    \"modelId\": \"3291fac9-6368-4c87-9562-e78cae0fa7c6\",    \"details\": {      \"statusId\": 0,      \"status\": \"Success\",      \"exampleCount\": 12,      \"trainingDateTime\": \"2017-01-31T21:42:02Z\"    }  },  {    \"modelId\": \"a193efac-ab02-49d7-b005-ee717d45c4f1\",    \"details\": {      \"statusId\": 3,      \"status\": \"InProgress\",      \"exampleCount\": 0    }  }]"
-            },
             "schema": {
               "$ref": "#/definitions/ModelTrainingInfoList"
             }
@@ -2764,7 +2755,12 @@
         "produces": [
           "application/json",
           "JSON"
-        ]
+        ],
+        "x-ms-examples": {
+          "Successful Get Application Version Training Status request": {
+            "$ref": "./examples/train/SuccessfulGetApplicationVersionTrainingStatusRequest.json"
+          }
+        }
       }
     },
     "/subscriptions": {
@@ -3042,12 +3038,6 @@
         "responses": {
           "200": {
             "description": "A JSON object containing the application settings.",
-            "examples": {
-              "application/json": {
-                "id": "51963bf0-08a1-44b7-9c69-735dbb92ce74",
-                "public": false
-              }
-            },
             "schema": {
               "$ref": "#/definitions/ApplicationSettings"
             }
@@ -3061,7 +3051,12 @@
         },
         "produces": [
           "application/json"
-        ]
+        ],
+        "x-ms-examples": {
+          "Successful Get Application Settings request": {
+            "$ref": "./examples/apps/SuccessfulGetApplicationSettingsRequest.json"
+          }
+        }
       },
       "put": {
         "description": "Updates the application settings",
@@ -3153,7 +3148,12 @@
         },
         "produces": [
           "application/json"
-        ]
+        ],
+        "x-ms-examples": {
+          "successful Get Application User Access List": {
+            "$ref": "./examples/permissions/SuccessfulGetApplicationUserAccessListRequest.json"
+          }
+        }
       },
       "post": {
         "description": "Adds a user to the allowed list of users to access this LUIS application.Users are added using their email address.",
@@ -3255,14 +3255,6 @@
         "responses": {
           "200": {
             "description": "Returns a list of endpoints regions and their corresponding endpoint URL",
-            "examples": {
-              "application/json": {
-                "westus": "https://westus.api.cognitive.microsoft.com/api/v2.0/apps/bb25e72c-2279-46bb-a99b-89fcb921b58a",
-                "eastus2": "https://eastus2.api.cognitive.microsoft.com/api/v2.0/apps/bb25e72c-2279-46bb-a99b-89fcb921b58a",
-                "westcentralus": "https://westcentralus.api.cognitive.microsoft.com/api/v2.0/apps/bb25e72c-2279-46bb-a99b-89fcb921b58a",
-                "southeastasia": "https://southeastasia.api.cognitive.microsoft.com/api/v2.0/apps/bb25e72c-2279-46bb-a99b-89fcb921b58a"
-              }
-            },
             "schema": {
               "$ref": "#/definitions/AvailableEndpoints"
             }
@@ -3276,7 +3268,12 @@
         },
         "produces": [
           "application/json"
-        ]
+        ],
+        "x-ms-examples": {
+          "Successful Get Endpoints request": {
+            "$ref": "./examples/apps/SuccessfulGetEndpointsRequest.json"
+          }
+        }
       }
     },
     "/apps/{appId}/versions/{versionId}/closedlists/{clEntityId}/sublists": {
@@ -3591,9 +3588,6 @@
         "responses": {
           "200": {
             "description": "Returns a list of all custom prebuilt domains and their intents/entities representation",
-            "examples": {
-              "application/json": "[ {    \"name\": \"taxi\",    \"culture\": \"en-us\",    \"description\": \"A custom prebuilt domain for taxi booking\",    \"examples\": \"book taxi x on friday at 6 pm, take me to Tinga's from Westin hotel with taxi lux\",    \"intents\": [      {        \"name\": \"book_taxi\",        \"description\": \"Requests/Books taxi\",        \"examples\": \"book taxi x on friday at 6 pm\"      },      {        \"name\": \"cancel_taxi\",        \"description\": \"Cancels taxi request\",        \"examples\": \"I just called an taxi SUV , please cancel, Cancel my taxi\"      }    ],    \"entities\": [      {        \"name\": \"from_place_name\",        \"description\": \"Route starting point\",        \"examples\": \"find taxi x to take me to 9th street from space needle\"      }    ]  },  {    \"name\": \"weather\",    \"culture\": \"en-us\",    \"description\": \"A custom prebuilt domain that gets weather forecast and condition\",    \"examples\": \"Show me the weather for this weekend, What's the weather?\",    \"intents\": [      {        \"name\": \"get_forecast\",        \"description\": \"Gets weather forecast\",        \"examples\": \"What's the weather like tomorrow?\"      },      {        \"name\": \"get_condition\",        \"description\": \"Gets weather condition\",        \"examples\": \"what's the average temperature in India in September?\"      }    ],    \"entities\": [      {        \"name\": \"location\",        \"description\": \"Location of the queried weather\",        \"examples\": \"What's the weather like in Minneapolis\"      },      {        \"name\": \"unit\",        \"description\": \"Temperature measurement unit\",        \"examples\": \"Please change the weather from Fahrenheit to Celsius\"      }    ]  }]"
-            },
             "schema": {
               "$ref": "#/definitions/PrebuiltDomainsList"
             }
@@ -3607,7 +3601,12 @@
         },
         "produces": [
           "application/json"
-        ]
+        ],
+        "x-ms-examples": {
+          "Successful Get Available Custom Prebuilt Domains request": {
+            "$ref": "./examples/apps/SuccessfulGetAvailableCustomPrebuiltDomainsRequest.json"
+          }
+        }
       },
       "post": {
         "description": "Adds a prebuilt domain along with its models as a new application.",
@@ -3679,7 +3678,12 @@
         },
         "produces": [
           "application/json"
-        ]
+        ],
+        "x-ms-examples": {
+          "Successful Get AvailableCustomPrebuiltDomainsForCulture request": {
+            "$ref": "./examples/apps/SuccessfulGetAvailableCustomPrebuiltDomainsForCultureRequest.json"
+          }
+        }
       }
     },
     "/apps/{appId}/versions/{versionId}/hierarchicalentities/{hEntityId}/children/{hChildId}": {
@@ -3707,13 +3711,8 @@
         "responses": {
           "200": {
             "description": "The hierarchical entity child model info.",
-            "examples": {
-              "application/json": {
-                "id": "ef278a6c-d94f-4d20-a602-cf53d0acf0f5",
-                "name": "From",
-                "typeId": 6,
-                "readableType": "Hierarchical Child Entity Extractor"
-              }
+            "schema": {
+              "$ref": "#/definitions/HierarchicalChildEntity"
             }
           },
           "default": {
@@ -3725,7 +3724,12 @@
         },
         "produces": [
           "application/json"
-        ]
+        ],
+        "x-ms-examples": {
+          "Successful Get Hierarchical Entity Child Info request": {
+            "$ref": "./examples/model/SuccessfulGetHierarchicalChildEntityInfoRequest.json"
+          }
+        }
       },
       "put": {
         "description": "Renames a single child in an existing hierarchical entity model.",
@@ -4819,6 +4823,7 @@
       "enum": [
         "Entity Extractor",
         "Hierarchical Entity Extractor",
+        "Hierarchical Child Entity Extractor",
         "Composite Entity Extractor",
         "Closed List Entity Extractor",
         "Prebuilt Entity Extractor",
@@ -4910,6 +4915,8 @@
       }
     },
     "ChildEntity": {
+      "type": "object",
+      "description": "The base child entity class.",
       "properties": {
         "id": {
           "type": "string",
@@ -4920,6 +4927,20 @@
           "description": "The name of a child entity."
         }
       }
+    },
+    "HierarchicalChildEntity": {
+      "type": "object",
+      "properties": {
+        "typeId": {
+          "type": "number"
+        },
+        "readableType": {
+          "$ref": "#/definitions/ReadableType"
+        }
+      },
+      "allOf": [
+        { "$ref": "#/definitions/ChildEntity" }
+      ]
     },
     "IntentClassifier": {
       "type": "object",
