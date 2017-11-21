@@ -615,9 +615,6 @@
         "responses": {
           "201": {
             "description": "The ID of the created model.",
-            "examples": {
-              "application/json": "\"227a71ed-7d4b-4dce-8f3a-16c4e5cc06e8\""
-            },
             "schema": {
               "$ref": "#/definitions/GuidResponse"
             }
@@ -625,7 +622,12 @@
         },
         "produces": [
           "application/json"
-        ]
+        ],
+        "x-ms-examples": {
+          "Successful Create Intent Classifier request": {
+            "$ref": "./examples/model/SuccessfulCreateIntentClassifierRequest.json"
+          }
+        }
       },
       "get": {
         "description": "Gets information about the intent models.",
@@ -690,9 +692,6 @@
         "responses": {
           "201": {
             "description": "The ID of the created model.",
-            "examples": {
-              "application/json": "\"3d73462d-98f0-4dcd-8d30-fab9e65f2e73\""
-            },
             "schema": {
               "$ref": "#/definitions/GuidResponse"
             }
@@ -706,7 +705,12 @@
         },
         "produces": [
           "application/json"
-        ]
+        ],
+        "x-ms-examples": {
+          "Successful Create Entity Extractor request": {
+            "$ref": "./examples/model/SuccessfulCreateEntityExtractorRequest.json"
+          }
+        }
       },
       "get": {
         "description": "Gets information about the entity models.",
@@ -771,9 +775,6 @@
         "responses": {
           "201": {
             "description": "The ID of the created model.",
-            "examples": {
-              "application/json": "\"fe559c31-9778-42ea-ba45-94e0bd7cf767\""
-            },
             "schema": {
               "$ref": "#/definitions/GuidResponse"
             }
@@ -787,7 +788,12 @@
         },
         "produces": [
           "application/json"
-        ]
+        ],
+        "x-ms-examples": {
+          "Successful Create Hierarchical Entity Extractor request": {
+            "$ref": "./examples/model/SuccessfulCreateHierarchicalEntityExtractorRequest.json"
+          }
+        }
       },
       "get": {
         "description": "Gets information about the hierarchical entity models.",
@@ -852,9 +858,6 @@
         "responses": {
           "201": {
             "description": "The ID of the created Model.",
-            "examples": {
-              "application/json": "\"bc1bae43-7904-48ad-a165-88b1910174f9\""
-            },
             "schema": {
               "$ref": "#/definitions/GuidResponse"
             }
@@ -868,7 +871,12 @@
         },
         "produces": [
           "application/json"
-        ]
+        ],
+        "x-ms-examples": {
+          "Successful Create Composite Entity Extractor": {
+            "$ref": "./examples/model/SuccessfulCreateCompositeEntityExtractorRequest.json"
+          }
+        }
       },
       "get": {
         "description": "Gets information about the composite entity models.",
@@ -949,7 +957,12 @@
         },
         "produces": [
           "application/json"
-        ]
+        ],
+        "x-ms-examples": {
+          "Successful Create Closed List Entity Model request": {
+            "$ref": "./examples/model/SuccessfulCreateClosedListEntityModelRequest.json"
+          }
+        }
       },
       "get": {
         "description": "Gets information about the closedlist models.",
@@ -1270,7 +1283,12 @@
         },
         "produces": [
           "application/json"
-        ]
+        ],
+        "x-ms-examples": {
+          "Successful Get Entity Info request": {
+            "$ref": "./examples/model/SuccessfulGetEntityInfoRequest.json"
+          }
+        }
       },
       "put": {
         "description": "Updates the name of an entity extractor.",
@@ -1447,7 +1465,12 @@
         },
         "produces": [
           "application/json"
-        ]
+        ],
+        "x-ms-examples": {
+          "Successful Get Composite Entity Info request": {
+            "$ref": "./examples/model/SuccessfulGetCompositeEntityInfoRequest.json"
+          }
+        }
       },
       "put": {
         "description": "Updates the composite entity extractor.",
@@ -1564,7 +1587,12 @@
         },
         "produces": [
           "application/json"
-        ]
+        ],
+        "x-ms-examples": {
+          "Successful Get Closed List Entity Info request": {
+            "$ref": "./examples/model/SuccessfulGetClosedListEntityInfoRequest.json"
+          }
+        }
       },
       "put": {
         "description": "Updates the closed list model.",
@@ -1660,14 +1688,6 @@
         "responses": {
           "200": {
             "description": "A prebuilt entity models info.",
-            "examples": {
-              "application/json": {
-                "id": "a18eaa87-ecd9-4a67-a951-e70cf5b87c7e",
-                "name": "datetime",
-                "typeId": 2,
-                "readableType": "Prebuilt Entity Extractor"
-              }
-            },
             "schema": {
               "$ref": "#/definitions/PrebuiltEntityExtractor"
             }
@@ -1681,7 +1701,12 @@
         },
         "produces": [
           "application/json"
-        ]
+        ],
+        "x-ms-examples": {
+          "Successful Get Prebuilt Info request": {
+            "$ref": "./examples/model/SuccessfulGetPrebuiltInfoRequest.json"
+          }
+        }
       },
       "delete": {
         "description": "Deletes a prebuilt entity extractor from the application.",
@@ -1896,9 +1921,6 @@
         "responses": {
           "200": {
             "description": "A list of the user applications.",
-            "examples": {
-              "application/json": "[    {      \"id\": \"363187f1-c573-46b3-bc4c-ae01d686e68e\",      \"name\": \"MyFirstDummyApp\",      \"description\": \"This is my first dummy application\",      \"culture\": \"en-us\",      \"usageScenario\": \"IoT\",      \"domain\": \"Comics\",      \"versionsCount\": 3,      \"createdDateTime\": \"2017-01-31T16:15:54Z\",      \"endpoints\": {        \"PRODUCTION\": {          \"versionId\": \"0.1\",          \"isStaging\": false,          \"endpointUrl\": \"DummyUrl\",          \"assignedEndpointKey\": \"\",          \"endpointRegion\":\"westus\",          \"publishedDateTime\": \"2017-02-19T17:09:14Z\"        }      },      \"endpointHitsCount\": 0    }]"
-            },
             "schema": {
               "$ref": "#/definitions/ApplicationsInfoList"
             }
@@ -1972,18 +1994,6 @@
         "responses": {
           "200": {
             "description": "A personal assistant apps JSON object containing the endpoint URLs for Cortana applications and the user's endpoint keys.",
-            "examples": {
-              "application/json": {
-                "endpointKeys": [],
-                "endpointUrls": {
-                  "English": "EnglishDummyURL",
-                  "Chinese": "ChineseDummyURL",
-                  "French": "FrenchDummyURL",
-                  "Spanish": "SpanishDummyURL",
-                  "Italian": "ItalianDummyURL"
-                }
-              }
-            },
             "schema": {
               "$ref": "#/definitions/PersonalAssistantsResponse"
             }
@@ -2040,9 +2050,6 @@
         "responses": {
           "200": {
             "description": "A list object containing the available application usage scenarios.",
-            "examples": {
-              "application/json": "[  \"IoT\",  \"Bot\",  \"Mobile Application\",  \"Other\"]"
-            },
             "schema": {
               "$ref": "#/definitions/ApplicationUsageScenarios"
             }
@@ -2104,8 +2111,9 @@
         "responses": {
           "200": {
             "description": "A CSV file containing the query logs for the past month.",
-            "examples": {
-              "application/octet-stream": "\"Query\",\"UTC DateTime\",\"Response\"\"hello, world!\",01/31/2017 17:17:41,\"{  \"\"query\"\": \"\"Hello, World!\"\",  \"\"topScoringIntent\"\": {    \"\"intent\"\": \"\"None\"\",    \"\"score\"\": 0.6277761  },  \"\"intents\"\": [    {      \"\"intent\"\": \"\"None\"\",      \"\"score\"\": 0.6277761    },    {      \"\"intent\"\": \"\"BookFlight\"\",      \"\"score\"\": 0.002136109    },    {      \"\"intent\"\": \"\"GetWeather\"\",      \"\"score\"\": 0.00142168161    }  ],  \"\"entities\"\": []}\""
+            "schema": {
+              "type": "file",
+              "description": "The query logs of an application for the past month in CSV format."
             }
           },
           "default": {
@@ -2117,12 +2125,7 @@
         },
         "produces": [
           "application/octet-stream"
-        ],
-        "x-ms-examples": {
-          "Successful Download Application Query Logs request": {
-            "$ref": "./examples/apps/SuccessfulDownloadApplicationQueryLogsRequest.json"
-          }
-        }
+        ]
       }
     },
     "/apps/{appId}": {
@@ -2137,29 +2140,6 @@
         "responses": {
           "200": {
             "description": "A JSON object containing the application info.",
-            "examples": {
-              "application/json": {
-                "id": "363187f1-c573-46b3-bc4c-ae01d686e68e",
-                "name": "MyFirstDummyAp",
-                "description": "This is my first dummy application",
-                "culture": "en-us",
-                "usageScenario": "IoT",
-                "domain": "Comics",
-                "versionsCount": 3,
-                "createdDateTime": "2017-01-31T16:15:54Z",
-                "endpoints": {
-                  "PRODUCTION": {
-                    "versionId": "0.1",
-                    "isStaging": false,
-                    "endpointUrl": "DummyUrl",
-                    "endpointRegion": "westus",
-                    "assignedEndpointKey": "",
-                    "publishedDateTime": "2017-02-19T17:09:14Z"
-                  }
-                },
-                "endpointHitsCount": 0
-              }
-            },
             "schema": {
               "$ref": "#/definitions/ApplicationInfoResponse"
             }
